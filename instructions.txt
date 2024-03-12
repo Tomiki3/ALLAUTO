@@ -1,0 +1,15 @@
+examiner [nom meuble] => examine [piece of fourniture name] : place le joueur devant un élément du décor afin d'avoir une meilleur description
+
+prendre [nom objet] => take [object name] : prend un objet et le range dans l'inventaire
+
+ouvrir [numéro/couleur de porte] => open [door number/color ?] : ouvre un porte en l'identifiant par son numéro ou sa couleur (contexte)
+
+retour => back : revient sur la description de la pièce
+
+inventaire => inventory : décrit l'inventaire sous forme de liste d'objet
+
+(équiper [nom objet / index inventaire] => equip [object name / inventory index]: si pas d'objet déjà équipé, équipe un objet. Sinon remplace l'objet équiper par l'objet sélectionné.)
+
+utiliser [nom objet] sur [nom meuble] => use [object name] on [piece of fourniture name] : utilise l'objet désigné sur le meuble désigné si possible. si impossible message d'erreur.
+
+à compléter ...
