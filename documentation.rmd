@@ -6,6 +6,22 @@
 
 # Histoire
 
+Le joueur commence la partie en se réveillant dans un bureau.
+Il ne sait rien d'autre : son identité, sa localisation, sa raison d'être ici lui sont inconnues.
+Le joueur va ainsi devoir explorer les lieux pour espérer trouver des réponses à ses questions.
+
+Son exploration est rythmée par des endormissements fréquents, suivis par des réveils.
+Cet évènement le fera reset dans la salle de départ, à chaque palier important de progression.
+
+Au fur et à mesure, le joueur apprend qu'il se situe dans l'open space (vide) de [insérer nom entreprise], une entreprise connue spécialisée dans le développement d'Intelligence Artificielle.
+Il découvre que [nom entreprise] travaille actuellement sur un gros projet très médiatisé : le développement d'une Intelligence Artificielle "ultime", [nom du projet], qui promet d'imiter le comportement humain à la perfection.
+Son exploration va l'emmener à découvrir tous les non-dits autour de ce projet, les rivalités, les arrangements secrets, etc ... qui vont pimenter un peu notre histoire.
+Ces éléments devront fournir des pistes de reflexion au joueur, de manière à ce qu'il puisse s'imaginer un scénario crédible concernant son identité et sa raison d'être ici.
+Cependant, le récit est parsemé d'incohérences qui doivent laisser au joueur un goût un peu amer vis à vis de ses conclusions, des éléments qui lui laissent penser qu'il n'a pas encore bien tout compris, comme si il lui manquait une pièce du puzzle.
+Et en effet, c'est en pénétrant dans la salle des archives et en trouvant un dossier à son nom que le joueur va se rendre compte quil est en fait l'IA "ultime" autour de laquelle toute l'histoire est centrée.
+
+Pour l'instant, le jeu se finira sur un nouveau réveil du joueur, cette fois-ci entourée de l'équipe chargée de son développement, tout sourire.
+
 # Carte
 
 TODO
@@ -32,6 +48,17 @@ Certains objets peuvent également être récupérés et placés dans l'inventai
 Un objet pourra être utilisé ultérieurement pour débloquer de nouveaux objets ou de nouvelles salles. 
 
 ## Rencontre PNJ
+
+Le joueur est l'unique entité "vivante" présente dans l'espace de jeu.
+Ainsi, les seuls PNJ qu'il recontre sont les ordinateurs de travail des employés de l'entreprise, laissés sur place.
+Ces ordinateurs sont tous habités par [nom IA vocale], une intelligence artificelle d'aide au développement créée par [nom de l'entreprise].
+[nom IA vocale] est particulièrement bavarde pour un logiciel, et possède l'avantage de ne pas pouvoir faire la distinction entre un humain et une machine.
+
+Le joueur peut interargir avec certains des ordinateurs qui lui sont décris lorsqu'il entre dans une pièce.
+*utiliser ordinateur[n° ordi]* --> Le joueur se place en face de l'ordinateur et l'allume. [nom IA vocale] initie la discussion. Une liste de n réponses est proposée au joueur.
+*répondre [n° réponse]" --> Le joueur rentre la réponse numéro [n° réponse] dans l'ordinateur. [nom IA vocale] lui répond en conséquence, en lui proposant générallement une nouvelle liste de m réponses.
+*quitter* --> Interrompt la discussion entre le joueur et [nom IA vocale]. Peut être utilisée à tout moment. Le joueur se retrouve alors dans le même état que lorsqu'il rentre dans une pièce.
+Si le joueur n'a aucune proposition de réponse, il ne peut que utiliser la commande *quitter*.
 
 ## Déroulement d'un épisode
 
