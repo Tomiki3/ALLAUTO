@@ -41,6 +41,30 @@ Le joueur peut interargir avec certains des ordinateurs qui lui sont décris lor
 Si le joueur n'a aucune proposition de réponse, il ne peut que utiliser la commande *quitter*.
 
 
+#Episode 1
+
+## Histoire
+Le joueur se réveille dans le bureau initial.
+
+BUREAU INITIAL : Communique avec PC. IA vocale nous introduit le jeu. On veut ouvrir la session pour obtenir des infos sur nous, mais il nous manque le mdp.
+Sur l'écran du pc est affiché un username particulier.
+Une fois que l'on rentre le mdp, on ouvre la session. De là, on peut accéder à un échange de mail entre le propriétaire de l'ordinateur (que je crois être moi) et un collègue.
+Il y est question de surmenage et de menace de grève/révolte si jamais le rythme de travail reste aussi insoutenable.
+On s'endort et let's go on pour le prochain épisode.
+
+OPEN SPACE : Pleins de pc qui donnent tous des infos sur le lore : l'identité de l'entreprise et le projet IA ultime (sous sa version grand publique, "positive").
+
+SALLE D'ATTENTE : Des tableaux sont affichés sur le mur. Ces tableax commémorent des évènements. Parmi eux, la création de l'entreprise.
+La date y est écrite.
+
+BUREAU DU PATRON : Bureau fermé par code. Ce code est la date de création de l'entreprise.
+Sur le bureau du patron se trouve le badge du patron.
+
+SALLE DE RÉUNION :
+La porte est fermée à clef. Il faut un badge pour l'ouvrir (de préférence celui du patron).
+Feuille avec tous les mdp attribués par défault aux employés sur une table. Un des mdp correspond au username initial.
+
+
 Carte
 
 Analyse
