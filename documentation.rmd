@@ -71,22 +71,22 @@ Le protagoniste passe à l'épisode suivant une fois que tous les objets de la l
 Le joueur se réveille dans le bureau initial.
 
 BUREAU INITIAL : Communique avec PC. IA vocale nous introduit le jeu. On veut ouvrir la session pour obtenir des infos sur nous, mais il nous manque le mdp.
-Sur l'écran du pc est affiché un username particulier.
+On veut sortir explorer mais bureau fermé à clef.
+La clef se trouve qq part de le bureau (tiroir/armoir/poche de blouson).
+Une fois qu'on l'a, on peut sortir.
+Sur l'écran du pc est affiché un username particulier (qui ne donne pas d'info sur qui on est), mais on n'a pas le mot de passe.
 Une fois que l'on rentre le mdp, on ouvre la session. De là, on peut accéder à un échange de mail entre le propriétaire de l'ordinateur (que je crois être moi) et un collègue.
 Il y est question de surmenage et de menace de grève/révolte si jamais le rythme de travail reste aussi insoutenable.
 On s'endort et let's go on pour le prochain épisode.
 
 OPEN SPACE : Pleins de pc qui donnent tous des infos sur le lore : l'identité de l'entreprise et le projet IA ultime (sous sa version grand publique, "positive").
+On peut se faire un café, ranger des dossiers, et d'autres actions random.
+Un ordinateur nous réclame d'ailleurs de quoi se réveiller pour pouvoir nous parler, (en même temps on est en pleins milieu de la nuit). 
+Quand on lui donne un café, nous apprend qu'il faut ouvrir la porte d'une certaine manière pour pouvoir accéder à la salle d'entrée.
 
-SALLE D'ATTENTE : Des tableaux sont affichés sur le mur. Ces tableax commémorent des évènements. Parmi eux, la création de l'entreprise.
-La date y est écrite.
-
-BUREAU DU PATRON : Bureau fermé par code. Ce code est la date de création de l'entreprise.
-Sur le bureau du patron se trouve le badge du patron.
-
-SALLE DE RÉUNION :
-La porte est fermée à clef. Il faut un badge pour l'ouvrir (de préférence celui du patron).
-Feuille avec tous les mdp attribués par défault aux employés sur une table. Un des mdp correspond au username initial.
+SALLE D'ATTENTE : Salle fermée. Action de l'ouvrir "spécialement" se débloque après avoir donné son café à l'ordi.
+A l'intérieur se trouve pleins de décos relatives à la boîte, dont une sur laquelle est affichée "Sudo est ton ami".
+Doit pas être trop subtile car doit donner l'idée au joueur d'utiliser "sudo" pour déverrouiller le pc dans bureau initial.
 
 ## Salles
 

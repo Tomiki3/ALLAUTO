@@ -12,4 +12,12 @@ inventaire => inventory : décrit l'inventaire sous forme de liste d'objet
 
 utiliser [nom objet] sur [nom meuble] => use [object name] on [piece of fourniture name] : utilise l'objet désigné sur le meuble désigné si possible. si impossible message d'erreur.
 
+utiliser ordinateur[n° ordi] : Le joueur se place en face de l'ordinateur et l'allume. [nom IA vocale] initie la discussion. Une liste de n réponses est proposée au joueur.
+
+Dans discussion avec IA vocale :
+
+répondre [n° réponse]" : Le joueur rentre la réponse numéro [n° réponse] dans l'ordinateur. [nom IA vocale] lui répond en conséquence, en lui proposant générallement une nouvelle liste de m réponses.
+
+quitter : Interrompt la discussion entre le joueur et [nom IA vocale]. Peut être utilisée à tout moment. Le joueur se retrouve alors dans le même état que lorsqu'il rentre dans une pièce.
+
 à compléter ...
