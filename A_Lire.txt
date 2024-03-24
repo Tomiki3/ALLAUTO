@@ -1,0 +1,20 @@
+### Description des fichiers rendus
+
+## Documentation
+
+Les fichiers sources sont trouvable dans [TODO]
+
+Toute notre documentation est rassemblée dans le fichier "documentation.rmd".
+Ce fichier est séquencé en 5 parties distincts suivants les consignes du sujet: cahier des charges, analyse, conception, manuel utilisateur, bilan
+
+Une courte introduction à chacune de ces parties est présentée dans ce document.
+
+# Cahier des charges
+
+# Document d'analyse
+
+# Document de conception
+
+# Manuel utilisateur
+
+### compiler et exécuter le programme en ligne de commande

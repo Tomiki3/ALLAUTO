@@ -1,0 +1,13 @@
+diag de classe : 
+objet (ramassable) / éléments ()
+
+diag de séquence : ratio laurine
+Deux diag pour le déplacement (changement de salle // interne à une salle)
+Prendre un objet : faire des branchement conditionnel (cf diag Alexis)
+Utiliser un objet : il faut équiper l'objet avant de pouvoir l'utiliser. On peut alors utilisé l'objet sur l'élément qu'on est en train d'observer. L'objet n'a qu'une utilisation.
+Intéragir avec un élément : on peut intéragir avec les "meubles vivants" d'une seule manière sauf pour ordinateur (mdp/IA)
+Intéragir avec l'IA : pas besoin de mdp pour parler à l'IA mais besoin d'un mdp pour se connecter à l'ordi.
+
+Ecrire les blocs de texte liés aux salles / objets
+
+Commencer implémentation
