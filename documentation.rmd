@@ -173,13 +173,13 @@ Boite
 
 Cartons
 
+Tiroir
+
 # Digicode
 
 # Ordinateurs
 
 Mdp pour intéragir avec le PC et l'IA (nom IA TODO) ou pas
-
-# Tiroir
 
 # Chasse d'eau
 
@@ -199,8 +199,6 @@ Lavabo
 
 # Table
 
-Bureau
-
 # Machine
 
 Machine à café
@@ -210,8 +208,6 @@ Distributeur
 Imprimante
 
 # Poubelle
-
-# Interrupteur 
 
 
 
@@ -227,8 +223,6 @@ définition : Ce que le protagoniste peut prendre
 
 # Badge
 
-# Carte de visite TODO?
-
 # Savon 
 
 # Lame 
@@ -239,7 +233,6 @@ Cutter
 
 # Document
 
-Feuille 
 
 
 
