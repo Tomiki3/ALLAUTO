@@ -1,0 +1,89 @@
+### Histoire
+
+## épisode 1
+
+# Intro
+
+Vous vous réveillez calmement dans le coin Sud-Ouest d'un bureau carré.
+Vous ne vous souvenez de rien.
+
+# bureau initial
+
+Le bureau est mystérieusement éclairé par une unique ampoule au plafond.
+il fait bon, une odeur d'encens parcourt la pièce.
+Sur les murs, des posters représentant des technologies presque futuriste sont accrochés.
+Le sol est en moquette bleu clair et les murs en papier peint brun clair.
+Le mur Nord est vitré mais un store vénitien fermé empêche de voir de l'autre côtés.
+Il y a un bureau, une étagère, deux chaises, une poubelle.
+Il y a aussi une porte sur le mur nord, une fenêtre sur le mur sud.
+[TODO interrupteurs ?]
+
+- bureau -
+le bureau est au centre de la pièce.
+Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfant brun portant un pull portant les inscriptions TF.
+Sur le bureau il y a un ordinateur
+
+-- ordinateur -- 
+Vous allumez l'ordinateur et voyez deux options sélectionnable : se connecter ou IA.
+
+--- se connecter ---
+l'ordinateur demande un nom d'utilisateur : JeanneF
+l'ordinateur demande un mot de passe : Sudo ?? [TODO]
+
+--- IA ---
+Un texte s'affiche : Bienvenu à XIMRINE, que puis-je faire pour vous ?
+Un prompt apparait à l'écran.
+-> où suis-je ?
+Vous êtes dans les bureaux de XIMRINE. une start up travaillant dans l'intelligence artificielle. Elle s'est monté en 2023 et compte déjà environ 15 employés !
+Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qui pourrait faire de XIMRINE un pionnier de l'intelligence artificelle.
+-> qui est-tu ? 
+Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leur tâche du quotidien et dans leur travail.
+-> [TODO]
+
+- étagère -
+Sur l'étagère se trouve des livres d'informatique, de logique, d'IA...
+L'étagère est décorée de plusieurs figurines d'une dizaine de centimètres incunnues.
+
+- chaises -
+De chaque côtés du bureau central se trouve une chaise bleue sur roulette.
+Elles ont l'air très confortable.
+
+- poubelle -
+La poubelle est vide à l'exception d'un post it au fond de cette dernière.
+
+-- post it --
+Vous prenez le post it sur lequel est écrit JeanneF et le rangez dans votre inventaire.
+
+- porte Nord -
+vous arrivez devant une porte en bois.
+Elle est peinte en bleu nuit.
+
+-- interagir avec la porte sans clé --
+la porte est fermé à clé, une serrure se trouve sous la poignée.
+
+-- intéragir avec la porte avec clé équipée --
+la porte s'ouvre
+{Description du prochain lieu}
+
+- fenêtre Sud -
+Vous vous approchez de la fenêtre.
+une poigné permet de l'ouvrir.
+Il fait beau dehors, le soleil est en train de se coucher, un lumière crépusculaire illumine le ciel.
+Par la fenêtre vous voyez un quartier des affaires avec plusieurs grandes tours.
+Vous même êtes dans une tour assez haute.
+Vous vous trouvez à plusieurs étages du sol.
+
+-- interagir avec la fenêtre --
+vous ouvrez la fenêtre.
+
+-- sauter --
+Vous sautez dans le vide.
+Vous traversez une crise suicidaire ? 
+Ne restez pas seul, rapprochez-vous de vos proches.
+Consultez votre médecin traitant : en fonction de votre situation il pourra vous orienter en urgence vers un spécialiste en psychiatrie ou un psychologue, ou vous adresser au centre médico-psychologique (CMP) dont vous dépendez.
+Réclamez l’aide de spécialistes (psychiatre, psychologue) ou de structures de soins (centré médico-psychologique).
+Contactez des structures d’écoute et de soutien en complément d’une aide médicale.
+Appelez le 3114.
+Appelez les urgences (le 15 si vous êtes en France, le 112 si vous voyagez dans l’Union européenne, le 114 si vous êtes sourd ou malentendant).
+
+Fin du jeu. [TODO]
