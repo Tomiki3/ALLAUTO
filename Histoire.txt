@@ -12,19 +12,18 @@ Vous ne vous souvenez de rien.
 Le bureau est mystérieusement éclairé par une unique ampoule au plafond.
 il fait bon, une odeur d'encens parcourt la pièce.
 Sur les murs, des posters représentant des technologies presque futuriste sont accrochés.
-Le sol est en moquette bleu clair et les murs en papier peint brun clair.
+Le sol est en lino bleu clair et les murs en papier peint brun foncé.
 Le mur Nord est vitré mais un store vénitien fermé empêche de voir de l'autre côtés.
 Il y a un bureau, une étagère, deux chaises, une poubelle.
 Il y a aussi une porte sur le mur nord, une fenêtre sur le mur sud.
-[TODO interrupteurs ?]
 
 - bureau -
 le bureau est au centre de la pièce.
-Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfant brun portant un pull portant les inscriptions TF.
+Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfant brun brandissant fièrement une coupe sur laquelle on peut lire : Tony F.
 Sur le bureau il y a un ordinateur
 
--- ordinateur -- 
-Vous allumez l'ordinateur et voyez deux options sélectionnable : se connecter ou IA.
+-- ordinateur --
+Vous allumez l'ordinateur et voyez deux options sélectionnables : se connecter ou IA.
 
 --- se connecter ---
 l'ordinateur demande un nom d'utilisateur : JeanneF
@@ -36,23 +35,27 @@ Un prompt apparait à l'écran.
 -> où suis-je ?
 Vous êtes dans les bureaux de XIMRINE. une start up travaillant dans l'intelligence artificielle. Elle s'est monté en 2023 et compte déjà environ 15 employés !
 Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qui pourrait faire de XIMRINE un pionnier de l'intelligence artificelle.
--> qui est-tu ? 
+-> qui es-tu ? 
 Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leur tâche du quotidien et dans leur travail.
 -> [TODO]
 
 - étagère -
 Sur l'étagère se trouve des livres d'informatique, de logique, d'IA...
-L'étagère est décorée de plusieurs figurines d'une dizaine de centimètres incunnues.
+L'étagère est décorée de plusieurs figurines inconnues d'une dizaine de centimètres.
 
 - chaises -
 De chaque côtés du bureau central se trouve une chaise bleue sur roulette.
 Elles ont l'air très confortable.
 
 - poubelle -
-La poubelle est vide à l'exception d'un post it au fond de cette dernière.
+La poubelle est vide à l'exception d'un bout de post it déchiré au fond de cette dernière.
 
 -- post it --
-Vous prenez le post it sur lequel est écrit JeanneF et le rangez dans votre inventaire.
+Vous prenez le bout de post it déchiré sur lequel est écrit :
+JeanneF
+Tonymonbe/
+Il semble que la deuxième ligne est coupée à cause de la déchirure.
+Vous le rangez dans votre inventaire.
 
 - porte Nord -
 vous arrivez devant une porte en bois.
