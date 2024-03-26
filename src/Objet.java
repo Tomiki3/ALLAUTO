@@ -5,7 +5,16 @@ public abstract class Objet extends Descriptible {
         super(id, nom);
     }
     
+    // Pour un objet, l'examiner revient à le décrire
+    public void examiner() {
+        decrire();
+    }
+
+    public void quitter() {
+        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
+    }
+
     public void ramasser() {
-        //TODO
+        throw new UnsupportedOperationException("Unimplemented method 'ramasser'");
     }
 }

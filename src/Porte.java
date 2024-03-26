@@ -18,4 +18,28 @@ public class Porte extends EntiteVivante {
         return c.getId() == this.clef.getId();
     }
 
+    @Override
+    public void interagir() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'interagir'");
+    }
+
+    @Override
+    public void arreter() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'arreter'");
+    }
+
+    @Override
+    public void examiner() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'examiner'");
+    }
+
+    @Override
+    public void quitter() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
+    }
+
 }
