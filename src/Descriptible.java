@@ -8,4 +8,8 @@ public abstract class Descriptible {
         this.id = id;
         this.nom = nom;
     }
+
+    public int getItd() {
+        return this.id;
+    }
 }
