@@ -13,8 +13,20 @@ public class Joueur {
         this.localisation = newSalle;
     }
 
+    /**
+     * Surcharge de la méthode. La localisation peut autant convenir à une salle qu'à un meuble.
+     * @param newMeuble
+     */
+    public void setLocalisation (Meuble newMeuble) {
+        this.meuble = newMeuble;
+    }
+
     public Salle getLocalisation() {
         return this.localisation;
+    }
+
+    public Meuble getMeuble() {
+        return this.meuble;
     }
 
     public void prendre(Meuble m, Objet o) {

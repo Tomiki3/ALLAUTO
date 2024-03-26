@@ -1,5 +1,6 @@
 public class Table extends Meuble {
-    public Table(int id, String nom) {
-        super(id, nom);
+
+    public Table(int id) {
+        super(id, "Table");
     }
 }
