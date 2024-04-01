@@ -29,11 +29,15 @@ public class Jeu {
         Scanner scan = new Scanner(System.in);
         System.out.println("Bienvenu dans cette demonstration du jeu 'Cramptman'.");
         moi.getLocalisation().examiner();
-        System.out.println("\n Veuillez réaliser une action :");
+        
+        
+        
         
         while(moi.getVie()) {
+            System.out.print("\nVeuillez réaliser une action : ");
             String commande = scan.nextLine();
             String[] arrCommande = commande.split(" ");
+            System.out.println("");
 
 
             switch(arrCommande[0]) {
@@ -57,7 +61,7 @@ public class Jeu {
                         Meuble monMeuble = moi.getMeuble();
 
                         if(monMeuble.containsObjet(nomObjet) == null){
-                            System.out.println("L'objet que vous souhaitez examiner n'est pas présent dans la salle.");
+                            System.out.println("L'objet que vous souhaitez examiner n'est pas présent sur le meuble.");
                             break;
                         }
 
@@ -66,10 +70,39 @@ public class Jeu {
 
                    break;
 
+                
+                case "interagir":
+                
+                    if (moi.getMeuble() == null) {
+                        System.out.println("Aucun objet interagissable n'est à votre portée.");
+                        break;
+                    }
+
+                    Meuble monMeuble = moi.getMeuble();
+
+                    if (monMeuble.containsViv(arrCommande[1]) == null) {
+                        System.out.println("L'objet avec lequel vous souhaitez interagir n'appartient pas au meuble que vous examinez.");
+                        break;
+                    }
+
+                    monMeuble.containsViv(arrCommande[1]).interagir(moi);
+                    break;
+
+
+                case "quitter":
+                    if (moi.getMeuble() != null)
+                        System.out.println("Vous quittez " + moi.getMeuble().getNom() + ".");
+                    moi.quitter();
+                    moi.getLocalisation().examiner();
+                    break;
+
                default:
+                    System.out.println("Cette action est actuellement impossible à réaliser.");
                     break;
             }
         }
 
+        System.out.println("Vous êtes mort. Le jeu est fini.");
+        scan.close();
     }
 }

@@ -42,6 +42,25 @@ public abstract class Meuble extends Descriptible {
         return null;
     }
 
+    /**
+     * Regarde si l'entité vivante désigné par la chaine de caractère est contenue dans le meuble.
+     * Si oui, retourne l'entité vivante.
+     * @return
+     */
+    public EntiteVivante containsViv(String nomViv) {
+        Iterator<EntiteVivante> it = interagissables.iterator();
+
+        while(it.hasNext()) {
+            EntiteVivante curr = it.next();
+
+            if(curr.getNom().equals(nomViv)) {
+                return curr;
+            }
+        }
+
+        return null;
+    }
+
 
     @Override
     public void examiner() {
