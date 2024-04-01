@@ -23,6 +23,25 @@ public abstract class Meuble extends Descriptible {
         return this.objets.remove(o);
     }
 
+    /**
+     * Regarde si l'objet désigné par la chaine de caractère est contenue dans le meuble.
+     * Si oui, retourne l'objet.
+     * @return
+     */
+    public Objet containsObjet(String nomObjet) {
+        Iterator<Objet> it = objets.iterator();
+
+        while(it.hasNext()) {
+            Objet curr = it.next();
+
+            if(curr.getNom().equals(nomObjet)) {
+                return curr;
+            }
+        }
+
+        return null;
+    }
+
 
     @Override
     public void examiner() {
@@ -50,10 +69,4 @@ public abstract class Meuble extends Descriptible {
         }
         System.out.println(".");
     }
-
-    @Override
-    public void quitter() {
-
-    }
-
 }

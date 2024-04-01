@@ -7,11 +7,7 @@ public abstract class Objet extends Descriptible {
     
     // Pour un objet, l'examiner revient à le décrire
     public void examiner() {
-        decrire();
-    }
-
-    public void quitter() {
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
+        this.decrire();
     }
 
     public void ramasser() {

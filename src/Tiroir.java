@@ -4,7 +4,7 @@ public class Tiroir extends Contenant {
     }
 
     @Override
-    public void interagir() {
+    public void interagir(Joueur moi) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'interagir'");
     }
@@ -19,11 +19,5 @@ public class Tiroir extends Contenant {
     public void examiner() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'examiner'");
-    }
-
-    @Override
-    public void quitter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
-    }    
+    }  
 }

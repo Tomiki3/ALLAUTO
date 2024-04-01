@@ -7,9 +7,4 @@ public class Ciseaux extends Lame {
     public void examiner() {
         throw new UnsupportedOperationException("Unimplemented method 'examiner'");
     }
-
-    @Override
-    public void quitter() {
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
-    }
 }

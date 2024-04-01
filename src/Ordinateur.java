@@ -7,7 +7,7 @@ public class Ordinateur extends EntiteVivante {
     }
 
     @Override
-    public void interagir() {
+    public void interagir(Joueur moi) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'interagir'");
     }
@@ -22,11 +22,5 @@ public class Ordinateur extends EntiteVivante {
     public void examiner() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'examiner'");
-    }
-
-    @Override
-    public void quitter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
-    }    
+    }  
 }

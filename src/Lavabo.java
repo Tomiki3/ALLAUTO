@@ -4,8 +4,7 @@ public class Lavabo extends Contenant {
     }
 
     @Override
-    public void interagir() {
-        // TODO Auto-generated method stub
+    public void interagir(Joueur moi) {
         throw new UnsupportedOperationException("Unimplemented method 'interagir'");
     }
 
@@ -19,11 +18,5 @@ public class Lavabo extends Contenant {
     public void examiner() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'examiner'");
-    }
-
-    @Override
-    public void quitter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
     }
 }

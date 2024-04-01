@@ -48,14 +48,8 @@ public class Salle extends Descriptible {
             System.out.print(it.next().getNom());
 
             if (it.hasNext())
-                System.out.println(", ");
+                System.out.print(", ");
         }
         System.out.println(".");
-    }
-
-    @Override
-    public void quitter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
     }
 }

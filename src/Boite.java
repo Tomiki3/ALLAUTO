@@ -4,7 +4,7 @@ public class Boite extends Contenant {
     }
 
     @Override
-    public void interagir() {
+    public void interagir(Joueur moi) {
         throw new UnsupportedOperationException("Unimplemented method 'interagir'");
     }
 
@@ -16,10 +16,5 @@ public class Boite extends Contenant {
     @Override
     public void examiner() {
         throw new UnsupportedOperationException("Unimplemented method 'examiner'");
-    }
-
-    @Override
-    public void quitter() {
-        throw new UnsupportedOperationException("Unimplemented method 'quitter'");
-    }    
+    }  
 }

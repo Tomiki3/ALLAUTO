@@ -4,7 +4,6 @@ public abstract class Descriptible {
     private String description;
     // Description recursive
     public abstract void examiner();
-    public abstract void quitter();
 
     public Descriptible(int id, String nom, String descr) {
         this.id = id;
