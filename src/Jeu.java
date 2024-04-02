@@ -19,10 +19,16 @@ public class Jeu {
         mur.setDescription("Un mur blanc et neuf, décoré de quelques posters.");
         mur.addEntitViv(fenetre);
 
+        Porte porte = new Porte(0, true);
+        porte.setDescription(null);
+
         Salle salle1 = new Salle(0, "Salle n°1");
         salle1.setDescription("La salle de démarrage du jeu. Elle est insipide, comme ta vie.");
         salle1.addMeuble(table);
         salle1.addMeuble(mur);
+
+        Salle salle2 = new Salle(0, "Salle n°2");
+        salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
 
         Joueur moi = new Joueur(salle1);
 
@@ -44,11 +50,14 @@ public class Jeu {
 
                case "examiner":
 
-                    if(moi.getMeuble() == null) {                  
+                    // Si pas de meuble courant, on s'attend à ce que l'entité à examiner soit un meuble
+                    if(moi.getMeuble() == null) 
+                    {                  
                         String nomMeuble = arrCommande[1];
                         Salle maSalle = moi.getLocalisation();
 
-                        if(maSalle.containsMeuble(nomMeuble) == null){
+                        if(maSalle.containsMeuble(nomMeuble) == null)
+                        {
                             System.out.println("Le meuble que vous souhaitez examiner n'est pas présent dans la salle.");
                             break;
                         }
@@ -56,16 +65,26 @@ public class Jeu {
                         moi.setLocalisation(maSalle.containsMeuble(nomMeuble));
                         moi.getMeuble().examiner();
                     }
-                    else{
-                        String nomObjet = arrCommande[1];
+                    else
+                    {
+                        String nomExaminable = arrCommande[1];
                         Meuble monMeuble = moi.getMeuble();
 
-                        if(monMeuble.containsObjet(nomObjet) == null){
-                            System.out.println("L'objet que vous souhaitez examiner n'est pas présent sur le meuble.");
+                        // on regarde dans un premier temps si l'examinable est un Objet
+                        if(monMeuble.containsObjet(nomExaminable) != null)
+                        {
+                            monMeuble.containsObjet(nomExaminable).examiner();
                             break;
                         }
 
-                        monMeuble.containsObjet(nomObjet).examiner();
+                        // si ce n'est pas le cas, on regarde si c'est une EntitéVivante
+                        if (monMeuble.containsViv(nomExaminable) != null)
+                        {
+                            monMeuble.containsViv(nomExaminable).examiner(); // cas !Objet et EntitéVivante
+                            break;
+                        }
+
+                        System.out.println("L'objet que vous souhaitez examiner n'est pas présent sur le meuble."); // cas !Objet et !EntitéVivante                        
                     }
 
                    break;
