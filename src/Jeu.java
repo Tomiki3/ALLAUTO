@@ -19,16 +19,18 @@ public class Jeu {
         mur.setDescription("Un mur blanc et neuf, décoré de quelques posters.");
         mur.addEntitViv(fenetre);
 
-        Porte porte = new Porte(0, true);
-        porte.setDescription(null);
-
+        
         Salle salle1 = new Salle(0, "Salle n°1");
         salle1.setDescription("La salle de démarrage du jeu. Elle est insipide, comme ta vie.");
         salle1.addMeuble(table);
         salle1.addMeuble(mur);
-
+        
         Salle salle2 = new Salle(0, "Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
+        
+        // Porte porte = new Porte(0, true);
+        // porte.setDescription("Une porte en bois.\nElle semble mener à une autre salle.\nElle est munit d'un digicode.");
+        // porte.setSalles(salle1, salle2);
 
         Joueur moi = new Joueur(salle1);
 

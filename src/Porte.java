@@ -4,9 +4,10 @@ public class Porte extends EntiteVivante {
     private HashSet<Salle> salles;
     private Clef clef;
 
-    public Porte(int id, String nom, Boolean verrouille) {
-        super(id, nom, verrouille);
+    public Porte(int id, Boolean verrouille, Clef clef) {
+        super(id, "porte", verrouille);
         this.salles = new HashSet<>();
+        this.clef = clef;
     }
 
     public void setSalles(Salle s1, Salle s2) {
