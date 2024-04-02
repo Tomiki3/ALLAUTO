@@ -31,6 +31,10 @@ public class Joueur {
         return this.meuble;
     }
 
+    public Inventaire getInventaire() {
+        return this.inventaire;
+    }
+
     public boolean getVie() {
         return this.enVie;
     }
