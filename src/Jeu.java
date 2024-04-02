@@ -27,20 +27,16 @@ public class Jeu {
         
         Salle salle2 = new Salle(0, "Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
-        
-        // Porte porte = new Porte(0, true);
-        // porte.setDescription("Une porte en bois.\nElle semble mener à une autre salle.\nElle est munit d'un digicode.");
-        // porte.setSalles(salle1, salle2);
+
+        //TODO : Tester la porte après avoir implémenté l'inventaire.
 
         Joueur moi = new Joueur(salle1);
-
+        
         Scanner scan = new Scanner(System.in);
         System.out.println("Bienvenu dans cette demonstration du jeu 'Cramptman'.");
         moi.getLocalisation().examiner();
         
-        
-        
-        
+
         while(moi.getVie()) {
             System.out.print("\nVeuillez réaliser une action : ");
             String commande = scan.nextLine();
@@ -112,6 +108,27 @@ public class Jeu {
                     break;
 
 
+                case "prendre":
+                    String objet = arrCommande[1];
+                    if (moi.getMeuble() == null)    // joueur n'examine pas un meuble
+                    {
+                        System.out.println("Chaque objet est posé sur un meuble.\nVous devez d'abord examiner un meuble avant de vouloir prendre un objet.");
+                        break;
+                    }
+                    if (moi.getMeuble().containsObjet(objet) == null)   // le meuble ne contient pas l'objet
+                    {
+                        System.out.println(moi.getMeuble().getNom() + (" ne contient pas l'objet que vous souhaitez prendre."));
+                        break;
+                    }
+                    moi.getMeuble().containsObjet(objet).prendre(moi);
+                    break;
+
+
+                case "inventaire":
+                    moi.getInventaire().examiner();
+                    break;
+
+
                 case "quitter":
                     if (moi.getMeuble() != null)
                         System.out.println("Vous quittez " + moi.getMeuble().getNom() + ".");
@@ -119,6 +136,7 @@ public class Jeu {
                     moi.quitter();
                     moi.getLocalisation().examiner();
                     break;
+
 
                default:
                     System.out.println("Cette action est actuellement impossible à réaliser.");

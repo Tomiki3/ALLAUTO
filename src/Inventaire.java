@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class Inventaire extends Descriptible {
     private Objet objetEquipe;
@@ -7,6 +8,11 @@ public class Inventaire extends Descriptible {
     public Inventaire(int id) {
         super(id, "Inventaire");
         this.objets = new HashSet<>();
+        this.setDescription("Ceci est votre inventaire.\nVous pouvez y stocker autant d'objets que vous le voulez.");
+    }
+
+    public Objet getObjetEquipe() {
+        return this.objetEquipe;
     }
 
     public void addObjet(Objet o) {
@@ -24,6 +30,15 @@ public class Inventaire extends Descriptible {
 
     @Override
     public void examiner() {
-        throw new UnsupportedOperationException("Unimplemented method 'examiner'");
+        this.decrire();
+
+        Iterator<Objet> it = objets.iterator();
+        System.out.print("Voici ce qu'il contient : ");
+        while (it.hasNext())
+        {
+            System.out.print(it.next().getNom());
+            if (it.hasNext()) {System.out.print(", ");}
+        }
+        System.out.println(".");
     }
 }

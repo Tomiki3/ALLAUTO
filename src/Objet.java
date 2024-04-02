@@ -10,7 +10,9 @@ public abstract class Objet extends Descriptible {
         this.decrire();
     }
 
-    public void ramasser() {
-        throw new UnsupportedOperationException("Unimplemented method 'ramasser'");
+    public void prendre(Joueur moi) {
+        moi.getInventaire().addObjet(this);
+        moi.getMeuble().removeObjet(this);
+        System.out.println(this.getNom() + " a été ajouté à votre inventaire.");
     }
 }
