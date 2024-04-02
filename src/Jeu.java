@@ -73,14 +73,16 @@ public class Jeu {
                 
                 case "interagir":
                 
-                    if (moi.getMeuble() == null) {
+                    if (moi.getMeuble() == null)
+                    {
                         System.out.println("Aucun objet interagissable n'est à votre portée.");
                         break;
                     }
 
                     Meuble monMeuble = moi.getMeuble();
 
-                    if (monMeuble.containsViv(arrCommande[1]) == null) {
+                    if (monMeuble.containsViv(arrCommande[1]) == null)
+                    {
                         System.out.println("L'objet avec lequel vous souhaitez interagir n'appartient pas au meuble que vous examinez.");
                         break;
                     }
@@ -92,6 +94,7 @@ public class Jeu {
                 case "quitter":
                     if (moi.getMeuble() != null)
                         System.out.println("Vous quittez " + moi.getMeuble().getNom() + ".");
+                    
                     moi.quitter();
                     moi.getLocalisation().examiner();
                     break;
