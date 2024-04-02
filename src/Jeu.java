@@ -28,7 +28,18 @@ public class Jeu {
         Salle salle2 = new Salle(0, "Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
 
-        //TODO : Tester la porte après avoir implémenté l'inventaire.
+        Clef clefDouze = new Clef(12);
+        clefDouze.setDescription("Une clef de douze.");
+        Clef clefQuatre = new Clef(4);
+        clefQuatre.setDescription("Une clef de quatre.");
+        
+        Porte porte = new Porte(0, true, clefDouze);
+        porte.setDescription("Une belle porte en bois de hêtre.");
+        porte.setSalles(salle1, salle2);
+
+        table.addObjet(clefDouze);
+        table.addObjet(clefQuatre);
+        mur.addEntitViv(porte);
 
         Joueur moi = new Joueur(salle1);
         
@@ -127,6 +138,8 @@ public class Jeu {
                 case "inventaire":
                     moi.getInventaire().examiner();
                     break;
+
+                //TODO : Implémenter "équiper"
 
 
                 case "quitter":
