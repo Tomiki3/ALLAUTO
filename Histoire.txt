@@ -1,13 +1,13 @@
-### Histoire
+# Histoire
 
 ## épisode 1
 
-# Intro
+### Intro
 
 Vous vous réveillez calmement dans le coin Sud-Ouest d'un bureau carré.
 Vous ne vous souvenez de rien.
 
-# bureau initial
+##### bureau initial
 
 Le bureau est mystérieusement éclairé par une unique ampoule au plafond.
 il fait bon, une odeur d'encens parcourt la pièce.
@@ -15,7 +15,7 @@ Sur les murs, des posters représentant des technologies presque futuriste sont 
 Le sol est en lino bleu clair et les murs en papier peint brun foncé.
 Le mur Nord est vitré mais un store vénitien fermé empêche de voir de l'autre côtés.
 Il y a un bureau, une étagère, deux chaises, une poubelle.
-Il y a aussi une porte sur le mur nord, une fenêtre sur le mur sud.
+Il y a aussi une porte nord, une fenêtre sud.
 
 - bureau -
 le bureau est au centre de la pièce.
@@ -23,7 +23,7 @@ Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfa
 Sur le bureau il y a un ordinateur
 
 -- ordinateur --
-Vous allumez l'ordinateur et voyez deux options sélectionnables : se connecter ou IA.
+En allumant l'ordinateur et deux options sont sélectionnables : se connecter ou IA.
 
 --- se connecter ---
 l'ordinateur demande un nom d'utilisateur : JeanneF
@@ -51,28 +51,27 @@ Elles ont l'air très confortable.
 La poubelle est vide à l'exception d'un bout de post it déchiré au fond de cette dernière.
 
 -- post it --
-Vous prenez le bout de post it déchiré sur lequel est écrit :
+Sur le bout de post it déchiré, il est écrit :
 JeanneF
 Tonymonbe/
 Il semble que la deuxième ligne est coupée à cause de la déchirure.
 Vous le rangez dans votre inventaire.
 
 - porte Nord -
-vous arrivez devant une porte en bois.
-Elle est peinte en bleu nuit.
+La porte est en bois. Elle est peinte en bleu nuit.
 
 -- interagir avec la porte sans clé --
 la porte est fermé à clé, une serrure se trouve sous la poignée.
 
 -- intéragir avec la porte avec clé équipée --
 la porte s'ouvre
-{Description du prochain lieu}
+{Description du prochain lieu} => openspace
 
 - fenêtre Sud -
 Vous vous approchez de la fenêtre.
 une poigné permet de l'ouvrir.
 Il fait beau dehors, le soleil est en train de se coucher, un lumière crépusculaire illumine le ciel.
-Par la fenêtre vous voyez un quartier des affaires avec plusieurs grandes tours.
+Par la fenêtre, on peut voir un quartier des affaires avec plusieurs grandes tours.
 Vous même êtes dans une tour assez haute.
 Vous vous trouvez à plusieurs étages du sol.
 
@@ -89,4 +88,246 @@ Contactez des structures d’écoute et de soutien en complément d’une aide m
 Appelez le 3114.
 Appelez les urgences (le 15 si vous êtes en France, le 112 si vous voyagez dans l’Union européenne, le 114 si vous êtes sourd ou malentendant).
 
-Fin du jeu. [TODO]
+#### openspace
+
+L'open space est plongé dans l'obscurité, éclairé sporadiquement par la lueur des ordinateurs et des lumières d'urgence clignotantes.
+Un silence oppressant règne dans la pièce.
+Des bruits lointains, comme le grésillement des néons défectueux ou le léger bourdonnement des machines en veille, contribuent à l'ambiance sinistre et déserte de l'endroit.
+Quelques plantes en pot fanées sont dispersées çà et là, témoignant d'une tentative passée d'égayer l'ambiance austère de l'open space.
+Des affiches promotionnelles et des tableaux blancs vides ornent les murs, semblant attendre d'être utilisés pour quelque chose de plus que leur fonction initiale.
+Au centre de l'open space se trouvent quatre bureaux identiques disposés en carré, chacun avec un ordinateur de bureau et des piles de documents désordonnés.
+Les chaises sont légèrement déplacées, comme si les occupants étaient partis à la hâte.
+Trois portes fermées à clé sont réparties sur les murs Est et Nord de l'open space.
+
+Il y a : un bureau nord, un bureau ouest, un bureau est, un bureau sud, une étagère, une poubelle nord-ouest, une poubelle sud-est, une imprimante.
+Il y a aussi : une porte Est 1, une porte Est 2, une porte Nord, une porte Sud, une fenête Ouest 1, une fenête Ouest 2.
+
+
+- bureau nord -
+
+Sur le bureau se trouve un ordinateur éteint avec un écran noir, tandis que des piles de dossiers et de papiers en désordre s'accumulent à côté. 
+Une tasse de café presque vide repose négligemment sur un sous-verre taché.
+Une chaise de bureau est poussée en arrière, comme si son occupant s'était levé rapidement.
+Sur le bureau il y a : un document vert, une page de journal.
+On y voit aussi : un ordinateur, une chaise
+
+-- document vert --
+
+Le document est un contrôle de qualité d'un certain projet intitulé "MCB le robot émotif".
+Le contrôle indique que les tests se sont bien déroulés mais qu'il reste encore quelques précisions à apporter au prototype.
+Une note globale de 8/10 est donné en bas de page et des annotations illisibles sont disposés un peut partout sur le document.
+Vous le rangez dans votre inventaire.
+
+
+-- une page de journal --
+
+Le titre de la page de journal est : "XIMRINE : Un projet trop ambitieux ?"
+L'article présente la société XIMRINE comme étant l'une des pionnières dans le domaine de l'IA.
+D'après ce même article c'est une entreprise à succés qui peut prétendre à un grand avenir.
+Cependant, l'article continue en mentionnant le dernier projet de l'entreprise, dont le nom est gardé secret pour le moment.
+Le projet est décrit comme inhumain, immoral et dangereux car mettrait en péril le fondement même de la société et menacerait le travail de millions de citoyens.
+Vous la rangez dans votre inventaire.
+
+-- ordinateur nord --
+
+L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.
+
+-- chaise nord --
+
+C'est une chaise de bureau bleu nuit.
+Elle est poussée en arrière, comme si son occupant s'était levé rapidement.
+
+- bureau sud -
+
+L'ordinateur est en veille, affichant une image d'économiseur d'écran.
+Des notes adhésives sont collées sur l'écran, contenant des rappels et des idées notées à la hâte.
+Une lampe de bureau éteinte se trouve à côté de l'ordinateur, projetant une faible lueur sur les documents éparpillés.
+Une photo encadrée d'une famille souriante repose à côté du clavier.
+Sur le bureau il y a : un post it bleu, un post it rose, un post it orange.
+On y voit aussi : un ordinateur, une chaise
+
+-- post it bleu --
+
+Sur ce post it, on peut lire : "NE PAS OUBLIER : ETEINDRE MCB".
+Vous le rangez dans votre inventaire.
+
+-- post it rose --
+
+Sur ce post it, on peut lire : "POUR OUVRIR LA PORTE DE LA SALLE D'ATTENTE : "
+
+-- post it orange --
+
+Sur ce post it, on peut lire : "IMPORTANT : METTRE DESCRIPTION PRECISE DU PROJET DANS LES ARCHIVES [check]"
+
+-- ordinateur sud --
+
+Après avoir appuyé sur la touche espace de l'ordinateur, ce dernier s'allume sur un bureau sans demander de mot de passe.
+C'est un bureau standardisé, bleu, présentant le logo de XIMRINE en fond.
+Sur la droite un prompt sur fond noir apparait et propose de chatter avec une IA.
+sur la gauche un seul et unique fichier sans nom est présent sur le bureau.
+
+--- IA ---
+Un texte s'affiche : Bienvenu à XIMRINE, que puis-je faire pour vous ?
+-> où suis-je ?
+Vous êtes dans les bureaux de XIMRINE. une start up travaillant dans l'intelligence artificielle. Elle s'est montée en 2023 et compte déjà environ 15 employés !
+Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qui pourrait faire de XIMRINE un pionnier de l'intelligence artificelle.
+-> qui es-tu ? 
+Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leur tâche du quotidien et dans leur travail.
+-> Peux-tu me parler du projet MCB ?
+Le projet MCB est en effet un projet d'envergure que nous menons avec le plus grand sérieux.
+Cependant, je suis désolé, je ne suis pas autorisé à divulguer des détails spécifiques sur les projets en cours de développement de l'entreprise.
+Sachez toutefois que notre objectif est toujours de repousser les limites de la technologie pour le bénéfice de l'humanité.
+-> Peut-tu me parler un peu de la philosophie de XIMRINE en matière d'intelligence artificielle ?
+Bien sûr.
+Chez XIMRINE, nous croyons fermement que l'intelligence artificielle a le potentiel de transformer radicalement notre société, en améliorant nos vies et en résolvant des problèmes complexes.
+Cependant, nous reconnaissons également les défis éthiques et sociaux associés à cette technologie, c'est pourquoi nous mettons un fort accent sur la recherche éthique et responsable.
+Notre objectif est de développer des IA qui travaillent en symbiose avec l'humanité, tout en respectant les valeurs et les droits fondamentaux.
+
+
+--- fichier sans nom ---
+
+En ouvrant le fichier on découvre un gros titre : Lettre de Démission.
+Dedans on y lit que Mme LITON, aujourd'hui ingénieur chez XIMRINE, aimerait démissionner de son poste. 
+D'après la lettre les raisons sont multiples : les conditions de travails sont décourageantes, le temps et travail investi dans le nouveau projet ont obligé l'ingénieure de sacrifié sa vie de famille, ses amies.
+Une phrase attire l'attention : "Tout ces sacrifices pour que le prototype ne daigne même pas m'adresser la parole !"
+
+-- chaise sud --
+
+C'est une simple chaise de bureau en cuir noir, avec des accoudoirs usés par l'usage.
+Son coussin est légèrement affaissé, témoignant des longues heures passées par son occupant à travailler.
+
+- bureau ouest -
+
+L'ordinateur est allumé, mais l'écran est verrouillé.
+Des dossiers soigneusement rangés sont empilés sur le bureau, avec un stylo et un agenda ouvert à côté.
+Une boîte de mouchoirs usagés se trouve à proximité, témoignant peut-être d'une récente frustration ou confusion.
+Une plante en pot bien entretenue ajoute une touche de verdure à l'environnement.
+Sur le bureau il y a : un agenda.
+On y voit aussi : un ordinateur, une chaise
+
+-- agenda --
+
+Sur l'agenda on peut lire : 11h réunion MCB // 15h Donner dossier au Boss // 18h rdv Psychologue.
+L'agenda est parsemé de petite tâches d'humidité.
+Comme si un liquide c'était égoutté au dessus.
+Sur la première page de l'agenda on peut lire M. MIPAIN, et en tout petit en bas de la page : "bisou de Lison (30/10)".
+Sur la page du 30 octobre on y lit : "ANNIV LISON"
+
+-- ordinateur ouest --
+
+En dévérouillant l'écran de l'ordinateur, deux options sont sélectionnables : se connecter ou IA.
+
+--- se connecter ---
+
+l'ordinateur demande un nom d'utilisateur : MIPAIN
+l'ordinateur demande un mot de passe : Lison3010
+
+--- IA ---
+Un texte s'affiche : Bienvenu à XIMRINE, que puis-je faire pour vous ?
+-> où suis-je ?
+Vous êtes dans les bureaux de XIMRINE. une start up travaillant dans l'intelligence artificielle. Elle s'est montée en 2023 et compte déjà environ 15 employés !
+Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qui pourrait faire de XIMRINE un pionnier de l'intelligence artificelle.
+-> qui es-tu ? 
+Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leur tâche du quotidien et dans leur travail.
+-> Peux-tu me parler du projet MCB ?
+Le projet MCB est en effet un projet d'envergure que nous menons avec le plus grand sérieux.
+Cependant, je suis désolé, je ne suis pas autorisé à divulguer des détails spécifiques sur les projets en cours de développement de l'entreprise.
+Sachez toutefois que notre objectif est toujours de repousser les limites de la technologie pour le bénéfice de l'humanité.
+-> Peut-tu me parler un peu de la philosophie de XIMRINE en matière d'intelligence artificielle ?
+Bien sûr.
+Chez XIMRINE, nous croyons fermement que l'intelligence artificielle a le potentiel de transformer radicalement notre société, en améliorant nos vies et en résolvant des problèmes complexes.
+Cependant, nous reconnaissons également les défis éthiques et sociaux associés à cette technologie, c'est pourquoi nous mettons un fort accent sur la recherche éthique et responsable.
+Notre objectif est de développer des IA qui travaillent en symbiose avec l'humanité, tout en respectant les valeurs et les droits fondamentaux.
+
+---- bureau ordinateur ouest ----
+
+C'est un bureau standardisé, bleu, présentant le logo de XIMRINE en fond.
+Sur la droite un prompt sur fond noir apparait et propose de chatter avec une IA.
+
+To FINISH //////////////////////////////////////////////////////////////////////////////////////
+
+-- chaise ouest --
+
+La chaise du bureau ouest est une chaise pivotante en simili cuir brun, avec des accoudoirs rembourrés et une assise légèrement inclinée.
+Des marques d'usure sont visibles sur les côtés, suggérant une utilisation régulière et prolongée.
+
+- bureau est -
+
+L'ordinateur est éteint, avec une pile de papiers en désordre qui s'étend jusqu'au clavier. 
+Une tasse de café renversée gît à côté de l'ordinateur, laissant une marque brune sur le bureau.
+Des notes manuscrites sont éparpillées sur la surface de travail, certaines avec des croquis et des schémas.
+Une photo froissée est coincée entre les pages d'un carnet, montrant un groupe d'amis souriants.
+Sur le bureau il y a : notes manuscrites, un document papier.
+On y voit aussi : un ordinateur, une chaise.
+
+-- notes manuscrites --
+
+-- document papier -- 
+
+-- ordinateur est --
+
+L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.
+
+-- chaise est --
+
+C'est une chaise ergonomique en tissu gris, avec un dossier réglable et des roulettes qui semblent encore lisses.
+Elle donne l'impression d'avoir été récemment utilisée, avec une légère empreinte laissée sur le siège.
+
+- étagère -
+
+- poubelle nord-ouest -
+
+La poubelle est pleine d'épeluchures de fruits et de gobelets en cartons.
+à côtés, sur le sol, il y a une boule de papier froissée, comme si son lanceur n'avait pas eu le courage de la reprendre pour la jeter définitivement.
+
+-- boule de papier --
+
+- poubelle sud -
+
+- imprimante -
+
+- porte Est 1 -
+
+La porte est robuste, faite de métal épais, avec des charnières visibles et une serrure solide.
+
+- porte Est 2 -
+
+La porte est robuste, faite de métal épais, avec des charnières visibles et une serrure solide.
+
+- porte Nord -
+
+La porte est robuste et imposante, avec des panneaux en bois sombre et une poignée en métal brillant.
+
+- porte Sud -
+
+La porte est en bois. Elle est peinte en bleu nuit.
+
+[IDEM POUR TOUTES LES PORTES]
+-- interagir avec la porte sans clé --
+la porte est fermé à clé.
+
+-- intéragir avec la porte avec clé équipée --
+la porte s'ouvre
+
+- fenête Ouest 1 -
+
+Vous vous approchez de la fenêtre.
+La fenêtre est ouverte afin d'aérer la pièce.
+Il fait beau dehors, le soleil est en train de se coucher, un lumière crépusculaire illumine le ciel.
+Par la fenêtre vous voyez un quartier des affaires avec plusieurs grandes tours.
+Vous même êtes dans une tour assez haute.
+Vous vous trouvez à plusieurs étages du sol.
+[même implem pour la suite]
+
+- fenête Ouest 2 -
+
+Vous vous approchez de la fenêtre.
+La fenêtre est fermé. 
+Un poigné permet de l'ouvrir.
+Il fait beau dehors, le soleil est en train de se coucher, un lumière crépusculaire illumine le ciel.
+Par la fenêtre vous voyez un quartier des affaires avec plusieurs grandes tours.
+Vous même êtes dans une tour assez haute.
+Vous vous trouvez à plusieurs étages du sol.
+[même implem pour la suite]
+
+#### salle d'attente
