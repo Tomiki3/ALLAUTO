@@ -5,8 +5,8 @@ public class Porte extends EntiteVivante {
     private HashSet<Salle> salles;
     private Clef clef;
 
-    public Porte(int id, Boolean verrouille, Clef clef) {
-        super(id, "porte", verrouille);
+    public Porte(Boolean verrouille, Clef clef) {
+        super("porte", verrouille);
         this.salles = new HashSet<>();
         this.clef = clef;
     }
@@ -23,7 +23,7 @@ public class Porte extends EntiteVivante {
         if (this.verrouille)
         {
             if ((moi.getInventaire().getObjetEquipe() instanceof Clef) &&
-                ((Clef) (moi.getInventaire().getObjetEquipe())).getId() == this.clef.getId())
+                ((Clef) (moi.getInventaire().getObjetEquipe())).getNom() == this.clef.getNom())
             {
                 this.verrouille = false;    // ouvre la porte
                 System.out.println("Vous ouvrez la porte.");
@@ -41,7 +41,7 @@ public class Porte extends EntiteVivante {
         {
             Salle room = it.next();
 
-            if (room.getId() != moi.getLocalisation().getId())
+            if (room.getNom() != moi.getLocalisation().getNom())
             {
                 moi.setLocalisation(room);
                 System.out.println("Vous passez dans la salle : " + room.getNom());

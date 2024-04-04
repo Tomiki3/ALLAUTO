@@ -4,8 +4,13 @@ import java.util.Iterator;
 public class Salle extends Descriptible {
     private HashSet<Meuble> meubles;
 
-    public Salle(int id, String nom) {
-        super(id, nom);
+    public Salle() {
+        super("Salle");
+        this.meubles = new HashSet<>();
+    }
+
+    public Salle(String nom) {
+        super(nom);
         this.meubles = new HashSet<>();
     }
 

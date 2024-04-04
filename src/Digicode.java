@@ -2,8 +2,8 @@ public class Digicode extends EntiteVivante {
     private Porte porte;
     private String secretCode;
 
-    public Digicode(int id, String nom, Boolean verrouille) {
-        super(id, nom, false);
+    public Digicode(String nom, Boolean verrouille) {
+        super(nom, false);
     }
 
     @Override

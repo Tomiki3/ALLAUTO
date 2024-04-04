@@ -1,5 +1,9 @@
 public class Clef extends Objet {
-    public Clef(int id) {
-        super(id, "clef");
+    public Clef() {
+        super("clef");
+    }
+
+    public Clef(String keyName) {
+        super(keyName);
     }
 }

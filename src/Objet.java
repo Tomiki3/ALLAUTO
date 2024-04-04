@@ -1,8 +1,8 @@
 import java.util.HashSet;
 
 public abstract class Objet extends Descriptible {
-    public Objet(int id, String nom) {
-        super(id, nom);
+    public Objet(String nom) {
+        super(nom);
     }
     
     // Pour un objet, l'examiner revient à le décrire

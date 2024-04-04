@@ -7,7 +7,7 @@ public class Joueur {
     public Joueur(Salle salle1) {
         this.localisation = salle1;
         this.meuble = null;
-        this.inventaire = new Inventaire(0);
+        this.inventaire = new Inventaire();
         this.enVie = true;
     }
     

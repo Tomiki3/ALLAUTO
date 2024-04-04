@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Fenetre extends EntiteVivante {
-    public Fenetre(int id, Boolean verrouille) {
-        super(id, "fenêtre", true);
+    public Fenetre(Boolean verrouille) {
+        super("fenêtre", true);
         // l'attribut "verrouillé" pour une fenêtre correspond à si elle est fermée ou non
     }
 
