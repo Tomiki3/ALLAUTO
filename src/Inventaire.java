@@ -47,7 +47,7 @@ public class Inventaire extends Descriptible {
         this.decrire();
 
         Iterator<Objet> it = objets.iterator();
-        System.out.print("Voici ce qu'il contient : ");
+        System.out.print("\nVoici ce qu'il contient : ");
         while (it.hasNext())
         {
             Objet curr = it.next();
@@ -55,5 +55,7 @@ public class Inventaire extends Descriptible {
             if (it.hasNext()) {System.out.print(", ");}
         }
         System.out.println(".");
+
+        System.out.println("\nVous tenez " + objetEquipe.getNom() + " en main.");
     }
 }

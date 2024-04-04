@@ -28,9 +28,9 @@ public class Jeu {
         Salle salle2 = new Salle("Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
 
-        Clef clefDouze = new Clef();
+        Clef clefDouze = new Clef("clef de douze");
         clefDouze.setDescription("Une clef de douze.");
-        Clef clefQuatre = new Clef();
+        Clef clefQuatre = new Clef("clef de quatre");
         clefQuatre.setDescription("Une clef de quatre.");
         
         Porte porte = new Porte(true, clefDouze);
@@ -54,15 +54,21 @@ public class Jeu {
             String[] arrCommande = commande.split(" ");
             System.out.println("");
 
+            String action = arrCommande[0];
+            String cible = "";
+            for (int i = 1; i < arrCommande.length-1; i++) {
+                cible += (arrCommande[i] + " ");
+            }
+            cible += arrCommande[arrCommande.length-1];
 
-            switch(arrCommande[0]) {
+            switch(action) {
 
                case "examiner":
 
                     // Si pas de meuble courant, on s'attend à ce que l'entité à examiner soit un meuble
                     if(moi.getMeuble() == null) 
                     {                  
-                        String nomMeuble = arrCommande[1];
+                        String nomMeuble = cible;
                         Salle maSalle = moi.getLocalisation();
 
                         if(maSalle.containsMeuble(nomMeuble) == null)
@@ -76,7 +82,7 @@ public class Jeu {
                     }
                     else
                     {
-                        String nomExaminable = arrCommande[1];
+                        String nomExaminable = cible;
                         Meuble monMeuble = moi.getMeuble();
 
                         // on regarde dans un premier temps si l'examinable est un Objet
@@ -109,18 +115,18 @@ public class Jeu {
 
                     Meuble monMeuble = moi.getMeuble();
 
-                    if (monMeuble.containsViv(arrCommande[1]) == null)
+                    if (monMeuble.containsViv(cible) == null)
                     {
                         System.out.println("L'objet avec lequel vous souhaitez interagir n'appartient pas au meuble que vous examinez.");
                         break;
                     }
 
-                    monMeuble.containsViv(arrCommande[1]).interagir(moi);
+                    monMeuble.containsViv(cible).interagir(moi);
                     break;
 
 
                 case "prendre":
-                    String objet = arrCommande[1];
+                    String objet = cible;
                     if (moi.getMeuble() == null)    // joueur n'examine pas un meuble
                     {
                         System.out.println("Chaque objet est posé sur un meuble.\nVous devez d'abord examiner un meuble avant de vouloir prendre un objet.");
@@ -140,7 +146,7 @@ public class Jeu {
                     break;
 
                 case "équiper":
-                    String aEquiper = arrCommande[1];
+                    String aEquiper = cible;
 
                     if (moi.getInventaire().contains(aEquiper) == null)
                     {
@@ -149,7 +155,7 @@ public class Jeu {
                     }
                     
                     moi.getInventaire().setObjetEquipe(moi.getInventaire().contains(aEquiper));
-                    System.out.println("Vous tenez " + aEquiper + "en main.");
+                    System.out.println("Vous tenez " + aEquiper + " en main.");
                     break;
 
 
