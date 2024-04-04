@@ -1,6 +1,8 @@
 public class Mur extends Meuble {
-    public Mur(int id) {
-        super(id, "mur");
+
+    public Mur(String nom) {
+        super(nom);
     }
+    
 }
 

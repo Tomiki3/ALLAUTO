@@ -5,8 +5,8 @@ public abstract class Meuble extends Descriptible {
     private HashSet<Objet> objets;
     private HashSet<EntiteVivante> interagissables;
 
-    public Meuble(int id, String nom) {
-        super(id, nom);
+    public Meuble(String nom) {
+        super(nom);
         this.objets = new HashSet<>();
         this.interagissables = new HashSet<>();
     }

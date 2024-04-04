@@ -1,6 +1,6 @@
 public class Carton extends Contenant {
-    public Carton(int id, String nom, Boolean verrouille) {
-        super(id, nom, verrouille);
+    public Carton(String nom, Boolean verrouille) {
+        super(nom, verrouille);
     }
 
     @Override

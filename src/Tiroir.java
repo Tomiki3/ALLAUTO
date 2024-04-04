@@ -1,6 +1,6 @@
 public class Tiroir extends Contenant {
-    public Tiroir(int id, String nom, Boolean verrouille) {
-        super(id, nom, verrouille);
+    public Tiroir(String nom, Boolean verrouille) {
+        super(nom, verrouille);
     }
 
     @Override

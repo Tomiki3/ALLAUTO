@@ -4,36 +4,36 @@ public class Jeu {
     
     public static void main(String[] args) {
 
-        Savon savon = new Savon(2);
+        Savon savon = new Savon();
         savon.setDescription("Ce savon à l'air vieux." +
         "Personnellement, je ne le toucherai pas même avec un baton.");
 
-        Table table = new Table(1);
+        Table table = new Table();
         table.setDescription("C'est une jolie table en bois, machallita");
         table.addObjet(savon);
         
-        Fenetre fenetre = new Fenetre(0, true);
+        Fenetre fenetre = new Fenetre(true);
         fenetre.setDescription("Une fenêtre commune. Il ne vous viendrait jamais à l'idée de sauter au travers.");
 
-        Mur mur = new Mur(0);
+        Mur mur = new Mur("Mur nord");
         mur.setDescription("Un mur blanc et neuf, décoré de quelques posters.");
         mur.addEntitViv(fenetre);
 
         
-        Salle salle1 = new Salle(0, "Salle n°1");
+        Salle salle1 = new Salle("Salle n°1");
         salle1.setDescription("La salle de démarrage du jeu. Elle est insipide, comme ta vie.");
         salle1.addMeuble(table);
         salle1.addMeuble(mur);
         
-        Salle salle2 = new Salle(0, "Salle n°2");
+        Salle salle2 = new Salle("Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
 
-        Clef clefDouze = new Clef(12);
+        Clef clefDouze = new Clef();
         clefDouze.setDescription("Une clef de douze.");
-        Clef clefQuatre = new Clef(4);
+        Clef clefQuatre = new Clef();
         clefQuatre.setDescription("Une clef de quatre.");
         
-        Porte porte = new Porte(0, true, clefDouze);
+        Porte porte = new Porte(true, clefDouze);
         porte.setDescription("Une belle porte en bois de hêtre.");
         porte.setSalles(salle1, salle2);
 
@@ -139,7 +139,18 @@ public class Jeu {
                     moi.getInventaire().examiner();
                     break;
 
-                //TODO : Implémenter "équiper"
+                case "équiper":
+                    String aEquiper = arrCommande[1];
+
+                    if (moi.getInventaire().contains(aEquiper) == null)
+                    {
+                        System.out.println("L'objet que vous souhaitez équiper n'est pas présent dans votre inventaire.");
+                        break;
+                    }
+                    
+                    moi.getInventaire().setObjetEquipe(moi.getInventaire().contains(aEquiper));
+                    System.out.println("Vous tenez " + aEquiper + "en main.");
+                    break;
 
 
                 case "quitter":

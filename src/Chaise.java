@@ -1,6 +1,7 @@
+
 public class Chaise extends EntiteVivante {
-    public Chaise(int id, String nom, Boolean verrouille) {
-        super(id, nom, false);
+    public Chaise(String nom, Boolean verrouille) {
+        super(nom, false);
     }
 
     @Override

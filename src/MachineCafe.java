@@ -1,6 +1,6 @@
 public class MachineCafe extends Machine {
-    public MachineCafe(int id, String nom, Boolean verrouille) {
-        super(id, nom, verrouille);
+    public MachineCafe(String nom, Boolean verrouille) {
+        super(nom, verrouille);
     }
 
     @Override

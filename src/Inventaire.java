@@ -5,8 +5,8 @@ public class Inventaire extends Descriptible {
     private Objet objetEquipe;
     private HashSet<Objet> objets;
 
-    public Inventaire(int id) {
-        super(id, "Inventaire");
+    public Inventaire() {
+        super("Inventaire");
         this.objets = new HashSet<>();
         this.setDescription("Ceci est votre inventaire.\nVous pouvez y stocker autant d'objets que vous le voulez.");
     }
@@ -28,6 +28,20 @@ public class Inventaire extends Descriptible {
         objets.remove(o);
     }
 
+    public Objet contains(String nomObjet) {
+        Iterator<Objet> it = objets.iterator();
+
+        while(it.hasNext()) {
+            Objet curr = it.next();
+
+            if(curr.getNom().equals(nomObjet)) {
+                return curr;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public void examiner() {
         this.decrire();
@@ -36,7 +50,8 @@ public class Inventaire extends Descriptible {
         System.out.print("Voici ce qu'il contient : ");
         while (it.hasNext())
         {
-            System.out.print(it.next().getNom());
+            Objet curr = it.next();
+            System.out.print(curr.getNom());
             if (it.hasNext()) {System.out.print(", ");}
         }
         System.out.println(".");

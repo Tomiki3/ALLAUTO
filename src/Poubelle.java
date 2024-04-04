@@ -1,5 +1,5 @@
 public class Poubelle extends Meuble {
-    public Poubelle(int id, String nom) {
-        super(id, nom);
+    public Poubelle(String nom) {
+        super(nom);
     }    
 }

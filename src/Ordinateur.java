@@ -1,8 +1,8 @@
 public class Ordinateur extends EntiteVivante {
     private IA ia;
 
-    public Ordinateur(int id, String nom, Boolean verrouille, IA ia) {
-        super(id, nom, verrouille);
+    public Ordinateur(String nom, Boolean verrouille, IA ia) {
+        super(nom, verrouille);
         this.ia = ia;
     }
 
