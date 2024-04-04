@@ -1,12 +1,14 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class Porte extends EntiteVivante {
     private HashSet<Salle> salles;
     private Clef clef;
 
-    public Porte(int id, String nom, Boolean verrouille) {
-        super(id, nom, verrouille);
+    public Porte(int id, Boolean verrouille, Clef clef) {
+        super(id, "porte", verrouille);
         this.salles = new HashSet<>();
+        this.clef = clef;
     }
 
     public void setSalles(Salle s1, Salle s2) {
@@ -14,25 +16,44 @@ public class Porte extends EntiteVivante {
         this.salles.add(s2);
     }
 
-    public Boolean ouvrir(Clef c) {
-        return c.getId() == this.clef.getId();
-    }
-
     @Override
     public void interagir(Joueur moi) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'interagir'");
+
+        // check qu'une clef est équipée et que c'est bien la bonne clef dans le cas où la porte est fermée
+        if (this.verrouille)
+        {
+            if ((moi.getInventaire().getObjetEquipe() instanceof Clef) &&
+                ((Clef) (moi.getInventaire().getObjetEquipe())).getId() == this.clef.getId())
+            {
+                this.verrouille = false;    // ouvre la porte
+                System.out.println("Vous ouvrez la porte.");
+            }
+            else
+            {
+                System.out.println("Vous n'arrivez pas à ouvrir la porte. Elle semble fermée à clef.");
+                return;
+            }
+        }
+
+        Iterator<Salle> it = salles.iterator();
+
+        while (it.hasNext())    // parcourt les salles liées à la porte pour trouver celle dans laquelle on doit aller
+        {
+            Salle room = it.next();
+
+            if (room.getId() != moi.getLocalisation().getId())
+            {
+                moi.setLocalisation(room);
+                System.out.println("Vous passez dans la salle : " + room.getNom());
+                room.examiner();
+                break;
+            }
+        }
+
     }
 
     @Override
     public void arreter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'arreter'");
-    }
-
-    @Override
-    public void examiner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'examiner'");
+        // nothing
     }
 }

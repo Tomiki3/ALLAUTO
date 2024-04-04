@@ -1,11 +1,14 @@
 public class Digicode extends EntiteVivante {
+    private Porte porte;
+    private String secretCode;
+
     public Digicode(int id, String nom, Boolean verrouille) {
         super(id, nom, false);
     }
 
     @Override
     public void interagir(Joueur moi) {
-        throw new UnsupportedOperationException("Unimplemented method 'interagir'");
+        // TODO : initialiser un scan + demander code + si code == secretCode on déverrouille la porte associée; 
     }
 
     @Override

@@ -1,10 +1,10 @@
 [Le jeu] TODO
 
-### Cahier des charges
+# Cahier des charges
 
 ## Introduction
 
-# Histoire
+### Histoire
 
 Le joueur commence la partie en se réveillant dans un bureau.
 Il ne sait rien d'autre : son identité, sa localisation, sa raison d'être ici lui sont inconnues.
@@ -22,11 +22,11 @@ Et en effet, c'est en pénétrant dans la salle des archives et en trouvant un d
 
 Pour l'instant, le jeu se finira sur un nouveau réveil du joueur, cette fois-ci entourée de l'équipe chargée de son développement, tout sourire.
 
-# Carte
+### Carte
 
 TODO
 
-## Gestion de l'inventaire TODO
+### Gestion de l'inventaire TODO
 
 Tout le long du jeu, le protagoniste est équipé d'un inventaire ouvrable contenant un ensemble d'objet.
 Lorsqu'un objet est pris, il est ajouté dans l'inventaire à capacité infinie.
@@ -35,19 +35,19 @@ Un objet peut être équipé (tenu dans la main du protagoniste). Un seul objet 
 Il est nécessaire d'équiper l'objet que l'on veut utiliser.
 C'est le seul objet pouvant être utilisé avec un autre objet ou un élément de la salle actuelle.
 
-## Déplacement
+### Déplacement
 
 Le déplacement s'effectue de salle en salle. 
 Une salle peut être accédée via l'une des portes proposées sur l'interface, si elle n'est pas verrouillée.
 
-## Investigation
+### Investigation
 
 Lorsqu'il rentre dans une salle, le protagoniste prend connaissance des différents éléments qui s'y trouvent si la lumière le permet.
 Différents éléments de chaque salle peuvent être examinés.
 Certains objets peuvent également être récupérés et placés dans l'inventaire à condition de ne pas avoir la main paralysée.
 Un objet pourra être utilisé ultérieurement pour débloquer de nouveaux objets ou de nouvelles salles. 
 
-## Rencontre PNJ
+### Rencontre PNJ
 
 Le joueur est l'unique entité "vivante" présente dans l'espace de jeu.
 Ainsi, les seuls PNJ qu'il recontre sont les ordinateurs de travail des employés de l'entreprise, laissés sur place.
@@ -60,13 +60,13 @@ Le joueur peut interargir avec certains des ordinateurs qui lui sont décris lor
 *quitter* --> Interrompt la discussion entre le joueur et [nom IA vocale]. Peut être utilisée à tout moment. Le joueur se retrouve alors dans le même état que lorsqu'il rentre dans une pièce.
 Si le joueur n'a aucune proposition de réponse, il ne peut que utiliser la commande *quitter*.
 
-## Déroulement d'un épisode
+### Déroulement d'un épisode
 
 Le protagoniste se réveille dans le bureau initial à chaque début d'épisode.
 Un épisode est défini par une liste d'objets à récupérer dans les pièces accessibles.
 Le protagoniste passe à l'épisode suivant une fois que tous les objets de la liste sont récupérés.
 
-#Episode 1
+#### Episode 1
 
 Le joueur se réveille dans le bureau initial.
 
@@ -88,86 +88,89 @@ SALLE D'ATTENTE : Salle fermée. Action de l'ouvrir "spécialement" se débloque
 A l'intérieur se trouve pleins de décos relatives à la boîte, dont une sur laquelle est affichée "Sudo est ton ami".
 Doit pas être trop subtile car doit donner l'idée au joueur d'utiliser "sudo" pour déverrouiller le pc dans bureau initial.
 
-## Salles
+### Salles
 
-# Bureau Initial
+#### Bureau Initial
 
 Éléments présents : 1 interrupteur, 1 porte, 1 ordinateurs, 1 bureau, 1 fenêtre, 1 étagère, 2 chaises, 1 poubelle
 
 Objets présents : 
 
-# Open-Space
+#### Open-Space
 
 Éléments présents : 4 interrupteurs, 4 portes (Nord, Sud, Nord Est, Sud Est), 6 ordinateurs, 6 bureaux, 2 fenêtres, 6 chaises, 4 poubelles, 2 tiroirs/bureau, 1 imprimante.
 
 Objets présents : 
 
-# Archives
+#### Archives
 
 Éléments présents : 2 interrupteurs, 2 étagères, 4 cartons, 2 portes (Nord, Sud)
 
 Objets présents : 
 
-# Salle de réunion
+#### Salle de réunion
 
 Éléments présents : 2 interrupteurs (celui de la porte Ouest HS), 2 portes (Est, Ouest), 1 table, 10 chaises, 1 étagère, 1 fenêtre.
 
+Objets présents :
 
-# Salle d'attente
+#### Salle d'attente
 
 Éléments présents : 2 portes (Est, Ouest), 2 interrupteurs, 8 chaises, 1 table.
 
 Objets présents : 
 
-# Couloir
+#### Couloir
 
 Éléments présents : 4 portes (Nord Est, Nord Ouest, Sud Est, Sud Ouest), 4 interrupteurs, accès accueil
 
 Objets présents : 
 
-# Toilettes
+#### Toilettes
 
 Éléments présents : 1 porte, 1 interrupteur, 1 Lavabo, 1 chasse d'eau, 1 poubelle.
 
 Objets présents : 1 savon
 
-# Salle de pause
+#### Salle de pause
 
 Éléments présents : 1 porte, 1 interrupteur, 1 fenêtre, 1 table, 10 chaises, machine à café, 1 poubelle
 
 Objets présents : 
 
-# Accueil
+#### Accueil
 
 Éléments présents : 3 portes (Nord, Sud Est, Sud Ouest, Ouest), 1 tiroir, accès couloir, 1 fenêtre, 1 bureau, 3 chaises, 1 étagère, 1 poubelle, 1 ordinateur, 1 distributeur, 4 interrupteurs.
 
 Objets présents : 
 
-# Ascenseur
+#### Ascenseur
 
 Éléments présents : Digicode Badge, 1 porte (Nord)
 
 Objets présents : 
 
-# Compta 
+#### Compta 
 
 Éléments présents : 1 bureau, 2 tiroirs, 1 chaise, 1 fenêtre, 1 porte, 1 interrupteur, 1 étagère, 1 poubelle. 
 
 Objets présents : 
 
-# Bureau Boss
+#### Bureau Boss
 
 Éléments présents : 1 bureau, 2 tiroirs, 1 chaise, 1 fenêtre, 1 porte, 1 interrupteur, 1 étagère, 1 poubelle.
 
 Objets présents : 
 
-## Éléments
+
+
+### Éléments
 
 définition : Ce avec quoi le protagoniste peut intéragir
 
-# Porte 
+#### Porte 
 
-# Contenant
+#### Contenant
 
 Boite
 
@@ -175,17 +178,17 @@ Cartons
 
 Tiroir
 
-# Digicode
+#### Digicode
 
-# Ordinateurs
+#### Ordinateurs
 
 Mdp pour intéragir avec le PC et l'IA (nom IA TODO) ou pas
 
-# Chasse d'eau
+#### Chasse d'eau
 
-# Fenêtre
+#### Fenêtre
 
-# Vasque 
+#### Vasque 
 
 Une minute de paralysie du bras s'il se lave les mains.
 
@@ -193,13 +196,13 @@ Lavabo
 
 Évier
 
-# Étagère
+#### Étagère
 
-# Chaise
+#### Chaise
 
-# Table
+#### Table
 
-# Machine
+#### Machine
 
 Machine à café
 
@@ -207,36 +210,36 @@ Distributeur
 
 Imprimante
 
-# Poubelle
+#### Poubelle
 
 
 
 
 
-## Objets
+### Objets
 
 définition : Ce que le protagoniste peut prendre
 
-# Clé
+#### Clé
 
-# Post-it
+#### Post-it
 
-# Badge
+#### Badge
 
-# Savon 
+#### Savon 
 
-# Lame 
+#### Lame 
 
 Ciseau 
 
 Cutter
 
-# Document
+#### Document
 
 
 
 
-### Analyse
+## Analyse
 
 ## Cas d'utilisation
 

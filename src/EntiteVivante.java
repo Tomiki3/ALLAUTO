@@ -9,9 +9,5 @@ public abstract class EntiteVivante extends Descriptible implements Interagissab
     @Override
     public void examiner() {
         this.decrire();
-
-        System.out.print("Cette objet ");
-        if (this.verrouille) {System.out.println("est verrouillé.");}
-        else {System.out.println("n'est pas verrouillé.");}
     }
 }
