@@ -12,9 +12,4 @@ public class Boite extends Contenant {
     public void arreter() {
         throw new UnsupportedOperationException("Unimplemented method 'arreter'");
     }
-
-    @Override
-    public void examiner() {
-        throw new UnsupportedOperationException("Unimplemented method 'examiner'");
-    }  
 }

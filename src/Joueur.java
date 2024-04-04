@@ -46,6 +46,11 @@ public class Joueur {
         this.enVie = false;
     }
 
+    public void changeSalle(Salle salleFin) {
+        this.localisation = salleFin;
+        this.meuble = null;
+    }
+
     /**
      * Nous fait quitter l'examination du meuble courant
      */

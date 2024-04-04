@@ -43,7 +43,7 @@ public class Porte extends EntiteVivante {
 
             if (room.getNom() != moi.getLocalisation().getNom())
             {
-                moi.setLocalisation(room);
+                moi.changeSalle(room);
                 System.out.println("Vous passez dans la salle : " + room.getNom());
                 room.examiner();
                 break;

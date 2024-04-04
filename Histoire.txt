@@ -23,7 +23,7 @@ Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfa
 Sur le bureau il y a un ordinateur
 
 -- ordinateur --
-En allumant l'ordinateur et deux options sont sélectionnables : se connecter ou IA.
+En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou IA.
 
 --- se connecter ---
 l'ordinateur demande un nom d'utilisateur : JeanneF

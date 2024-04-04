@@ -1,9 +1,11 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Jeu {
     
     public static void main(String[] args) {
 
+// ------ SALLE 1 --------------------------
         Savon savon = new Savon();
         savon.setDescription("Ce savon à l'air vieux." +
         "Personnellement, je ne le toucherai pas même avec un baton.");
@@ -25,6 +27,8 @@ public class Jeu {
         salle1.addMeuble(table);
         salle1.addMeuble(mur);
         
+// ------ PORTE 1 / 2 --------------------------
+
         Salle salle2 = new Salle("Salle n°2");
         salle2.setDescription("La seconde salle du jeu.\nElle est un peu plus lumineuse que la précédente, mais reste tout de même assez placide.");
 
@@ -33,7 +37,7 @@ public class Jeu {
         Clef clefQuatre = new Clef("clef de quatre");
         clefQuatre.setDescription("Une clef de quatre.");
         
-        Porte porte = new Porte(true, clefDouze);
+        Porte porte = new Porte(false, clefDouze);
         porte.setDescription("Une belle porte en bois de hêtre.");
         porte.setSalles(salle1, salle2);
 
@@ -41,12 +45,34 @@ public class Jeu {
         table.addObjet(clefQuatre);
         mur.addEntitViv(porte);
 
+// ------ SALLE 2 --------------------------
+
+        Ciseaux ciseaux = new Ciseaux("paire de ciseaux");
+        ciseaux.setDescription("Une paire de ciseaux pour gaucher. Quelle hérésie ...");
+
+        Savon savonCarton = new Savon();
+
+        Carton carton = new Carton("carton", false);
+        carton.addObjet(savonCarton);
+
+        Etagere etagere = new Etagere("étagère");
+        etagere.setDescription("Une grande étagère en marbre blanc.\nY'a du budget ici dis donc !");
+        etagere.addObjet(ciseaux);
+
+        Sol sol = new Sol();
+        sol.setDescription("Une jolie moquette bien poilue.");
+        sol.addEntitViv(carton);
+
+        salle2.addMeuble(etagere);
+        salle2.addMeuble(sol);
+
         Joueur moi = new Joueur(salle1);
         
         Scanner scan = new Scanner(System.in);
         System.out.println("Bienvenu dans cette demonstration du jeu 'Cramptman'.");
         moi.getLocalisation().examiner();
         
+        // TODO : Patch le problème de la nature des contenants, pck peut pas prendre d'objet dessus si c'est pas des meubles
 
         while(moi.getVie()) {
             System.out.print("\nVeuillez réaliser une action : ");
@@ -132,12 +158,31 @@ public class Jeu {
                         System.out.println("Chaque objet est posé sur un meuble.\nVous devez d'abord examiner un meuble avant de vouloir prendre un objet.");
                         break;
                     }
-                    if (moi.getMeuble().containsObjet(objet) == null)   // le meuble ne contient pas l'objet
+
+                    if (moi.getMeuble().containsObjet(objet) != null)   // le meuble contient l'objet
                     {
-                        System.out.println(moi.getMeuble().getNom() + (" ne contient pas l'objet que vous souhaitez prendre."));
+                        moi.getMeuble().containsObjet(objet).prendre(moi);
                         break;
                     }
-                    moi.getMeuble().containsObjet(objet).prendre(moi);
+
+                    // l'objet est peut être contenu dans un contenant sur le meuble
+                    Iterator<Contenant> it = moi.getMeuble().getContenantIterator();
+                    Objet o = null;
+                    while(it.hasNext())
+                    {
+                        Contenant cont = it.next();
+                        o = cont.containsObjet(cible);
+                        if (o != null)
+                        {
+                            o.prendre(moi);
+                            cont.removeObjet(o);
+                            break;
+                        }
+                    }
+                    
+                    if (o == null)
+                        System.out.println(moi.getMeuble().getNom() + (" ne contient pas l'objet que vous souhaitez prendre."));
+                    
                     break;
 
 
@@ -145,7 +190,8 @@ public class Jeu {
                     moi.getInventaire().examiner();
                     break;
 
-                case "équiper":
+                
+                    case "équiper":
                     String aEquiper = cible;
 
                     if (moi.getInventaire().contains(aEquiper) == null)

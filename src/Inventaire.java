@@ -56,6 +56,7 @@ public class Inventaire extends Descriptible {
         }
         System.out.println(".");
 
-        System.out.println("\nVous tenez " + objetEquipe.getNom() + " en main.");
+        if (objetEquipe != null)
+            System.out.println("\nVous tenez " + objetEquipe.getNom() + " en main.");
     }
 }
