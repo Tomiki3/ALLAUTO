@@ -242,9 +242,12 @@ Notre objectif est de développer des IA qui travaillent en symbiose avec l'huma
 ---- bureau ordinateur ouest ----
 
 C'est un bureau standardisé, bleu, présentant le logo de XIMRINE en fond.
-Sur la droite un prompt sur fond noir apparait et propose de chatter avec une IA.
+Sur la droite un prompt sur fond noir apparait et propose de chatter avec une IA. [parler avec IA]
+sur la gauche un répertoire est présent intitulé : "DEV MCB"
 
-To FINISH //////////////////////////////////////////////////////////////////////////////////////
+----- répertoire -----
+
+Ouvrir le répertoir demande un mot de passe : impossible à dévérouiller pour le moment
 
 -- chaise ouest --
 
@@ -262,7 +265,16 @@ On y voit aussi : un ordinateur, une chaise.
 
 -- notes manuscrites --
 
+Parmis les notes illisibles et incohérente sans contexte se trouve plusieur croquis et schéma.
+Un dessin, fait à première vu par un enfant, attire l'attention.
+Le dessin met en scène unu sorte de robot humanoide très grand et une petite fille qui jouent sur une moquette bleue.
+Vous le rangez dans votre inventaire
+
 -- document papier -- 
+
+c'est un document avec une grosse tache d'encre bleue dessus. 
+Comme si l'imprimante qui devait le délivrer n'a pas bien fait son travail.
+Vous le ranger dans votre inventaire
 
 -- ordinateur est --
 
@@ -275,6 +287,21 @@ Elle donne l'impression d'avoir été récemment utilisée, avec une légère em
 
 - étagère -
 
+L'étagère se trouve sur le mur nord de la pièce à côtés de la porte et s'étend jusqu'aux fenêtres du mur Ouest.
+Elle est étonnemment peu remplie.
+on y trouve : un cutter et une petite clé.
+
+-- cutter -- 
+
+C'est un cutter standard rien de plus normal.
+Vous le rangez dans votre inventaire.
+
+-- une petite clé --
+
+C'est une clé toute petite ne permettant pas d'ouvrir une porte.
+Elle serait peut être utile pour ouvrir un tiroir ou un petit cadenas certainement.
+Vous le rangez dans votre inventaire.
+
 - poubelle nord-ouest -
 
 La poubelle est pleine d'épeluchures de fruits et de gobelets en cartons.
@@ -282,9 +309,23 @@ La poubelle est pleine d'épeluchures de fruits et de gobelets en cartons.
 
 -- boule de papier --
 
+En dépliant la boule de papier, on y découvre un message au recto :
+"   ykc khuz sh jhmlalyph
+    Ql kvpz al whysly   "
+Et au dos on y lit : "C7"
+
 - poubelle sud -
 
+C'est une petite poubelle noir.
+Elle a été vidée récemment.
+
 - imprimante -
+
+L'imprimante est éteinte
+
+-- imprimante allumé --
+
+l'imprimante demande un badge afin d'être utilisée.
 
 - porte Est 1 -
 
