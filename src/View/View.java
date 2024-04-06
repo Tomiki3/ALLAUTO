@@ -11,7 +11,15 @@ public class View {
     }
 
     public void afficheBvn() {
-        System.out.println("Bienvenu dans cette demonstration du jeu 'Cramptman'.");
+        System.out.println("Bienvenu.e dans cette demonstration du jeu 'Cramptman'.");
+    }
+
+    public void choixAction() {
+        System.out.print("\nVeuillez réaliser une action : ");
+    }
+
+    public void newLine() {
+        System.out.println("");
     }
 
     public void meubleManquant() {
@@ -20,6 +28,27 @@ public class View {
     
     public void objetManquant() {
         System.out.println("L'objet que vous souhaitez examiner n'est pas présent sur le meuble.");                      
+    }
+
+    public void ouvrePorte(Boolean possible) {
+        if (possible) {
+            System.out.println("Vous ouvrez la porte.");
+        } else {
+            System.out.println("Vous n'arrivez pas à ouvrir la porte. Elle semble fermée à clef.");
+        }
+    }
+
+    public void entreSalle(String nom) {
+        System.out.println("Vous passez dans la salle : " + nom);
+    }
+
+    public void ordiAllume(Boolean possible) {
+        if (possible) {
+            System.out.println("En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou IA.\n" + //
+                                "Connexion : connecter [nom_machine] [identifiant]");
+        } else {
+            System.out.println("L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.");
+        }
     }
 
     public void pasInteraction() {

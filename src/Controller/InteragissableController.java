@@ -86,13 +86,12 @@ public class InteragissableController {
         {
             if (!ordi.getAllumable())
             {
-                System.out.println("L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.");
+                view.ordiAllume(false);
                 return;
             }
 
             ordi.setVerrouille(false);
-            System.out.println("En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou IA.\n" + //
-                                "Connexion : connecter [nom_machine] [identifiant]");
+            view.ordiAllume(true);
         }
         // Si ordi éteint, essaye de l'allumer --> peut fonctionner ou non
         // Si allumé, donne le choix de se connecter ou d'interagir avec l'IA
@@ -107,11 +106,11 @@ public class InteragissableController {
                 ((Clef) (joueur.getInventaire().getObjetEquipe())).getNom() == porte.getClef().getNom())
             {
                 porte.setVerrouille(false);    // ouvre la porte
-                System.out.println("Vous ouvrez la porte.");
+                view.ouvrePorte(true);
             }
             else
             {
-                System.out.println("Vous n'arrivez pas à ouvrir la porte. Elle semble fermée à clef.");
+                view.ouvrePorte(false);
                 return;
             }
         }
@@ -125,7 +124,7 @@ public class InteragissableController {
             if (room.getNom() != joueur.getLocalisation().getNom())
             {
                 changeSalle(joueur, room);
-                System.out.println("Vous passez dans la salle : " + room.getNom());
+                view.entreSalle(room.getNom());
                 view.examiner(room);
                 break;
             }
@@ -133,23 +132,23 @@ public class InteragissableController {
     }
 
     public void interagir(EntiteVivante e) {
-        switch(e.getClass().getName()) { //TODO à tester
-            case "Carton":
+        switch(e.getClass().getName()) {
+            case "Model.Carton":
                 interagir((Carton) e);
                 break;
-            case "Digicode":
+            case "Model.Digicode":
                 interagir((Digicode) e);
                 break;
-            case "Fenetre":
+            case "Model.Fenetre":
                 interagir((Fenetre) e);
                 break;
-            case "IA":
+            case "Model.IA":
                 interagir((IA) e);
                 break;
-            case "Ordinateur":
+            case "Model.Ordinateur":
                 interagir((Ordinateur) e);
                 break;
-            case "Porte":
+            case "Model.Porte":
                 interagir((Porte) e);
                 break;
             default:

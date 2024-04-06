@@ -23,10 +23,10 @@ public class Jeu {
         // TODO : Patch le problème de la nature des contenants, pck peut pas prendre d'objet dessus si c'est pas des meubles
 
         while(moi.getVie()) {
-            System.out.print("\nVeuillez réaliser une action : ");
+            view.choixAction();
             String commande = scan.nextLine();
             String[] arrCommande = commande.split(" ");
-            System.out.println("");
+            view.newLine();
 
             String action = arrCommande[0];
             String cible = "";

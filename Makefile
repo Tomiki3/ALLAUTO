@@ -2,7 +2,7 @@ compileJeu:
 	javac -d bin/  -sourcepath ./src -classpath ./bin src/Controller/Jeu.java
 
 compile :
-	javac -d bin/ src/*.java
+	javac -d bin/ src/*
 
-run :
+run : compileJeu
 	java -cp bin/ Controller/Jeu
