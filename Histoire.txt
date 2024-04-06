@@ -39,6 +39,51 @@ Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qu
 Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leur tâche du quotidien et dans leur travail.
 -> [TODO]
 
+---- bureau ordinateur ----
+
+l'ordinateur s'ouvre sur un bureau standardisé, bleu, présentant le logo de XIMRINE en fond.
+Sur la droite, un prompt sur fond noir apparait et propose de chatter avec une IA.
+Sur la gauche on y trouve 1 répertoir intitulé : "Rapport de crise"
+
+----- répertoir rdc -----
+
+Dans ce répertoir ce trouve plusieurs fichier en désordre.
+Parmis ces fichiers, beaucoup de photos, de captures d'écrans et quelques fichiers en formats PDF.
+On y trouve : un préavis de grève, une lettre de menace, une capture d'écran d'un échange de mails.
+
+------ préavis de grève ------
+
+En ouvrant le fichier, on y découvre un préavis de grêve annoncé pour le 1 juin.
+La raison évoqué est le surmenage au travail dans la société XIMRINE.
+D'autres grêves sont à prévoir dans plusieurs autres domaines d'activités pour dénoncer le développement de l'IA qui menace le travail de beaucoup de gens.
+On y lit que cette grêve sera accompagnée d'une manifestation devant les locaux de la société et qu'une entrevue concernant les syndicats et la direction de la société serait la bienvenue.
+
+------ lettre de menace ------
+
+La lettre date du 5 janvier.
+Cette lettre exprime le mécontentement des employés de XIMRINE concernant le surmenage et l'exploitation au travail.
+Elle met en garde contre les avancées de l'intelligence artificielle dans l'entreprise, qui menacent les emplois des travailleurs.
+Les employés demandent des garanties pour la préservation de leurs postes et de leurs conditions de travail, menaçant d'actions supplémentaires si des changements ne sont pas apportés.
+
+------ échange mails ------
+
+Le mail ressemble à ça : 
+Objet : Réorganisation du personnel suite aux avancées de l'IA
+
+Chère PDG,
+
+Suite aux récents progrès dans le développement de l'intelligence artificielle au sein de l'entreprise, je vous adresse ce mail pour discuter de la réorganisation potentielle de notre personnel.
+Après en avoit discuter avec les comptables, il est devenu évident que certains postes sont désormais obsolètes et pourraient être avantageusement remplacés par des solutions basées sur l'IA.
+
+Je propose que nous tenions une réunion pour examiner de plus près les départements et les fonctions où cette transition pourrait être envisagée.
+Il est impératif que nous prenions des mesures proactives pour assurer une transition en douceur et minimiser les perturbations pour notre personnel.
+
+Je suis disponible pour discuter de ces questions plus en détail à votre convenance.
+
+Cordialement,
+Nicolas Moultou
+[DRH de XIMRINE]
+
 - étagère -
 Sur l'étagère se trouve des livres d'informatique, de logique, d'IA...
 L'étagère est décorée de plusieurs figurines inconnues d'une dizaine de centimètres.
@@ -333,7 +378,7 @@ La porte est robuste, faite de métal épais, avec des charnières visibles et u
 
 - porte Est 2 -
 
-La porte est robuste, faite de métal épais, avec des charnières visibles et une serrure solide.
+La porte de l'open space est en bois clair, avec une poignée chromée brillante, des rainures discrètes courent le long du panneau
 
 - porte Nord -
 
@@ -349,6 +394,7 @@ la porte est fermé à clé.
 
 -- intéragir avec la porte avec clé équipée --
 la porte s'ouvre
+{Description du prochaine lieu}
 
 - fenête Ouest 1 -
 
@@ -372,3 +418,75 @@ Vous vous trouvez à plusieurs étages du sol.
 [même implem pour la suite]
 
 #### salle d'attente
+
+Vous rentré dans ce qui ressemble à une salle d'attente.
+Cette dernière adjacente à l'open space est accueillante mais minimaliste.
+Les murs sont recouverent d'un papier peint mélangeant du rouge et du orange.
+Des chaises rembourrées sont alignées contre le mur, elles ont l'air confortables.
+Un tapis épais recouvre le sol, avec un motif abstrait apportant une nouvelle touche de couleur à l'ensemble.
+Sur une petite table basse au centre de la pièce, des magazines et quelques brochures sont soigneusement disposés, de quoi se divertir.
+Une lumière douce émane d'un plafonnier encastré, créant une atmosphère chaleureuse et accueillante dans cet espace d'attente tranquille.
+
+Il y a : une table basse, une petite poubelle, un pot avec une plante, un banc de chaises.
+Il y a aussi : une porte Est, une porte Ouest
+
+- table basse -
+
+La table basse de la salle d'attente est en bois de chêne, polie pour une finition lisse et brillante. 
+Son design minimaliste est accentué par des lignes épurées et des angles droits.
+Au centre de la table repose un plateau en verre, mettant en valeur les magazines et brochures soigneusement disposés en dessous.
+Sur la table basse il y a : une revue scientifique, un magazine de mode.
+
+-- revue scientifique --
+
+En prenant la revu on tombe rapidement sur un article : "XIMRINE : Leader de l'IA et de l'Innovation".
+
+Cet article met en lumière le rôle central de XIMRINE dans l'avancement de l'intelligence artificielle (IA).
+En se concentrant sur des projets innovants comme ALLAUTO, XIMRINE a établi sa réputation en tant que pionnier de l'IA.
+On y apprends que l'entreprise se distingue par son engagement envers la recherche éthique et son objectif constant d'améliorer la vie grâce à la technologie.
+Vous le rangez dans votre inventaire.
+
+-- magazine de mode --
+
+Le magazine à pour titre principal : "Les Tendances Printanières : Florals et Pastels en Vogue"
+C'est la parution du 23 mai.
+
+Dans cet article de mode, nous explorons les tendances incontournables du printemps, mettant en lumière l'omniprésence des motifs floraux et des tons pastel sur les podiums et dans les rues.
+Des robes légères aux accessoires délicats, le printemps est synonyme de fraîcheur et de féminité avec ces choix de couleurs et de motifs.
+L'article propose également des conseils pour intégrer ces tendances dans votre garde-robe, afin d'adopter un look printanier chic et moderne.
+Vous le rangez dans votre inventaire.
+
+- petite poubelle -
+
+La poubelle est vide à l'exception d'un bout de post it déchiré.
+
+-- post it --
+Sur le bout de post it déchiré, on peut déchiffrer la fin d'une suite de caractères :
+boujtm84
+Vous le rangez dans votre inventaire.
+
+- pot de fleur -
+
+Le pot contient une grand plante verte censée égayer la salle de sa tranquilité.
+
+- banc de chaises -
+
+Le banc de chaises dans la salle d'attente est une rangée de sièges rembourrés, disposés sur une base en métal solide.
+Les assises sont recouvertes d'un tissu orangé assorti à la moquette du sol, offrant un ensemble harmonieux à l'espace.
+Des accoudoirs discrets ajoutent un confort supplémentaire.
+
+- porte Est -
+
+La porte est en bois. Peinte en orange, elle se fond complètement dans l'ambiance de la pièce.
+
+- porte Ouest -
+
+La porte de l'open space est en bois clair, avec une poignée chromée brillante, des rainures discrètes courent le long du panneau.
+
+[IDEM POUR TOUTES LES PORTES]
+-- interagir avec la porte sans clé --
+la porte est fermé à clé.
+
+-- intéragir avec la porte avec clé équipée --
+la porte s'ouvre
+{Description du prochaine lieu}
