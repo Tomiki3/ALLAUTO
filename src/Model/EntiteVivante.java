@@ -1,6 +1,6 @@
 package Model;
 
-public abstract class EntiteVivante extends Descriptible {
+public abstract class EntiteVivante extends Localisation {
     protected Boolean verrouille;
 
     public EntiteVivante(String nom, Boolean verrouille) {
@@ -14,5 +14,9 @@ public abstract class EntiteVivante extends Descriptible {
 
     public void setVerrouille(Boolean verrouille) {
         this.verrouille = verrouille;
+    }
+
+    public Descriptible contains(String nomLoc) {
+        return null;
     }
 }

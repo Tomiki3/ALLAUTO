@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public abstract class Meuble extends Descriptible {
+public abstract class Meuble extends Localisation {
     private HashSet<Objet> objets;
     private HashSet<EntiteVivante> interagissables;
 
@@ -68,6 +68,17 @@ public abstract class Meuble extends Descriptible {
                 return curr;
             }
         }
+
+        return null;
+    }
+
+    @Override
+    public Descriptible contains(String nomDesc) {
+        Objet o = this.containsObjet(nomDesc);
+        EntiteVivante ev = this.containsViv(nomDesc);
+
+        if (o != null) {return o;}
+        if (ev != null) {return ev;}
 
         return null;
     }

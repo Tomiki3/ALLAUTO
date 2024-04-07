@@ -23,8 +23,8 @@ public abstract class Contenant extends EntiteVivante {
         objets.remove(o);
     }
 
-    // Même méthode que dans Meuble, ça fait chier
-    public Objet containsObjet(String nomObjet) {
+    @Override
+    public Descriptible contains(String nomObjet) {
         Iterator<Objet> it = objets.iterator();
 
         while(it.hasNext()) {

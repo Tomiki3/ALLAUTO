@@ -138,22 +138,27 @@ public class InteragissableController {
             else
             {
                 view.ouvrePorte(false);
-                return;
             }
         }
-
-        Iterator<Salle> it = porte.getSalles().iterator();
-
-        while (it.hasNext())    // parcourt les salles liées à la porte pour trouver celle dans laquelle on doit aller
+        
+        if (!porte.getVerrouille())
         {
-            Salle room = it.next();
-
-            if (room.getNom() != joueur.getLocalisation().getNom())
+            Iterator<Salle> it = porte.getSalles().iterator();
+            joueur.resetLocalisation(); // on sait qu'on change de salle donc on peut vider la pile de localisations
+        
+            while (it.hasNext())    // parcourt les salles liées à la porte pour trouver celle dans laquelle on doit aller
             {
-                changeSalle(joueur, room);
-                view.entreSalle(room.getNom());
-                view.examiner(room);
-                break;
+                Salle room = it.next();
+                System.out.println("JE SUIS PASSÉ PAR ICI : " + room.getNom() + " boubou : " + joueur.getLocalisation().getNom());
+
+                if (!room.getNom().equals(joueur.getLocalisation().getNom()))
+                {
+                    System.out.println("JE SUIS PASSÉ PAR LA");
+                    changeSalle(joueur, room);
+                    view.entreSalle(room.getNom());
+                    view.examiner(room);
+                    break;
+                }
             }
         }
     }
@@ -185,8 +190,8 @@ public class InteragissableController {
     }
 
     public void changeSalle(Joueur j, Salle salleFin) {
+        j.quitterLocalisation();
         j.setLocalisation(salleFin);
-        j.setMeuble(null);
     }
 
     /**

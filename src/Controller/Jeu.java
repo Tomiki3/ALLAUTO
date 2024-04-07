@@ -5,6 +5,7 @@ import View.*;
 
 import java.util.Iterator;
 import java.util.Scanner;
+import java.lang.reflect.Field;
 
 public class Jeu {
     static InteragissableController interagissableController;
@@ -18,7 +19,7 @@ public class Jeu {
         
         Scanner scan = new Scanner(System.in);
         view.afficheBvn();
-        view.examiner(moi.getLocalisation());
+        view.examiner((Salle) moi.getLocalisation());
         
         // TODO : Patch le problème de la nature des contenants, pck peut pas prendre d'objet dessus si c'est pas des meubles
 
@@ -39,54 +40,42 @@ public class Jeu {
 
                case "examiner":
 
-                    // Si pas de meuble courant, on s'attend à ce que l'entité à examiner soit un meuble
-                    if(moi.getMeuble() == null) 
-                    {                  
-                        String nomMeuble = cible;
-                        Salle maSalle = moi.getLocalisation();
-
-                        if(maSalle.containsMeuble(nomMeuble) == null)
-                        {
-                            view.meubleManquant();
-                            break;
-                        }
-
-                        moi.setLocalisation(maSalle.containsMeuble(nomMeuble));
-                        view.examiner(moi.getMeuble());
+                    if (cible.equals("self")) {
+                        view.examiner(moi.getLocalisation());
+                        break;
                     }
-                    else
+
+                    if (moi.getLocalisation().contains(cible) != null)
                     {
-                        String nomExaminable = cible;
-                        Meuble monMeuble = moi.getMeuble();
-
-                        // on regarde dans un premier temps si l'examinable est un Objet
-                        if(monMeuble.containsObjet(nomExaminable) != null)
+                        view.examiner(moi.getLocalisation().contains(cible));
+                        
+                        if (moi.getLocalisation().contains(cible) instanceof Localisation)
                         {
-                            view.examiner(monMeuble.containsObjet(nomExaminable));
-                            break;
+                            // Verifie que c'est pas une entité vivante à la noix
+                            if (!(moi.getLocalisation().contains(cible) instanceof EntiteVivante) ||
+                                moi.getLocalisation().contains(cible) instanceof Contenant ||
+                                 moi.getLocalisation().contains(cible) instanceof Ordinateur)
+                            {
+                                     System.out.println("Nouvelle localisation : " + moi.getLocalisation().contains(cible).getNom());
+                                     moi.setLocalisation((Localisation) moi.getLocalisation().contains(cible));
+                            }
+                        break;
                         }
-
-                        // si ce n'est pas le cas, on regarde si c'est une EntitéVivante
-                        if (monMeuble.containsViv(nomExaminable) != null)
-                        {
-                            view.examiner(monMeuble.containsViv(nomExaminable)); // cas !Objet et EntitéVivante
-                            break;
-                        }
-                        view.objetManquant(); // cas !Objet et !EntitéVivante  
                     }
 
-                   break;
+                    view.objetManquant(moi.getLocalisation());
+                    break;
 
                 
                 case "interagir":
                 
-                    if (moi.getMeuble() == null)
+                    if (!(moi.getLocalisation() instanceof Meuble))
                     {
                         view.pasInteraction();
                         break;
                     }
 
-                    Meuble monMeuble = moi.getMeuble();
+                    Meuble monMeuble = (Meuble) moi.getLocalisation();
 
                     if (monMeuble.containsViv(cible) == null)
                     {
@@ -100,25 +89,26 @@ public class Jeu {
 
                 case "prendre":
                     String objet = cible;
-                    if (moi.getMeuble() == null)    // joueur n'examine pas un meuble
+                    if (!(moi.getLocalisation() instanceof Meuble))    // joueur n'examine pas un meuble
                     {
                         view.dabordMeuble();
                         break;
                     }
 
-                    if (moi.getMeuble().containsObjet(objet) != null)   // le meuble contient l'objet
+                    Meuble meuble = (Meuble) moi.getLocalisation();
+                    if (meuble.containsObjet(objet) != null)   // le meuble contient l'objet
                     {
-                        prendre(moi, moi.getMeuble().containsObjet(objet));
+                        prendre(moi, meuble.containsObjet(objet));
                         break;
                     }
 
                     // l'objet est peut être contenu dans un contenant sur le meuble
-                    Iterator<Contenant> it = moi.getMeuble().getContenantIterator();
+                    Iterator<Contenant> it = meuble.getContenantIterator();
                     Objet o = null;
                     while(it.hasNext())
                     {
                         Contenant cont = it.next();
-                        o = cont.containsObjet(cible);
+                        o = (Objet) cont.contains(cible);
                         if (o != null)
                         {
                             prendre(moi, o);
@@ -128,7 +118,7 @@ public class Jeu {
                     }
                     
                     if (o == null) {
-                        view.pasPrendre(moi.getMeuble().getNom());
+                        view.pasPrendre(meuble.getNom());
                     }
                     
                     break;
@@ -154,11 +144,11 @@ public class Jeu {
 
 
                 case "quitter":
-                    if (moi.getMeuble() != null) {
-                        view.quitter(moi.getMeuble().getNom());
+                    if (!(moi.getLocalisation() instanceof Salle)) {
+                        view.quitter(moi.getLocalisation().getNom());
+                        quitter(moi);
                     }
-                    
-                    quitter(moi);
+
                     view.examiner(moi.getLocalisation());
                     break;
 
@@ -206,7 +196,7 @@ public class Jeu {
         Clef clefQuatre = new Clef("clef de quatre");
         clefQuatre.setDescription("Une clef de quatre.");
         
-        Porte porte = new Porte(false, clefDouze);
+        Porte porte = new Porte(true, clefDouze);
         porte.setDescription("Une belle porte en bois de hêtre.");
         porte.setSalles(salle1, salle2);
 
@@ -243,8 +233,8 @@ public class Jeu {
      * Nous fait quitter l'examination du meuble courant
      */
     public static void quitter(Joueur j) {
-        j.setMeuble(null);
-    }  
+        j.quitterLocalisation();
+    }
     
     public static void seConnecter(Ordinateur ordi, String identifiant) {
         if (ordi.getIdentifiant().equals(identifiant))
@@ -269,7 +259,7 @@ public class Jeu {
 
     public static void prendre(Joueur moi, Objet obj) {
         moi.getInventaire().addObjet(obj);
-        moi.getMeuble().removeObjet(obj);
+        ((Meuble) moi.getLocalisation()).removeObjet(obj);
         view.prendre(obj.getNom());
     }
 }
