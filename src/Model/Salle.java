@@ -3,7 +3,7 @@ package Model;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Salle extends Descriptible {
+public class Salle extends Localisation {
     private HashSet<Meuble> meubles;
 
     public Salle() {
@@ -30,7 +30,8 @@ public class Salle extends Descriptible {
      * @param nomMeuble Le nom du meuble que l'on recherche
      * @return
      */
-    public Meuble containsMeuble(String nomMeuble) {
+    @Override
+    public Descriptible contains(String nomMeuble) {
         Iterator<Meuble> it = meubles.iterator();
 
         while(it.hasNext()) {

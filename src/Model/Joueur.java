@@ -1,40 +1,40 @@
 package Model;
 
+import java.util.Stack;
+
 public class Joueur {
-    private Salle localisation;
-    private Meuble meuble;  //peut valoir null si le joueur est juste dans une salle
+    private Stack<Localisation> localisation;
     private Inventaire inventaire;
     private boolean enVie;
 
     public Joueur(Salle salle1) {
-        this.localisation = salle1;
-        this.meuble = null;
+        this.localisation = new Stack<>();
+        this.localisation.push(salle1);
         this.inventaire = new Inventaire();
         this.enVie = true;
     }
     
-    public void setLocalisation (Salle newSalle) {
-        this.localisation = newSalle;
+    public void setLocalisation (Localisation newLoc) {
+        if (newLoc instanceof Salle) {
+            this.localisation.push(newLoc);
+        }
+        else if (this.localisation.peek().contains(newLoc.getNom()) != null) {
+            this.localisation.push(newLoc);
+        }
     }
 
-    /**
-     * Surcharge de la méthode. La localisation peut autant convenir à une salle qu'à un meuble.
-     * @param newMeuble
-     */
-    public void setLocalisation (Meuble newMeuble) {
-        this.meuble = newMeuble;
+    public Localisation getLocalisation() {
+        return this.localisation.peek();
     }
 
-    public Salle getLocalisation() {
-        return this.localisation;
+    public Localisation quitterLocalisation() {
+        return this.localisation.pop();
     }
 
-    public void setMeuble(Meuble meuble) {
-        this.meuble = meuble;
-    }
-
-    public Meuble getMeuble() {
-        return this.meuble;
+    public void resetLocalisation() {
+        while (!(this.localisation.peek() instanceof Salle)) {
+            this.localisation.pop();
+        }
     }
 
     public Inventaire getInventaire() {

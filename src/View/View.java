@@ -22,12 +22,40 @@ public class View {
         System.out.println("");
     }
 
-    public void meubleManquant() {
+    public void objetManquant(Localisation l) {
+        if (l instanceof Salle) {
+            objetManquant((Salle) l);
+        }
+        else if (l instanceof Meuble) {
+            objetManquant((Meuble) l);
+        }
+        else if (l instanceof EntiteVivante) {
+            if (l instanceof Contenant) {
+                objetManquant((Contenant) l);
+            }
+            else if (l instanceof Ordinateur) {
+                objetManquant((Ordinateur) l);
+            }
+            else {
+                System.out.println("Il n'y a rien à examiner dans cette interagissable.");
+            }
+        }
+    }
+
+    public void objetManquant(Salle s) {
         System.out.println("Le meuble que vous souhaitez examiner n'est pas présent dans la salle.");
     }
     
-    public void objetManquant() {
+    public void objetManquant(Meuble m) {
         System.out.println("L'objet que vous souhaitez examiner n'est pas présent sur le meuble.");                      
+    }
+
+    public void objetManquant(Contenant c) {
+        System.out.println("L'objet que vous souhaitez examiner n'est pas présent dans le contenant.");                      
+    }
+
+    public void objetManquant(Ordinateur o) {
+        System.out.println("Le repertoire que vous souhaitez examiner n'est pas présent dans l'ordinateur.");                      
     }
 
     public void ouvrePorte(Boolean possible) {
@@ -95,6 +123,27 @@ public class View {
 
     public void mauvaisId() {
         System.out.println("Mauvais identifiant");
+    }
+
+    public void examiner(Descriptible d) {
+        if (d instanceof Salle) {
+            examiner((Salle) d);
+        }
+        else if (d instanceof Objet) {
+            examiner((Objet) d);
+        }
+        else if (d instanceof EntiteVivante) {
+            examiner((EntiteVivante) d);
+        }
+        else if (d instanceof Meuble) {
+            examiner((Meuble) d);
+        }
+        else if (d instanceof Inventaire) {
+            examiner((Inventaire) d);
+        }
+        else if (d instanceof Contenant) {
+            examiner((Contenant) d);
+        }
     }
 
     public void examiner(Salle s) {
