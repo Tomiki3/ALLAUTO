@@ -5,7 +5,6 @@ import View.*;
 
 import java.util.Iterator;
 import java.util.Scanner;
-import java.lang.reflect.Field;
 
 public class Jeu {
     static InteragissableController interagissableController;

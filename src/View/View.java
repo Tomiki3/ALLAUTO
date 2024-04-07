@@ -82,7 +82,7 @@ public class View {
     public void ordiConnexion(Boolean idvalide, Boolean mdpvalide) {
         if (idvalide && mdpvalide){
             System.out.println("connexion en cours");
-            Thread.sleep(3);
+            System.out.println("");
         }
         else {
             if (!(idvalide)){
@@ -95,28 +95,28 @@ public class View {
     }
 
     public void IASalut() {
-        System.out.println("Un texte s'affiche : Bienvenu.e à XIMRINE, que puis-je faire pour vous ?")
-        System.out.println("Un prompt apparait à l'écran.")
+        System.out.println("Un texte s'affiche : Bienvenu.e à XIMRINE, que puis-je faire pour vous ?");
+        System.out.println("Un prompt apparait à l'écran.");
     }
 
-    public void IAlisteQuest(ia) {
-        System.out.println("voici les questions que vous pouvez poser :")
+    public void IAlisteQuest(IA ia) {
+        System.out.println("voici les questions que vous pouvez poser :");
         
-        for (int i = 0; i<ia.getSize; i++)
+        for (int i = 0; i<ia.getSize(); i++)
         {
-            System.out.println("["+i+"]"+" "+ia.Questions[i])
+            System.out.println("["+i+"]"+" "+ia.getQuestion(i));
         }
     }
 
     public void IAQuest(int numQuest, IA ia){
-        if (0 <= numQuest < ia.getSize())
+        if (0 <= numQuest && numQuest < ia.getSize())
         {
-            System.out.println(ia.Questions[numQuest]);
-            System.out.println(ia.Reponses[numQuest]);
+            System.out.println(ia.getQuestion(numQuest));
+            System.out.println(ia.getReponse(numQuest));
         }
         else
         {
-            Systeme.out.println("Rentrer le numéro de la question à poser ou quitter")
+            System.out.println("Rentrer le numéro de la question à poser ou quitter");
         }
     }
 

@@ -1,6 +1,6 @@
 package Model;
 
-public class Repertoire extends Localisation {
+public class Repertoire {
 
     public Repertoire() {
         // TODO

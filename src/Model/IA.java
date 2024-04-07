@@ -1,8 +1,9 @@
 package Model;
+import java.util.ArrayList;
 
 public class IA extends EntiteVivante{
-    private Arraylist<String> Questions = new Arraylist<String>;
-    private Arraylist<String> Reponses = new Arraylist<String>;
+    private ArrayList<String> Questions = new ArrayList<String>();
+    private ArrayList<String> Reponses = new ArrayList<String>();
     private int size = 0;
 
     public IA(String nom, Boolean verrouille) {
@@ -15,7 +16,15 @@ public class IA extends EntiteVivante{
         size++;
     }
 
-    public void getSize() {
-        return size;
+    public int getSize() {
+        return this.size;
+    }
+
+    public String getQuestion(int i) {
+        return Questions.get(i);
+    }
+
+    public String getReponse(int i) {
+        return Reponses.get(i);
     }
 }

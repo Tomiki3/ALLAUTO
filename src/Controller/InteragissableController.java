@@ -81,6 +81,7 @@ public class InteragissableController {
         view.IASalut();
         view.IAlisteQuest(ia);
 
+        Scanner scan = new Scanner(System.in);
         String action = scan.nextLine();
         while (!(action.equals("quitter"))) {
             // on récupère le numéro de la question qu'on veut poser
@@ -99,6 +100,7 @@ public class InteragissableController {
 
             action = scan.nextLine();
         }        
+        scan.close();
     }
 
     public void interagir(Ordinateur ordi) {
@@ -149,11 +151,9 @@ public class InteragissableController {
             while (it.hasNext())    // parcourt les salles liées à la porte pour trouver celle dans laquelle on doit aller
             {
                 Salle room = it.next();
-                System.out.println("JE SUIS PASSÉ PAR ICI : " + room.getNom() + " boubou : " + joueur.getLocalisation().getNom());
 
                 if (!room.getNom().equals(joueur.getLocalisation().getNom()))
                 {
-                    System.out.println("JE SUIS PASSÉ PAR LA");
                     changeSalle(joueur, room);
                     view.entreSalle(room.getNom());
                     view.examiner(room);
