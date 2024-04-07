@@ -78,10 +78,12 @@ public class InteragissableController {
     }
     
     public void interagir(IA ia) {
+        Scanner scan = new Scanner(System.in);
         view.IASalut();
         view.IAlisteQuest(ia);
+        view.newLine();
 
-        Scanner scan = new Scanner(System.in);
+        view.IAAction();
         String action = scan.nextLine();
         while (!(action.equals("quitter"))) {
             // on récupère le numéro de la question qu'on veut poser
@@ -96,11 +98,16 @@ public class InteragissableController {
             }
 
             // on pose la question correspondante au numéro rentré si ce n'est pas une entrée valide, un message d'erreur apparait
-            view.IAQuest(numQuest, ia);
+            if (0 <= numQuest && numQuest < ia.getSize())
+            {
+                view.IAQuest(numQuest, ia);
+            }
 
+            view.newLine();
+            view.IAAction();
             action = scan.nextLine();
-        }        
-        scan.close();
+            view.newLine();
+        }
     }
 
     public void interagir(Ordinateur ordi) {
@@ -114,6 +121,8 @@ public class InteragissableController {
 
             ordi.setVerrouille(false);
             view.ordiAllume(true);
+            view.examiner(ordi);
+            joueur.setLocalisation(ordi);
         }
         // Si ordi éteint, essaye de l'allumer --> peut fonctionner ou non
         // Si allumé, donne le choix de se connecter ou d'interagir avec l'IA
@@ -123,7 +132,20 @@ public class InteragissableController {
         Boolean idvalide = (id.equals(ordi.getIdentifiant()));
         Boolean mdpvalide = (mdp.equals(ordi.getmdp()));
 
-        view.ordiConnexion(idvalide, mdpvalide);
+        if (idvalide && mdpvalide) {
+            view.connexionReussie();
+            joueur.setLocalisation(ordi.getBureau());
+            view.examiner(ordi.getBureau());
+        }
+        else {
+            if (!(idvalide)) {
+                view.idinvalide();
+                return;
+            }
+            else {
+                view.mdpinvalide();
+            }
+        }
     }
 
     public void interagir(Porte porte) {

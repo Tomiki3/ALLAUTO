@@ -5,13 +5,17 @@ public class Ordinateur extends EntiteVivante {
     private String identifiant;
     private String motDePasse;
     private boolean allumable;
+    private Repertoire bureauOrdi;
 
-    public Ordinateur(String nom, boolean eteint, String identifiant, IA ia, boolean allumable, String mdp) {
+    public Ordinateur(String nom, boolean eteint, String identifiant, IA ia, boolean allumable, String mdp, Repertoire bureau) {
         super(nom, eteint); // verrouille == eteint
         this.ia = ia;
         this.identifiant = identifiant;
         this.motDePasse = mdp;
         this.allumable = allumable;
+        this.bureauOrdi = bureau;
+        this.setDescription("Deux options sont sélectionnables : se connecter ou interagir avec " + ia.getNom() + ".\n"+
+                                "Connexion : connecter [identifiant] [mot de passe]");
     }
 
     public boolean getAllumable() {
@@ -30,4 +34,14 @@ public class Ordinateur extends EntiteVivante {
         return ia;
     }
 
+    public Repertoire getBureau() {
+        return bureauOrdi;
+    }
+
+    public Descriptible contains(String nomLoc) {
+        if (nomLoc.equals(ia.getNom())){
+            return ia;
+        }
+        return null;
+    }
 }

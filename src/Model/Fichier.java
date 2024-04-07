@@ -1,4 +1,4 @@
-Package Model;
+package Model;
 
 public class Fichier extends Descriptible {
     

@@ -6,6 +6,9 @@ import Model.*;
 
 public class View {
 
+    private final String Normal = "\u001B[0m";
+    private final String Green = "\033[1;32m";
+
     public View() {
 
     }
@@ -15,7 +18,7 @@ public class View {
     }
 
     public void choixAction() {
-        System.out.print("\nVeuillez réaliser une action : ");
+        System.out.print(Green + "\nVeuillez réaliser une action : " + Normal);
     }
 
     public void newLine() {
@@ -72,26 +75,27 @@ public class View {
 
     public void ordiAllume(Boolean possible) {
         if (possible) {
-            System.out.println("En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou interagire avec IA.\n" + //
-                                "Connexion : connecter [identifiant] [mot de passe]");
+            System.out.println("Vous allumez l'ordinateur.\n");
         } else {
             System.out.println("L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.");
         }
     }
 
-    public void ordiConnexion(Boolean idvalide, Boolean mdpvalide) {
-        if (idvalide && mdpvalide){
-            System.out.println("connexion en cours");
-            System.out.println("");
-        }
-        else {
-            if (!(idvalide)){
-                System.out.println("identifiant incorrect");
-            }
-            if (!(mdpvalide)){
-                System.out.println("mot de passe incorrect");
-            }
-        }
+    public void connexionReussie(){
+        System.out.println("connexion en cours");
+        System.out.println("");
+    }
+
+    public void idinvalide(){
+        System.out.println("identifiant invalide");
+    }
+
+    public void mdpinvalide(){
+        System.out.println("mot de passe invalide");
+    }
+
+    public void ordiAvantConnexion() {
+        System.out.println("il faut être devant un ordinateur pour pouvoir se connecter");
     }
 
     public void IASalut() {
@@ -108,16 +112,15 @@ public class View {
         }
     }
 
+    public void IAAction(){
+        System.out.print(Green + "Rentrer le numéro de la question à poser ou quitter :" + Normal);
+    }
+
     public void IAQuest(int numQuest, IA ia){
-        if (0 <= numQuest && numQuest < ia.getSize())
-        {
-            System.out.println(ia.getQuestion(numQuest));
-            System.out.println(ia.getReponse(numQuest));
-        }
-        else
-        {
-            System.out.println("Rentrer le numéro de la question à poser ou quitter");
-        }
+
+        System.out.println("\n>>" + ia.getQuestion(numQuest));
+        newLine();
+        System.out.println("IA : " + ia.getReponse(numQuest));
     }
 
     public void pasInteraction() {
@@ -184,6 +187,12 @@ public class View {
         }
         else if (d instanceof Contenant) {
             examiner((Contenant) d);
+        }
+        else if (d instanceof Repertoire) {
+            examiner((Repertoire) d);
+        }
+        else if (d instanceof Fichier) {
+            examiner((Fichier) d);
         }
     }
 
@@ -276,6 +285,14 @@ public class View {
                 System.out.print(", ");
         }
         System.out.println(".");
+    }
+
+    public void examiner(Repertoire rep) {
+        System.out.println(rep.getDescription());
+    }
+
+    public void examiner(Fichier fich) {
+        System.out.println(fich.getDescription());
     }
 
     public void prendre(String nom) {

@@ -37,7 +37,7 @@ public class Jeu {
 
             switch(action) {
 
-               case "examiner":
+                case "examiner":
 
                     if (cible.equals("self")) {
                         view.examiner(moi.getLocalisation());
@@ -68,22 +68,38 @@ public class Jeu {
                 
                 case "interagir":
                 
-                    if (!(moi.getLocalisation() instanceof Meuble))
+                    if (!(moi.getLocalisation() instanceof Meuble) && !(moi.getLocalisation() instanceof Ordinateur))
                     {
                         view.pasInteraction();
                         break;
                     }
+                    
+                    if (moi.getLocalisation() instanceof Meuble){
+                        Meuble monMeuble = (Meuble) moi.getLocalisation();
 
-                    Meuble monMeuble = (Meuble) moi.getLocalisation();
+                        if (monMeuble.containsViv(cible) == null)
+                        {
+                            view.pasInteractionObj();
+                            break;
+                        }
 
-                    if (monMeuble.containsViv(cible) == null)
-                    {
-                        view.pasInteractionObj();
+                        interagissableController.interagir(monMeuble.containsViv(cible));
                         break;
                     }
 
-                    interagissableController.interagir(monMeuble.containsViv(cible));
-                    break;
+                    else if (moi.getLocalisation() instanceof Ordinateur){
+                        Ordinateur monOrdi = (Ordinateur) moi.getLocalisation();
+
+                        if (monOrdi.contains(cible) == null)
+                        {
+                            view.pasInteractionObj();
+                            break;
+                        }
+                        
+                        interagissableController.interagir((IA) monOrdi.contains(cible));
+                        view.examiner(moi.getLocalisation());
+                        break;
+                    }
 
 
                 case "prendre":
@@ -151,8 +167,18 @@ public class Jeu {
                     view.examiner(moi.getLocalisation());
                     break;
 
+                case "connecter":
+                    if (!(moi.getLocalisation() instanceof Ordinateur)) {
+                        view.ordiAvantConnexion();
+                    }
 
-               default:
+                    String id = cible.split(" ")[0];
+                    String mdp = cible.split(" ")[1];
+
+                    interagissableController.connecter((Ordinateur) moi.getLocalisation(), id, mdp);
+                    break;
+
+                default:
                     view.impossible();
                     break;
             }
@@ -168,9 +194,25 @@ public class Jeu {
         savon.setDescription("Ce savon à l'air vieux." +
         "Personnellement, je ne le toucherai pas même avec un baton.");
 
+        Fichier fichTest = new Fichier("Fichier Test", "pas ouf le fichier");
+
+        Repertoire repTest = new Repertoire("Répertoire de Test");
+        repTest.addFichier(fichTest);
+        repTest.setDescription();
+
+        Repertoire burOrdi = new Repertoire("Bureau OrdiTest");
+        burOrdi.addRep(repTest);
+        burOrdi.setDescription();
+
+        IA IAtest = new IA("IATest", false);
+        IAtest.setQuestRep("Bonjour?", "Coucou");
+
+        Ordinateur ordiTest = new Ordinateur("OrdiTest", true, "Jhonny", IAtest, true, "1234", burOrdi);
+
         Table table = new Table();
         table.setDescription("C'est une jolie table en bois, machallita");
         table.addObjet(savon);
+        table.addEntitViv(ordiTest);
         
         Fenetre fenetre = new Fenetre(true);
         fenetre.setDescription("Une fenêtre commune. Il ne vous viendrait jamais à l'idée de sauter au travers.");
