@@ -44,10 +44,51 @@ public class View {
 
     public void ordiAllume(Boolean possible) {
         if (possible) {
-            System.out.println("En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou IA.\n" + //
-                                "Connexion : connecter [nom_machine] [identifiant]");
+            System.out.println("En allumant l'ordinateur, deux options sont sélectionnables : se connecter ou interagire avec IA.\n" + //
+                                "Connexion : connecter [identifiant] [mot de passe]");
         } else {
             System.out.println("L'ordinateur est éteint et ne semble pas répondre aux tentatives de démarrage.");
+        }
+    }
+
+    public void ordiConnexion(Boolean idvalide, Boolean mdpvalide) {
+        if (idvalide && mdpvalide){
+            System.out.println("connexion en cours");
+            Thread.sleep(3);
+        }
+        else {
+            if (!(idvalide)){
+                System.out.println("identifiant incorrect");
+            }
+            if (!(mdpvalide)){
+                System.out.println("mot de passe incorrect");
+            }
+        }
+    }
+
+    public void IASalut() {
+        System.out.println("Un texte s'affiche : Bienvenu.e à XIMRINE, que puis-je faire pour vous ?")
+        System.out.println("Un prompt apparait à l'écran.")
+    }
+
+    public void IAlisteQuest(ia) {
+        System.out.println("voici les questions que vous pouvez poser :")
+        
+        for (int i = 0; i<ia.getSize; i++)
+        {
+            System.out.println("["+i+"]"+" "+ia.Questions[i])
+        }
+    }
+
+    public void IAQuest(int numQuest, IA ia){
+        if (0 <= numQuest < ia.getSize())
+        {
+            System.out.println(ia.Questions[numQuest]);
+            System.out.println(ia.Reponses[numQuest]);
+        }
+        else
+        {
+            Systeme.out.println("Rentrer le numéro de la question à poser ou quitter")
         }
     }
 
@@ -91,10 +132,6 @@ public class View {
 
     public void mort() {
         System.out.println("Vous êtes mort. Le jeu est fini.");
-    }
-
-    public void mauvaisId() {
-        System.out.println("Mauvais identifiant");
     }
 
     public void examiner(Salle s) {

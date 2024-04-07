@@ -78,7 +78,27 @@ public class InteragissableController {
     }
     
     public void interagir(IA ia) {
-        //TODO Faire un arbre des choix avec les répliques possibles de l'IA
+        view.IASalut();
+        view.IAlisteQuest(ia);
+
+        String action = scan.nextLine();
+        while (!(action.equals("quitter"))) {
+            // on récupère le numéro de la question qu'on veut poser
+            int numQuest;
+            try 
+            {
+                numQuest = Integer.valueOf(action);
+            }
+            catch (NumberFormatException e)
+            {
+                numQuest = -1;
+            }
+
+            // on pose la question correspondante au numéro rentré si ce n'est pas une entrée valide, un message d'erreur apparait
+            view.IAQuest(numQuest, ia);
+
+            action = scan.nextLine();
+        }        
     }
 
     public void interagir(Ordinateur ordi) {
@@ -95,6 +115,13 @@ public class InteragissableController {
         }
         // Si ordi éteint, essaye de l'allumer --> peut fonctionner ou non
         // Si allumé, donne le choix de se connecter ou d'interagir avec l'IA
+    }
+
+    public void connecter(Ordinateur ordi, String id, String mdp) {
+        Boolean idvalide = (id.equals(ordi.getIdentifiant()));
+        Boolean mdpvalide = (mdp.equals(ordi.getmdp()));
+
+        view.ordiConnexion(idvalide, mdpvalide);
     }
 
     public void interagir(Porte porte) {
