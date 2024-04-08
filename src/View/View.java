@@ -145,7 +145,7 @@ public class View {
         System.out.println("IA : " + ia.getReponse(numQuest));
     }
 
-    public void pasInteraction() {
+    public void interactionImpossible() {
         System.out.println("Aucun objet interagissable n'est à votre portée.");
     }
 
@@ -153,11 +153,11 @@ public class View {
         System.out.println("Chaque objet est posé sur un meuble.\nVous devez d'abord examiner un meuble avant de vouloir prendre un objet.");
     }
 
-    public void pasInteractionObj() {
+    public void InteractionObjImpossible() {
         System.out.println("L'objet avec lequel vous souhaitez interagir n'appartient pas au meuble que vous examinez.");
     }
 
-    public void pasPrendre(String nom) {
+    public void prendreImpossible(String nom) {
         System.out.println(nom + " ne contient pas l'objet que vous souhaitez prendre.");
     }
 
@@ -175,7 +175,7 @@ public class View {
         System.out.println("Vous quittez " + nom + ".");
     }
 
-    public void impossible() {
+    public void actionImpossible() {
         System.out.println("Cette action est actuellement impossible à réaliser.");
         System.out.println("Entrer la commande \"help\" si besoin d'aide");
     }

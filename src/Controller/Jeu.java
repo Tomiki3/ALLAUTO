@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Jeu {
-    static InteragissableController interagissableController;
+    static InteractionController interagissableController;
     static View view;
     
     public static void main(String[] args) {
@@ -15,14 +15,14 @@ public class Jeu {
         Episode ep = EpisodeInitJeu();
 
         // initialisation du joueur
-        Joueur moi = new Joueur(ep.getSalledep());
+        Joueur moi = new Joueur(ep.getSalleDep());
 
         // initialisation de la localisation de fin d'épisode
         Localisation contraintefin = ep.getLocfin();
 
         // initialise une vue et un controlleur
         view = new View();
-        interagissableController = new InteragissableController(moi, view);
+        interagissableController = new InteractionController(moi, view);
         
         // initialise un scanner pour la ligne de commande
         Scanner scan = new Scanner(System.in);
@@ -95,7 +95,7 @@ public class Jeu {
                 
                     if (!(moi.getLocalisation() instanceof Meuble) && !(moi.getLocalisation() instanceof Ordinateur))
                     {
-                        view.pasInteraction();
+                        view.interactionImpossible();
                         break;
                     }
                     
@@ -104,7 +104,7 @@ public class Jeu {
 
                         if (monMeuble.containsViv(cible) == null)
                         {
-                            view.pasInteractionObj();
+                            view.InteractionObjImpossible();
                             break;
                         }
 
@@ -117,7 +117,7 @@ public class Jeu {
 
                         if (monOrdi.contains(cible) == null)
                         {
-                            view.pasInteractionObj();
+                            view.InteractionObjImpossible();
                             break;
                         }
                         
@@ -158,7 +158,7 @@ public class Jeu {
                     }
                     
                     if (o == null) {
-                        view.pasPrendre(meuble.getNom());
+                        view.prendreImpossible(meuble.getNom());
                     }
                     
                     break;
@@ -224,7 +224,7 @@ public class Jeu {
                     view.help();
 
                 default:
-                    view.impossible();
+                    view.actionImpossible();
                     break;
             }
         }
@@ -735,26 +735,10 @@ public class Jeu {
         j.setfinep(true);
     }
     
-    public static void seConnecter(Ordinateur ordi, String identifiant) {
-        if (ordi.getIdentifiant().equals(identifiant))
-        {
-            // faire les trucs qu'on peut faire pendant la connection
-        }
-        else
-        {
-            view.mauvaisId();
-        }
-    }
-    
     public static void prendre(Joueur j, Meuble m, Objet o) {
         m.removeObjet(o);
         j.getInventaire().addObjet(o);
     }
-
-    public static void equiper(Joueur j, Objet o) {
-        j.getInventaire().setObjetEquipe(o);
-    }
-
 
     public static void prendre(Joueur moi, Objet obj) {
         moi.getInventaire().addObjet(obj);

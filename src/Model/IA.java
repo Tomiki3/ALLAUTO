@@ -2,18 +2,20 @@ package Model;
 import java.util.ArrayList;
 
 public class IA extends EntiteVivante{
-    private ArrayList<String> Questions = new ArrayList<String>();
-    private ArrayList<String> Reponses = new ArrayList<String>();
+    private ArrayList<String> questions;
+    private ArrayList<String> reponses;
     private int size = 0;
 
     public IA(String nom, Boolean verrouille) {
         super(nom, verrouille);
+        this.questions = new ArrayList<String>();
+        this.reponses = new ArrayList<String>();
     }
 
     // permet d'ajouter une question et une réponse à l'IA (utilisée dans l'initialisation du jeu)
     public void setQuestRep(String quest, String rep) {
-        Questions.add(quest);
-        Reponses.add(rep);
+        questions.add(quest);
+        reponses.add(rep);
         size++;
     }
 
@@ -22,10 +24,10 @@ public class IA extends EntiteVivante{
     }
 
     public String getQuestion(int i) {
-        return Questions.get(i);
+        return questions.get(i);
     }
 
     public String getReponse(int i) {
-        return Reponses.get(i);
+        return reponses.get(i);
     }
 }

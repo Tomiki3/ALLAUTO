@@ -9,14 +9,14 @@ public class Joueur {
     private Stack<Localisation> localisation;
     private Inventaire inventaire;
     private boolean enVie;
-    private boolean finep;
+    private boolean finEp;
 
     public Joueur(Salle salle1) {
         this.localisation = new Stack<>();
         this.localisation.push(salle1);
         this.inventaire = new Inventaire();
         this.enVie = true;
-        this.finep = false;
+        this.finEp = false;
     }
     
     public void setLocalisation (Localisation newLoc) {
@@ -60,10 +60,10 @@ public class Joueur {
     }
 
     public boolean getfinep() {
-        return this.finep;
+        return this.finEp;
     }
 
     public void setfinep(boolean episodetermine){
-        this.finep = episodetermine;
+        this.finEp = episodetermine;
     }
 }

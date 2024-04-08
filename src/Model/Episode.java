@@ -6,19 +6,19 @@ package Model;
  * On suppose qu'un épisode se termine lorsque le joueur quitte la localisation contfin.
  */
 public class Episode {
-    private Salle salledep;
-    private Localisation contfin;
+    private Salle salleDep;
+    private Localisation contFin;
 
     public Episode(Salle salldep, Localisation contfin){
-        this.salledep = salldep;
-        this.contfin = contfin;
+        this.salleDep = salldep;
+        this.contFin = contfin;
     }
 
-    public Salle getSalledep(){
-        return salledep;
+    public Salle getSalleDep(){
+        return salleDep;
     }
 
     public Localisation getLocfin(){
-        return contfin;
+        return contFin;
     }
 }

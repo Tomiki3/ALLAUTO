@@ -21,12 +21,12 @@ import View.View;
  * partie controlleur de l'architecture MVC.
  * Permet de manipuler les objets et d'afficher les bonnes informations à l'écran.
  */
-public class InteragissableController {
+public class InteractionController {
     Joueur joueur;
     View view;
     Jeu jeu;
 
-    public InteragissableController(Joueur j, View v) {
+    public InteractionController(Joueur j, View v) {
         joueur = j;
         view = v;
     }
@@ -229,7 +229,7 @@ public class InteragissableController {
                 interagir((Porte) e);
                 break;
             default:
-                view.impossible();
+                view.actionImpossible();
                 break;
         }
     }
