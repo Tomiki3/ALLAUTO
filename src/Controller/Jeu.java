@@ -338,7 +338,7 @@ public class Jeu {
         rapportDeCrise.addFichier(captureEcranMail);
         rapportDeCrise.setDescription();
         
-        Repertoire bureauOrdiBurInit = new Repertoire("Bureau de l'ordinateur du bureau Initial");
+        Repertoire bureauOrdiBurInit = new Repertoire("Bureau de l'ordinateur du bureau initial");
         bureauOrdiBurInit.addRep(rapportDeCrise);
         bureauOrdiBurInit.setDescription();
 
@@ -368,17 +368,17 @@ public class Jeu {
         etagereBurInit.setDescription(  "Sur l'étagère se trouvent des livres d'informatique, de logique, d'IA...\n"+
                                         "L'étagère est décorée de plusieurs figurines inconnues d'une dizaine de centimètres.\n");
 
-        PostIt postIt1 = new PostIt("morceau de post It gauche");
-        postIt1.setDescription( "Sur le bout de post it déchiré, il est écrit :"+
+        PostIt postIt1 = new PostIt("morceau de post it gauche");
+        postIt1.setDescription( "Sur le bout de post it déchiré, il est écrit :\n"+
                                 "JeanneF\n"+
                                 "Tonymonbe/\n"+
                                 "Il semble que la deuxième ligne est coupée à cause de la déchirure.\n");
 
-        Poubelle poubelleBurInit = new Poubelle("poubelle du bureau Initial");
+        Poubelle poubelleBurInit = new Poubelle("poubelle du bureau");
         poubelleBurInit.setDescription("La poubelle est vide à l'exception d'un bout de post it déchiré au fond de cette dernière.");
         poubelleBurInit.addObjet(postIt1);
 
-        Mur murNordBurInit = new Mur("mur nord du bureau initial");
+        Mur murNordBurInit = new Mur("mur nord du bureau");
 
         Fenetre fenetreSudBurInit = new Fenetre(true);
         fenetreSudBurInit.setDescription(   "Vous vous approchez de la fenêtre.\n"+
@@ -388,7 +388,7 @@ public class Jeu {
                                             "Vous-même êtes dans une tour assez haute.\n"+
                                             "Vous vous trouvez à plusieurs étages du sol.\n"); 
 
-        Mur murSudBurInit = new Mur("mur sud du bureau initial");
+        Mur murSudBurInit = new Mur("mur sud du bureau");
         murSudBurInit.addEntitViv(fenetreSudBurInit);
 
         Salle bureauInitial = new Salle("Bureau initial");
