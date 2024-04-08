@@ -306,7 +306,7 @@ public class Jeu {
     public static Episode EpisodeInitJeu(){
         // ------ Bureau Initial --------------------------
 
-        Fichier captureEcranMail = new Fichier("Capture d'écran",   "Objet : Réorganisation du personnel suite aux avancées de l'IA\n"+
+        Fichier captureEcranMail = new Fichier("capture d'écran",   "Objet : Réorganisation du personnel suite aux avancées de l'IA\n"+
                                                                         "\n"+
                                                                         "Chère PDG,\n"+
                                                                         "\n"+
@@ -322,23 +322,23 @@ public class Jeu {
                                                                         "Nicolas Moultou\n"+
                                                                         "[DRH de XIMRINE]\n");
 
-        Fichier lettreDeMenace = new Fichier("Lettre de menace",    "La lettre date du 5 janvier.\n"+
+        Fichier lettreDeMenace = new Fichier("lettre de menace",    "La lettre date du 5 janvier.\n"+
                                                                         "Cette lettre exprime le mécontentement des employés de XIMRINE concernant le surmenage et l'exploitation au travail.\n"+
                                                                         "Elle met en garde contre les avancées de l'intelligence artificielle dans l'entreprise, qui menacent les emplois des travailleurs.\n"+
                                                                         "Les employés demandent des garanties pour la préservation de leurs postes et de leurs conditions de travail, menaçant d'actions supplémentaires si des changements ne sont pas apportés.\n");
 
-        Fichier preavisDeGreve = new Fichier("Préavis de Grêve",    "En ouvrant le fichier, on y découvre un préavis de grêve annoncé pour le 1 juin.\n"+
+        Fichier preavisDeGreve = new Fichier("préavis de grêve",    "En ouvrant le fichier, on y découvre un préavis de grêve annoncé pour le 1 juin.\n"+
                                                                         "La raison évoquée est le surmenage au travail dans la société XIMRINE.\n"+
                                                                         "D'autres grèves sont à prévoir dans plusieurs autres domaines d'activités pour dénoncer le développement de l'IA qui menace le travail de beaucoup de gens.\n"+
                                                                         "On y lit que cette grève sera accompagnée d'une manifestation devant les locaux de la société et qu'une entrevue concernant les syndicats et la direction de la société serait la bienvenue.\n");
 
-        Repertoire rapportDeCrise = new Repertoire("Rapport de crise");
+        Repertoire rapportDeCrise = new Repertoire("rapport de crise");
         rapportDeCrise.addFichier(preavisDeGreve);
         rapportDeCrise.addFichier(lettreDeMenace);
         rapportDeCrise.addFichier(captureEcranMail);
         rapportDeCrise.setDescription();
         
-        Repertoire bureauOrdiBurInit = new Repertoire("Bureau de l'ordinateur du Bureau Initial");
+        Repertoire bureauOrdiBurInit = new Repertoire("Bureau de l'ordinateur du bureau Initial");
         bureauOrdiBurInit.addRep(rapportDeCrise);
         bureauOrdiBurInit.setDescription();
 
@@ -349,36 +349,36 @@ public class Jeu {
 
         Ordinateur OrdinateurBurInit = new Ordinateur("Ordinateur", true, "JeanneF", IABurInit, true, "Tonymonbeboujtm84", bureauOrdiBurInit);
 
-        Chaise chaiseBur = new Chaise("Chaise côtés bureau", false);
+        Chaise chaiseBur = new Chaise("chaise côtés bureau", false);
         chaiseBur.setDescription(   "De chaque côté du bureau central se trouve une chaise bleue sur roulette.\n"+
-                                    "Elles ont l'air très confortable.\n");
+                                    "Elles ont l'air très confortables.\n");
 
-        Chaise chaiseCli = new Chaise("Chaise côtés bureau", false);
+        Chaise chaiseCli = new Chaise("chaise côtés client", false);
         chaiseCli.setDescription(   "De chaque côté du bureau central se trouve une chaise bleue sur roulette.\n"+
-                                    "Elles ont l'air très confortable.\n");
+                                    "Elles ont l'air très confortables.\n");
 
-        Table bureauBurInit = new Table("Bureau central");
+        Table bureauBurInit = new Table("bureau central");
         bureauBurInit.setDescription("le bureau est au centre de la pièce.\n"+
                                         "Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfant brun brandissant fièrement une coupe, sur laquelle on peut lire : Tony F.\n");
         bureauBurInit.addEntitViv(OrdinateurBurInit);
         bureauBurInit.addEntitViv(chaiseCli);
         bureauBurInit.addEntitViv(chaiseBur);
 
-        Etagere etagereBurInit = new Etagere("Etagère du bureau");
+        Etagere etagereBurInit = new Etagere("étagère du bureau");
         etagereBurInit.setDescription(  "Sur l'étagère se trouvent des livres d'informatique, de logique, d'IA...\n"+
                                         "L'étagère est décorée de plusieurs figurines inconnues d'une dizaine de centimètres.\n");
 
-        PostIt postIt1 = new PostIt("Morceau de Post It Gauche");
+        PostIt postIt1 = new PostIt("morceau de post It gauche");
         postIt1.setDescription( "Sur le bout de post it déchiré, il est écrit :"+
                                 "JeanneF\n"+
                                 "Tonymonbe/\n"+
                                 "Il semble que la deuxième ligne est coupée à cause de la déchirure.\n");
 
-        Poubelle poubelleBurInit = new Poubelle("Poubelle du bureau Initial");
+        Poubelle poubelleBurInit = new Poubelle("poubelle du bureau Initial");
         poubelleBurInit.setDescription("La poubelle est vide à l'exception d'un bout de post it déchiré au fond de cette dernière.");
         poubelleBurInit.addObjet(postIt1);
 
-        Mur murNordBurInit = new Mur("Mur nord du bureau initial");
+        Mur murNordBurInit = new Mur("mur nord du bureau initial");
 
         Fenetre fenetreSudBurInit = new Fenetre(true);
         fenetreSudBurInit.setDescription(   "Vous vous approchez de la fenêtre.\n"+
@@ -388,10 +388,10 @@ public class Jeu {
                                             "Vous-même êtes dans une tour assez haute.\n"+
                                             "Vous vous trouvez à plusieurs étages du sol.\n"); 
 
-        Mur murSudBurInit = new Mur("Mur sud du bureau initial");
+        Mur murSudBurInit = new Mur("mur sud du bureau initial");
         murSudBurInit.addEntitViv(fenetreSudBurInit);
 
-        Salle bureauInitial = new Salle("Bureau Initial");
+        Salle bureauInitial = new Salle("Bureau initial");
         bureauInitial.setDescription("Le bureau est mystérieusement éclairé par une unique ampoule au plafond.\n"+
                                         "Il fait bon, une odeur d'encens embaume la pièce.\n"+
                                         "Sur les murs, des posters représentant des technologies presque futuristes sont accrochés.\n"+
@@ -405,7 +405,7 @@ public class Jeu {
 
         // ------ PORTE Bur Init / OpenSpace --------------------------
 
-        Salle openSpace = new Salle("Open Space");
+        Salle openSpace = new Salle("Open space");
         openSpace.setDescription(   "L'open space est plongé dans l'obscurité, éclairé sporadiquement par la lueur des ordinateurs et des lumières d'urgence clignotantes.\n"+
                                     "Un silence oppressant règne dans la pièce.\n"+
                                     "Des bruits lointains, comme le grésillement des néons défectueux ou le léger bourdonnement des machines en veille, contribuent à l'ambiance sinistre et déserte de l'endroit.\n"+
@@ -415,7 +415,7 @@ public class Jeu {
                                     "Les chaises sont légèrement déplacées, comme si leurs occupants étaient partis à la hâte.\n"+
                                     "Trois portes fermées à clé sont réparties sur les murs Est et Nord de l'open space.\n");
 
-        Clef clefBurInit = new Clef("Clef 1");
+        Clef clefBurInit = new Clef("clef 1");
         clefBurInit.setDescription("une clef, rien de plus normal.");
         
         Porte porteBurInitOpenSpace = new Porte(true, clefBurInit, "porte en bois");
@@ -428,25 +428,25 @@ public class Jeu {
 
         // ------ Open Space -------------------------------------
 
-        Document documentVert = new Document("Document vert");
+        Document documentVert = new Document("document vert");
         documentVert.setDescription(    "Le document est un contrôle de qualité d'un certain projet intitulé \"MCB le robot émotif\".\n"+
                                         "Le contrôle indique que les tests se sont bien déroulés mais qu'il reste encore quelques précisions à apporter au prototype.\n"+
                                         "Une note globale de 8/10 est donné en bas de page et des annotations illisibles sont disposées un peut partout sur le document.\n");
 
-        Document pageDeJournal = new Document("Page de journal");
+        Document pageDeJournal = new Document("page de journal");
         pageDeJournal.setDescription( "Le titre de la page de journal est : \"XIMRINE : Un projet trop ambitieux ?\"\n"+
                                             "L'article présente la société XIMRINE comme étant l'une des pionnières dans le domaine de l'IA.\n"+
                                             "D'après ce même article, c'est une entreprise à succés qui peut prétendre à un grand avenir.\n"+
                                             "Cependant, l'article continue en mentionnant le dernier projet de l'entreprise, dont le nom est gardé secret pour le moment.\n"+
                                             "Le projet est décrit comme inhumain, immoral et dangereux car il mettrait en péril le fondement même de la société et menacerait le travail de millions de citoyens.\n");
 
-        Ordinateur ordiNord = new Ordinateur("Ordinateur Nord", true, null, IABurInit, false, null, null);
+        Ordinateur ordiNord = new Ordinateur("ordinateur Nord", true, null, IABurInit, false, null, null);
                            
-        Chaise chaiseNord = new Chaise("Chaise nord", false);
+        Chaise chaiseNord = new Chaise("chaise nord", false);
         chaiseNord.setDescription(  "C'est une chaise de bureau bleu nuit.\n"+
                                     "Elle est poussée en arrière, comme si son occupant s'était levé rapidement.");
 
-        Table bureauNord = new Table("Bureau nord");
+        Table bureauNord = new Table("bureau nord");
         bureauNord.setDescription(  "Sur le bureau se trouve un ordinateur éteint avec un écran noir, tandis que des piles de dossiers et de papiers en désordre s'accumulent à côté.\n"+
                                     "Une tasse de café presque vide repose négligemment sur un sous-verre taché.\n"+
                                     "Une chaise de bureau est poussée en arrière, comme si son occupant s'était levé rapidement.\n");
@@ -455,10 +455,10 @@ public class Jeu {
         bureauNord.addEntitViv(ordiNord);
         bureauNord.addEntitViv(chaiseNord);
 
-        PostIt postItBleu = new PostIt("Post it bleu");
+        PostIt postItBleu = new PostIt("post it bleu");
         postItBleu.setDescription("Sur ce post it, on peut lire : NE PAS OUBLIER : ETEINDRE MCB.\n");
 
-        PostIt postItOrange = new PostIt("Post it orange");
+        PostIt postItOrange = new PostIt("post it orange");
         postItOrange.setDescription("Sur ce post it, on peut lire : IMPORTANT : METTRE DESCRIPTION PRECISE DU PROJET DANS LES ARCHIVES [check]\n");
 
         IA IAOS = new IA("IAOS", false);
@@ -473,7 +473,7 @@ public class Jeu {
                                                                                                                                     "Cependant, nous reconnaissons également les défis éthiques et sociaux associés à cette technologie, c'est pourquoi nous mettons un fort accent sur la recherche éthique et responsable.\n"+
                                                                                                                                     "Notre objectif est de développer des IA qui travaillent en symbiose avec l'humanité, tout en respectant les valeurs et les droits fondamentaux.\n");
 
-        Fichier sansNom = new Fichier("Fichier sans nom",   "En ouvrant le fichier, on découvre un gros titre : Lettre de Démission.\n"+
+        Fichier sansNom = new Fichier("fichier sans nom",   "En ouvrant le fichier, on découvre un gros titre : Lettre de Démission.\n"+
                                                                 "Dedans on y lit que Mme LITON, aujourd'hui ingénieure chez XIMRINE, aimerait démissionner de son poste.\n"+
                                                                 "D'après la lettre les raisons sont multiples : les conditions de travails sont décourageantes, le temps et travail investis dans le nouveau projet ont obligé l'ingénieure à sacrifier sa vie de famille, ainsi que ses ami.e.s.\n"+
                                                                 "Une phrase attire l'attention : \"Tout ces sacrifices pour que le prototype ne daigne même pas m'adresser la parole !\"");
@@ -484,13 +484,13 @@ public class Jeu {
         bureauOrdiSud.addFichier(sansNom);
         bureauOrdiSud.setDescription();
 
-        Ordinateur ordiSud = new Ordinateur("Ordinateur sud", false, "", IAOS, true, "", bureauOrdiSud);
+        Ordinateur ordiSud = new Ordinateur("ordinateur sud", false, "", IAOS, true, "", bureauOrdiSud);
 
         Chaise chaiseSud = new Chaise("chaise sud", false);
         chaiseSud.setDescription(   "C'est une simple chaise de bureau en cuir noir, avec des accoudoirs usés par l'usage.\n"+
                                     "Son coussin est légèrement affaissé, témoignant des longues heures passées par son occupant à travailler.\n");
 
-        Table bureauSud = new Table("Bureau sud");
+        Table bureauSud = new Table("bureau sud");
         bureauSud.setDescription(   "L'ordinateur est en veille, affichant une image d'économiseur d'écran.\n"+
                                     "Des notes adhésives sont collées sur le côté de l'écran, contenant des rappels et des idées notées à la hâte.\n"+
                                     "Une lampe de bureau se trouve à côté de l'ordinateur, projetant une faible lueur sur les documents éparpillés.\n"+
@@ -500,23 +500,23 @@ public class Jeu {
         bureauSud.addEntitViv(ordiSud);
         bureauSud.addEntitViv(chaiseSud);
 
-        Document agenda = new Document("Agenda");
+        Document agenda = new Document("agenda");
         agenda.setDescription(      "Sur l'agenda on peut lire : 11h réunion MCB // 15h Donner dossier au Boss // 18h rdv Psychologue.\n"+
                                     "L'agenda est parsemé de petite tâches d'humidité.\n"+
                                     "Comme si un liquide c'était égoutté au dessus.\n"+
                                     "Sur la première page de l'agenda on peut lire M. MIPAIN, et en tout petit en bas de la page : \"bisou de Lison (30/10)\".\n"+
                                     "Sur la page du 30 octobre on y lit : \"ANNIV LISON\"\n");
         
-        Repertoire bureauOrdiOuest = new Repertoire("Bureau de l'ordinateur ouest");
+        Repertoire bureauOrdiOuest = new Repertoire("bureau de l'ordinateur ouest");
         bureauOrdiOuest.setDescription("Le bureau de l'ordinateur est vide");
 
-        Ordinateur ordiOuest = new Ordinateur("Ordinateur ouest", true, "MIPAIN", IAOS, true, "Lison3010", bureauOrdiOuest);
+        Ordinateur ordiOuest = new Ordinateur("ordinateur ouest", true, "MIPAIN", IAOS, true, "Lison3010", bureauOrdiOuest);
 
-        Chaise chaiseOuest = new Chaise("Chaise ouest", false);
+        Chaise chaiseOuest = new Chaise("chaise ouest", false);
         chaiseOuest.setDescription(     "La chaise du bureau ouest est une chaise pivotante en simili cuir brun, avec des accoudoirs rembourrés et une assise légèrement inclinée.\n"+
                                         "Des marques d'usure sont visibles sur les côtés, suggérant une utilisation régulière et prolongée.\n");
 
-        Table bureauOuest = new Table("Bureau ouest");
+        Table bureauOuest = new Table("bureau ouest");
         bureauOuest.setDescription(     "L'ordinateur est allumé, mais l'écran est verrouillé.\n"+
                                         "Des dossiers soigneusement rangés sont empilés sur le bureau, avec un stylo et un agenda ouvert à côté.\n"+
                                         "Une boîte de mouchoirs usagés se trouve à proximité, témoignant peut-être d'une récente frustration ou confusion.\n"+
@@ -525,21 +525,21 @@ public class Jeu {
         bureauOuest.addEntitViv(ordiOuest);
         bureauOuest.addEntitViv(chaiseOuest);
 
-        Document notesManus = new Document("Notes manuscrites");
+        Document notesManus = new Document("notes manuscrites");
         notesManus.setDescription(      "Parmi les notes illisibles et incohérente sans contexte se trouvent plusieurs croquis et schémas.\n"+
                                         "Un dessin, fait à première vue par un enfant, attire l'attention.\n"+
                                         "Le dessin met en scène une sorte de robot humanoïde très grand et une petite fille qui jouent sur une moquette bleue.\n");
         
-        Document documentPapier = new Document("Document papier");
+        Document documentPapier = new Document("document papier");
         documentPapier.setDescription("C'est un document avec une grosse tache d'encre bleue dessus, comme si l'imprimante qui devait le délivrer n'avait pas bien fait son travail.");
 
-        Ordinateur ordiEst = new Ordinateur("Ordinateur est", true, null, IAOS, false, null, null);
+        Ordinateur ordiEst = new Ordinateur("ordinateur est", true, null, IAOS, false, null, null);
 
-        Chaise chaiseEst = new Chaise("Chaise est", false);
+        Chaise chaiseEst = new Chaise("chaise est", false);
         chaiseEst.setDescription(   "C'est une chaise ergonomique en tissu gris, avec un dossier réglable et des roulettes qui semblent encore lisses.\n"+
                                     "Elle donne l'impression d'avoir été récemment utilisée, avec une légère empreinte laissée sur le siège.");
 
-        Table bureauEst = new Table("Bureau est");
+        Table bureauEst = new Table("bureau est");
         bureauEst.setDescription(   "L'ordinateur est éteint, avec une pile de papiers en désordre qui s'étend jusqu'au clavier.\n"+
                                     "Une tasse de café renversée gît à côté de l'ordinateur, laissant une marque brune sur le bureau.\n"+
                                     "Des notes manuscrites sont éparpillées sur la surface de travail, certaines avec des croquis et des schémas.\n"+
@@ -556,44 +556,44 @@ public class Jeu {
         clefTirr.setDescription(    "C'est une clé toute petite ne permettant pas d'ouvrir une porte.\n"+
                                     "Elle serait certainement utile pour ouvrir un tiroir ou un petit cadenas.\n");
 
-        Etagere etagereOpenSpace = new Etagere("Etagère de l'open space");
+        Etagere etagereOpenSpace = new Etagere("étagère de l'open space");
         etagereOpenSpace.setDescription(    "L'étagère se trouve sur le mur nord de la pièce à côtés de la porte et s'étend jusqu'aux fenêtres du mur Ouest.\n"+
                                             "Elle est étonnemment peu remplie.\n");
         etagereOpenSpace.addObjet(cutter);
         etagereOpenSpace.addObjet(clefTirr);
 
-        Document bouleDePapier = new Document("Boule de papier");
+        Document bouleDePapier = new Document("boule de papier");
         bouleDePapier.setDescription(       "En dépliant la boule de papier, on y découvre un message au recto :\n"+
                                             "\"   ykc khuz sh jhmlalyph\n"+
                                             "    Ql kvpz al whysly   \"\n"+
                                             "Et au dos on y lit : C7\n");
 
-        Poubelle poubelleNO = new Poubelle("Poubelle nord ouest");
+        Poubelle poubelleNO = new Poubelle("poubelle nord ouest");
         poubelleNO.setDescription(      "La poubelle est pleine d'épluchures de fruits et de gobelets en cartons.\n"+
                                         "À côté, sur le sol, il y a une boule de papier froissée, comme si son lanceur n'avait pas eu le courage de la reprendre pour la jeter définitivement.\n");
         poubelleNO.addObjet(bouleDePapier);
 
-        Poubelle poubelleSE = new Poubelle("Poubelle sud est");
+        Poubelle poubelleSE = new Poubelle("poubelle sud est");
         poubelleSE.setDescription(  "C'est une petite poubelle noir.\n"+
                                     "Elle a été vidée récemment.\n");
 
         Porte porteEstSud = new Porte(true, null, "porte en métal");
         porteEstSud.setDescription("La porte est robuste, faite de métal épais, avec des charnières visibles et une serrure solide.\n");
 
-        Mur murEstOS = new Mur("Mur est de l'open space");
+        Mur murEstOS = new Mur("mur est de l'open space");
         murEstOS.addEntitViv(porteEstSud);
 
-        Imprimante imprimanteOS = new Imprimante("Imprimante de l'open space", true);
+        Imprimante imprimanteOS = new Imprimante("imprimante de l'open space", true);
         imprimanteOS.setDescription("l'imprimente est éteinte\n");
 
         Porte porteNord = new Porte(true, null, "porte robuste");
         porteNord.setDescription("La porte est robuste et imposante, avec des panneaux en bois sombre et une poignée en métal brillant.\n");
 
-        Mur murNordOS = new Mur("Mur nord de l'open space");
+        Mur murNordOS = new Mur("mur nord de l'open space");
         murNordOS.addEntitViv(porteNord);
         murNordOS.addEntitViv(imprimanteOS);
 
-        Mur murSudOS = new Mur("Mur sud de l'open space");
+        Mur murSudOS = new Mur("mur sud de l'open space");
         murSudOS.addEntitViv(porteBurInitOpenSpace);
 
         Fenetre fenetreOuestOS = new Fenetre(true);
@@ -604,7 +604,7 @@ public class Jeu {
                                             "Vous-même êtes dans une tour assez haute.\n"+
                                             "Vous vous trouvez à plusieurs étages du sol.\n");
 
-        Mur murOuestOS = new Mur("Mur ouest de l'open Space");
+        Mur murOuestOS = new Mur("mur ouest de l'open Space");
         murOuestOS.addEntitViv(fenetreOuestOS);
 
         openSpace.addMeuble(bureauNord);
@@ -629,7 +629,7 @@ public class Jeu {
                                         "Sur une petite table basse au centre de la pièce, des magazines et quelques brochures sont soigneusement disposés, de quoi se divertir.\n"+
                                         "Une lumière douce émane d'un plafonnier encastré, créant une atmosphère chaleureuse et accueillante dans cet espace d'attente tranquille.\n");
 
-        Clef clefPorteOSSalleAtt = new Clef("Clef 2");
+        Clef clefPorteOSSalleAtt = new Clef("clef 2");
         clefPorteOSSalleAtt.setDescription("une nouvelle clef un peu vieille.");
         
         Porte porteOSSA = new Porte(true, clefPorteOSSalleAtt, "vieille porte");
@@ -641,14 +641,14 @@ public class Jeu {
 
         // ------ Salle d'attente --------------------------
 
-        Document revueSci = new Document("Revue scientifique");
+        Document revueSci = new Document("revue scientifique");
         revueSci.setDescription(  "En prenant la revu on tombe rapidement sur un article : \"XIMRINE : Leader de l'IA et de l'Innovation\".\n"+
                                     "\n"+
                                     "Cet article met en lumière le rôle central de XIMRINE dans l'avancement de l'intelligence artificielle (IA).\n"+
                                     "En se concentrant sur des projets innovants comme ALLAUTO, XIMRINE a établi sa réputation en tant que pionnier de l'IA.\n"+
                                     "On y apprend que l'entreprise se distingue par son engagement envers la recherche éthique et son objectif constant d'améliorer la vie grâce à la technologie.\n");
 
-        Document magazieDeMode = new Document("Magazine de mode");
+        Document magazieDeMode = new Document("magazine de mode");
         magazieDeMode.setDescription(   "Le magazine à pour titre principal : \"Les Tendances Printanières : Florals et Pastels en Vogue\"\n"+
                                         "C'est la parution du 23 mai.\n"+
                                         "\n"+
@@ -656,14 +656,14 @@ public class Jeu {
                                         "Des robes légères aux accessoires délicats, le printemps est synonyme de fraîcheur et de féminité avec ces choix de couleurs et de motifs.\n"+
                                         "L'article propose également des conseils pour intégrer ces tendances dans votre garde-robe, afin d'adopter un look printanier chic et moderne.\n");
 
-        Table tableBasse = new Table("Table basse");
+        Table tableBasse = new Table("table basse");
         tableBasse.setDescription(      "La table basse de la salle d'attente est en bois de chêne, polie pour une finition lisse et brillante.\n"+
                                         "Son design minimaliste est accentué par des lignes épurées et des angles droits.\n"+
                                         "Au centre de la table repose un plateau en verre, mettant en valeur les magazines et brochures soigneusement disposés en dessous.\n");
         tableBasse.addObjet(revueSci);
         tableBasse.addObjet(magazieDeMode);
 
-        PostIt postIt2 = new PostIt("Morceau de post it droit");
+        PostIt postIt2 = new PostIt("morceau de post it droit");
         postIt2.setDescription(     "Sur le bout de post it déchiré, on peut déchiffrer la fin d'une suite de caractères :\n"+
                                     "boujtm84\n");
 
@@ -671,24 +671,24 @@ public class Jeu {
         petitePoub.setDescription("La poubelle est vide à l'exception d'un bout de post it déchiré.");
         petitePoub.addObjet(postIt2);
 
-        Table planteEnPot = new Table("Plante en pot");
+        Table planteEnPot = new Table("plante en pot");
         planteEnPot.setDescription("Le pot contient une grand plante verte censée égayer la salle de sa tranquilité.");
 
-        Chaise bancDeChaise = new Chaise("Banc de chaises", false);
+        Chaise bancDeChaise = new Chaise("banc de chaises", false);
         bancDeChaise.setDescription(    "Le banc de chaises dans la salle d'attente est une rangée de sièges rembourrés, disposés sur une base en métal solide.\n"+
                                         "Les assises sont recouvertes d'un tissu orangé assorti à la moquette du sol, offrant un ensemble harmonieux à l'espace.\n"+
                                         "Des accoudoirs discrets ajoutent un confort supplémentaire.\n");
 
-        Mur murNordAtt = new Mur("Mur nord de la salle d'attente");
+        Mur murNordAtt = new Mur("mur nord de la salle d'attente");
         murNordAtt.addEntitViv(bancDeChaise);
 
         Porte porteOuestSA = new Porte( true, null, "porte orange");
         porteOuestSA.setDescription("La porte est en bois. Peinte en orange, elle se fond complètement dans l'ambiance de la pièce.");
 
-        Mur murEstAtt = new Mur("Mur est de la salle d'attente");
+        Mur murEstAtt = new Mur("mur est de la salle d'attente");
         murEstAtt.addEntitViv(porteOuestSA);
 
-        Mur murOuestAtt = new Mur("Mur ouest de la salle d'attente");
+        Mur murOuestAtt = new Mur("mur ouest de la salle d'attente");
         murOuestAtt.addEntitViv(porteOSSA);
 
         salleDAttente.addMeuble(tableBasse);
