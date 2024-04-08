@@ -347,4 +347,20 @@ public class View {
         System.out.println(str);
 
     }
+
+    public void finep() {
+        System.out.println("Soudain vos forces vous quittent.\n" +
+                            "Vous vous endormez sur place sans avoir le temps de réagir.\n"+
+                            "\n"+
+                            "\n"+
+                            "\n"+
+                            "Vous vous réveillez calmement dans le coin Sud-Ouest du même bureau carré.\n"+
+                            "Fin Episode 1\n");
+    }
+
+    public void Remerciements() {
+        System.out.println("Merci d'avoir jouer à la démo de ...\n"+
+                            "Ce projet à été réalisé dans le cadre du cours \"Analayse, Conception Objet de Logiciel\" par Laurine Corbard, Alexis Mourier et Tom Briand\n"+
+                            "En espérant que vous n'ayez pas sauté par la fenêtre.\n");
+    }
 }

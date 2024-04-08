@@ -121,12 +121,23 @@ public class InteragissableController {
 
             ordi.setVerrouille(false);
             view.ordiAllume(true);
-            view.examiner(ordi);
-            joueur.setLocalisation(ordi);
         }
+        view.examiner(ordi);
+        joueur.setLocalisation(ordi);
         // Si ordi éteint, essaye de l'allumer --> peut fonctionner ou non
         // Si allumé, donne le choix de se connecter ou d'interagir avec l'IA
     }
+
+    public void connecter(Ordinateur ordi){
+        if (ordi.getIdentifiant() == null && ordi.getmdp() == null){
+            view.connexionReussie();
+            joueur.setLocalisation(ordi.getBureau());
+            view.examiner(ordi.getBureau());
+        }
+        else {
+            view.idinvalide();
+        }
+    };
 
     public void connecter(Ordinateur ordi, String id, String mdp) {
         Boolean idvalide = (id.equals(ordi.getIdentifiant()));

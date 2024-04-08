@@ -6,8 +6,8 @@ public class Porte extends EntiteVivante {
     private HashSet<Salle> salles;
     private Clef clef;
 
-    public Porte(Boolean verrouille, Clef clef) {
-        super("porte", verrouille);
+    public Porte(Boolean verrouille, Clef clef, String nom) {
+        super(nom, verrouille);
         this.salles = new HashSet<>();
         this.clef = clef;
     }

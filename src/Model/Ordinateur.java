@@ -15,7 +15,8 @@ public class Ordinateur extends EntiteVivante {
         this.allumable = allumable;
         this.bureauOrdi = bureau;
         this.setDescription("Deux options sont sélectionnables : se connecter ou interagir avec " + ia.getNom() + ".\n"+
-                                "Connexion : connecter [identifiant] [mot de passe]");
+                                "Connexion : connecter [identifiant] [mot de passe]\n"+
+                                "Il peut ne pas y avoir d'identifiant et de mot de passe");
     }
 
     public boolean getAllumable() {

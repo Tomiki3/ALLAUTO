@@ -6,12 +6,14 @@ public class Joueur {
     private Stack<Localisation> localisation;
     private Inventaire inventaire;
     private boolean enVie;
+    private boolean finep;
 
     public Joueur(Salle salle1) {
         this.localisation = new Stack<>();
         this.localisation.push(salle1);
         this.inventaire = new Inventaire();
         this.enVie = true;
+        this.finep = false;
     }
     
     public void setLocalisation (Localisation newLoc) {
@@ -20,6 +22,11 @@ public class Joueur {
         }
         else if (this.localisation.peek().contains(newLoc.getNom()) != null) {
             this.localisation.push(newLoc);
+        }
+        else if (this.localisation.peek() instanceof Ordinateur) {
+            if (((Ordinateur) this.localisation.peek()).getBureau() == newLoc){
+                this.localisation.push(newLoc);
+            }
         }
     }
 
@@ -47,5 +54,13 @@ public class Joueur {
 
     public boolean getVie() {
         return this.enVie;
+    }
+
+    public boolean getfinep() {
+        return this.finep;
+    }
+
+    public void setfinep(boolean episodetermine){
+        this.finep = episodetermine;
     }
 }

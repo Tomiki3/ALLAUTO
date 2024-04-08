@@ -2,7 +2,7 @@ package Model;
 
 public class Table extends Meuble {
 
-    public Table() {
-        super("table");
+    public Table(String nom) {
+        super(nom);
     }
 }
