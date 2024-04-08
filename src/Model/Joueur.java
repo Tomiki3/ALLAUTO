@@ -2,6 +2,9 @@ package Model;
 
 import java.util.Stack;
 
+/**
+ * Cette classe donne toutes les informations importantes sur le joueur (Localisation actuelle, inventaire, ...)
+ */
 public class Joueur {
     private Stack<Localisation> localisation;
     private Inventaire inventaire;

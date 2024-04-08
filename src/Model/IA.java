@@ -10,6 +10,7 @@ public class IA extends EntiteVivante{
         super(nom, verrouille);
     }
 
+    // permet d'ajouter une question et une réponse à l'IA (utilisée dans l'initialisation du jeu)
     public void setQuestRep(String quest, String rep) {
         Questions.add(quest);
         Reponses.add(rep);

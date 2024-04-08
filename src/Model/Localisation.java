@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Cette classe permet de Localiser le joueur dans le jeu (l'élément qu'il est en train d'observer en particulier)
+ */
 public abstract class Localisation extends Descriptible{
 
     public Localisation(String nom) {

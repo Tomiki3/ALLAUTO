@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Décrit les objets avec lesquelles on peut intéragir
+ */
 public abstract class EntiteVivante extends Localisation {
     protected Boolean verrouille;
 

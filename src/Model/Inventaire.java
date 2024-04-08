@@ -25,6 +25,7 @@ public class Inventaire extends Descriptible {
         objets.add(o);
     }
 
+    // ajout d'un objet dans l'inventaire
     public void setObjetEquipe(Objet o) {
         assert(objets.contains(o));
         if (objetEquipe != null) {
@@ -34,6 +35,7 @@ public class Inventaire extends Descriptible {
         objets.remove(o);
     }
 
+    // check si un objet est présent dans l'inventaire
     public Objet contains(String nomObjet) {
         Iterator<Objet> it = objets.iterator();
 

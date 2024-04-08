@@ -1,5 +1,9 @@
 package Model;
 
+
+/**
+ * Classe des objets pouvant être décrit.
+ */
 public abstract class Descriptible {
     private String nom;
     private String description;

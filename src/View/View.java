@@ -4,6 +4,11 @@ import java.util.Iterator;
 
 import Model.*;
 
+
+/**
+ * La classe View permet de gérer toute la partie "vue" du modèle MVC.
+ * Le jeu se joue via ligne de commande donc toutes les actions sont décrite grâce aux fonctions de la classe View.
+ */
 public class View {
 
     private final String Normal = "\u001B[0m";
@@ -23,6 +28,23 @@ public class View {
 
     public void newLine() {
         System.out.println("");
+    }
+
+    public void help() {
+        System.out.println("Rappel de commande\n");
+        System.out.println("COMMANDE => DESCRIPTION\n");
+        System.out.println("help => donne la liste des commandes");
+        System.out.println("examiner self => donne la descritpion de la localisation courante");
+        System.out.println("examiner [nom objet] => si possible déplace le personnage devant l'objet et en donne la description");
+        System.out.println("examiner [nom répertoire] => permet de naviguer dans les fichiers/répertoires d'un ordinateur");
+        System.out.println("interagir [nom objet] => permet d'intéragir avec un objet si possible (ouvrir, allumer, ...)");
+        System.out.println("prendre [nom objet] => si c'est possible permet de prendre un objet et de le mettre dans son inventaire");
+        System.out.println("inventaire => donne une description de l'inventaire");
+        System.out.println("équiper [nom objet] => si l'objet désigné se trouve dans l'inventaire alors l'équipe dans la main (clef pour une porte par exemple)");
+        System.out.println("quitter => permet de revenir à la localisation précédente");
+        System.out.println("connecter => utile uniquement devant un pc (la commande est alors rappelée)");
+        newLine();
+    
     }
 
     public void objetManquant(Localisation l) {
@@ -155,6 +177,7 @@ public class View {
 
     public void impossible() {
         System.out.println("Cette action est actuellement impossible à réaliser.");
+        System.out.println("Entrer la commande \"help\" si besoin d'aide");
     }
 
     public void decrire(Descriptible d) {
@@ -169,6 +192,7 @@ public class View {
         System.out.println("Mauvais identifiant");
     }
 
+    // permet de rediriger l'appel vers la bonne fonction afin de différentier certains cas non triviaux.
     public void examiner(Descriptible d) {
         if (d instanceof Salle) {
             examiner((Salle) d);
@@ -201,6 +225,7 @@ public class View {
         
         System.out.print("La salle contient : ");
         
+        // donne la liste des éléments présents dans la salle
         Iterator<Meuble> it = s.getMeubles().iterator();
         while (it.hasNext()) {
             System.out.print(it.next().getNom());
@@ -253,6 +278,8 @@ public class View {
 
         Iterator<Objet> it = inventaire.getObjets().iterator();
         System.out.print("\nVoici ce qu'il contient : ");
+
+        // donne une liste des éléments de l'inventaire
         while (it.hasNext())
         {
             Objet curr = it.next();
@@ -277,6 +304,7 @@ public class View {
         
         System.out.print("Dans ce/cette " + contenant.getNom() + " se trouvent : ");
         
+        // donne une liste des objets présents dans le contenant.
         Iterator<Objet> it = contenant.getObjets().iterator();
         while (it.hasNext()) {
             System.out.print(it.next().getNom());

@@ -11,24 +11,39 @@ public class Jeu {
     static View view;
     
     public static void main(String[] args) {
+        // initialisation de l'épisode
         Episode ep = EpisodeInitJeu();
+
+        // initialisation du joueur
         Joueur moi = new Joueur(ep.getSalledep());
+
+        // initialisation de la localisation de fin d'épisode
         Localisation contraintefin = ep.getLocfin();
+
+        // initialise une vue et un controlleur
         view = new View();
         interagissableController = new InteragissableController(moi, view);
         
+        // initialise un scanner pour la ligne de commande
         Scanner scan = new Scanner(System.in);
+
+        // Début du jeu
+        view.help();
         view.afficheBvn();
         view.examiner((Salle) moi.getLocalisation());
         
         // TODO : Patch le problème de la nature des contenants, pck peut pas prendre d'objet dessus si c'est pas des meubles
 
+        // Boucle du jeu
         while(moi.getVie() && !moi.getfinep()) {
             view.choixAction();
+
+            // Lexing de la commande
             String commande = scan.nextLine();
             String[] arrCommande = commande.split(" ");
             view.newLine();
 
+            // Parsing de la commande
             String action = arrCommande[0];
             String cible = "";
             for (int i = 1; i < arrCommande.length-1; i++) {
@@ -38,6 +53,8 @@ public class Jeu {
                 cible += arrCommande[arrCommande.length-1];
             }
 
+            // maintenant on a une "action" qui décrit la commande en cours de traitement 
+            // et une "cible" permettant de désigner les arguments de la commande
             switch(action) {
 
                 case "examiner":
@@ -202,6 +219,9 @@ public class Jeu {
 
                     interagissableController.connecter((Ordinateur) moi.getLocalisation(), id, mdp);
                     break;
+
+                case "help":
+                    view.help();
 
                 default:
                     view.impossible();
@@ -708,6 +728,9 @@ public class Jeu {
         j.quitterLocalisation();
     }
 
+    /**
+     * fait terminer l'épisode
+     */
     public static void finep(Joueur j) {
         j.setfinep(true);
     }

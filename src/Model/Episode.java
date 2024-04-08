@@ -1,5 +1,10 @@
 package Model;
 
+
+/**
+ * Cette classe donne la structure d'un épisode.
+ * On suppose qu'un épisode se termine lorsque le joueur quitte la localisation contfin.
+ */
 public class Episode {
     private Salle salledep;
     private Localisation contfin;
