@@ -165,6 +165,7 @@ public class InteragissableController {
         if (porte.getVerrouille())
         {
             if ((joueur.getInventaire().getObjetEquipe() instanceof Clef) &&
+                porte.getClef() != null &&
                 ((Clef) (joueur.getInventaire().getObjetEquipe())).getNom() == porte.getClef().getNom())
             {
                 porte.setVerrouille(false);    // ouvre la porte

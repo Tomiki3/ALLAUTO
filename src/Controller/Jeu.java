@@ -64,7 +64,6 @@ public class Jeu {
                                 moi.getLocalisation().contains(cible) instanceof Contenant ||
                                  moi.getLocalisation().contains(cible) instanceof Ordinateur)
                             {
-                                     System.out.println("Nouvelle localisation : " + moi.getLocalisation().contains(cible).getNom());
                                      moi.setLocalisation((Localisation) moi.getLocalisation().contains(cible));
                             }
                         }
@@ -343,7 +342,7 @@ public class Jeu {
         bureauOrdiBurInit.setDescription();
 
         IA IABurInit = new IA("IA", false);
-        IABurInit.setQuestRep("où suis-je ?", "Vous êtes dans les bureaux de XIMRINE. une start-up travaillant dans l'intelligence artificielle. Elle a été montée en 2023 et compte déjà environ 15 employés !\n"+
+        IABurInit.setQuestRep("où suis-je ?", "Vous êtes dans les bureaux de XIMRINE, une start-up travaillant dans l'intelligence artificielle. Elle a été montée en 2023 et compte déjà environ 15 employés !\n"+
                                                     "Ils ont annoncé qu'ils travaillaient actuellement sur un tout nouveau projet qui pourrait faire de XIMRINE un pionnier de l'Intelligence Artificelle.\n");
         IABurInit.setQuestRep("qui es-tu ?", "Je suis ALLAUTO, la première IA créée par XIMRINE. Je les aide dans leurs tâches du quotidien et dans leur travail.\n");
 
@@ -358,7 +357,7 @@ public class Jeu {
                                     "Elles ont l'air très confortables.\n");
 
         Table bureauBurInit = new Table("bureau central");
-        bureauBurInit.setDescription("le bureau est au centre de la pièce.\n"+
+        bureauBurInit.setDescription("Le bureau est au centre de la pièce.\n"+
                                         "Il est en verre et est décoré d'un petit pot de fleur et d'une photo d'un enfant brun brandissant fièrement une coupe, sur laquelle on peut lire : Tony F.\n");
         bureauBurInit.addEntitViv(OrdinateurBurInit);
         bureauBurInit.addEntitViv(chaiseCli);
