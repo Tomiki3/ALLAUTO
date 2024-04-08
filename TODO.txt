@@ -1,7 +1,11 @@
-finir texte storytelling => Tom
+Code => coder le help (+ set de commande au début) // commentaires [Tom]
 
-finaliser les diags de séquence => Tom
+CDC => Gameplay // Carte // [Tom]
 
-diag classe analyse // diag classe conception => Alexis / Laurine
+Analyse => clean les diagrammes // mettre sur un document // commenté  [Alexis]
 
-Commencer l'implémentation => Laurine / Alexis
+Conception => MVC + interface graphique [Laurine] // qu'est ce qu'on a codé ? [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
+
+Manuel utilisateur => comment on lance le jeu et tout tu connais... [Alexis]
+
+Bilan [Laurine]
