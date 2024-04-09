@@ -201,7 +201,12 @@ public class View {
             examiner((Objet) d);
         }
         else if (d instanceof EntiteVivante) {
-            examiner((EntiteVivante) d);
+            if (d instanceof Contenant) {
+                examiner((Contenant) d);
+            }
+            else{
+                examiner((EntiteVivante) d);
+            }
         }
         else if (d instanceof Meuble) {
             examiner((Meuble) d);
@@ -240,11 +245,11 @@ public class View {
     public void examiner(Objet obj) {
         decrire(obj);
     }
-
+    
     public void examiner(EntiteVivante e) {
         decrire(e);
     }
-
+    
     public void examiner(Meuble meuble) {
         decrire(meuble);
 
