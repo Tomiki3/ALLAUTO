@@ -59,7 +59,7 @@ public class Joueur {
         return this.enVie;
     }
 
-    public boolean getfinep() {
+    public boolean getFinEp() {
         return this.finEp;
     }
 

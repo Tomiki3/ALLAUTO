@@ -24,15 +24,10 @@ import View.View;
 public class InteractionController {
     Joueur joueur;
     View view;
-    Jeu jeu;
 
     public InteractionController(Joueur j, View v) {
         joueur = j;
         view = v;
-    }
-    
-    public void setJeu(Jeu jeu) {
-        this.jeu = jeu;
     }
 
     // Joueur en paramètre car une action peut potentiellement modifier l'état du joueur (ex : Fenêtre)
