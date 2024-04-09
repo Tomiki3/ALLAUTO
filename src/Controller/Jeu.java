@@ -32,8 +32,6 @@ public class Jeu {
         view.afficheBvn();
         view.examiner((Salle) moi.getLocalisation());
         
-        // TODO : Patch le problème de la nature des contenants, pck peut pas prendre d'objet dessus si c'est pas des meubles
-
         // Boucle du jeu
         while(moi.getVie() && !moi.getfinep()) {
             view.choixAction();
