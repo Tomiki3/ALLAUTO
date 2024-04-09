@@ -127,36 +127,24 @@ public class Jeu {
 
                 case "prendre":
                     String objet = cible;
-                    if (!(moi.getLocalisation() instanceof Meuble))    // joueur n'examine pas un meuble
-                    {
-                        view.dabordMeuble();
-                        break;
-                    }
 
-                    Meuble meuble = (Meuble) moi.getLocalisation();
-                    if (meuble.containsObjet(objet) != null)   // le meuble contient l'objet
+                    if(moi.getLocalisation() instanceof Meuble)
                     {
-                        prendre(moi, meuble.containsObjet(objet));
-                        break;
-                    }
-
-                    // l'objet est peut être contenu dans un contenant sur le meuble
-                    Iterator<Contenant> it = meuble.getContenantIterator();
-                    Objet o = null;
-                    while(it.hasNext())
-                    {
-                        Contenant cont = it.next();
-                        o = (Objet) cont.contains(cible);
-                        if (o != null)
+                        Meuble meuble = (Meuble) moi.getLocalisation();
+                        if (meuble.containsObjet(objet) != null)   // le meuble contient l'objet
                         {
-                            prendre(moi, o);
-                            cont.removeObjet(o);
+                            prendre(moi, meuble.containsObjet(objet));
                             break;
                         }
                     }
-                    
-                    if (o == null) {
-                        view.prendreImpossible(meuble.getNom());
+                    else if (moi.getLocalisation() instanceof Contenant)
+                    {
+                        Contenant contenant = (Contenant) moi.getLocalisation();
+                        if (contenant.contains(objet) != null)   // le contenant contient l'objet
+                        {
+                            prendre(moi, contenant, (Objet) contenant.contains(objet));
+                            break;
+                        }
                     }
                     
                     break;
@@ -396,6 +384,14 @@ public class Jeu {
         poubelleBurInit.addObjet(postIt1);
 
         Mur murNordBurInit = new Mur("mur nord du bureau");
+
+        Savon savon = new Savon();
+        savon.setDescription("Un savon de marseille comme on n'en fait plus.");
+
+        Carton carton = new Carton("carton", false);
+        carton.setDescription("Un joli carton qui à l'air remplis de merveilles.");
+        carton.addObjet(savon);
+        etagereBurInit.addEntitViv(carton);;
 
         Fenetre fenetreSudBurInit = new Fenetre(true);
         fenetreSudBurInit.setDescription(   "Vous vous approchez de la fenêtre.\n"+
@@ -736,6 +732,12 @@ public class Jeu {
     public static void prendre(Joueur j, Meuble m, Objet o) {
         m.removeObjet(o);
         j.getInventaire().addObjet(o);
+    }
+
+    public static void prendre(Joueur j, Contenant c, Objet o) {
+        c.removeObjet(o);
+        j.getInventaire().addObjet(o);
+        view.prendre(o.getNom());
     }
 
     public static void prendre(Joueur moi, Objet obj) {
