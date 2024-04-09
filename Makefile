@@ -6,3 +6,6 @@ compile :
 
 run : compileJeu
 	java -cp bin/ Controller/Jeu
+
+play : 
+	java -cp bin/ Controller/Jeu
