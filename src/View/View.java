@@ -34,7 +34,7 @@ public class View {
         System.out.println("Rappel de commande\n");
         System.out.println("COMMANDE => DESCRIPTION\n");
         System.out.println("help => donne la liste des commandes");
-        System.out.println("examiner self => donne la descritpion de la localisation courante");
+        System.out.println("examiner self => donne la description de la localisation courante");
         System.out.println("examiner [nom objet] => si possible déplace le personnage devant l'objet et en donne la description");
         System.out.println("examiner [nom répertoire] => permet de naviguer dans les fichiers/répertoires d'un ordinateur");
         System.out.println("interagir [nom objet] => permet d'intéragir avec un objet si possible (ouvrir, allumer, ...)");
