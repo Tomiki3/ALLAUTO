@@ -2,7 +2,6 @@ package Model;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public abstract class Meuble extends Localisation {
     private HashSet<Objet> objets;

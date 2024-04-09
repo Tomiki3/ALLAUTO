@@ -1,10 +1,7 @@
 package Controller;
 
-import Model.*;
 import View.*;
 
-import java.util.Iterator;
-import java.util.Scanner;
 
 public class Jeu {
     

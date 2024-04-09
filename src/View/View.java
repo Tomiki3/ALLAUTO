@@ -3,10 +3,7 @@ package View;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import javax.swing.Action;
-
 import Controller.ActionController;
-import Controller.Jeu;
 import Model.*;
 
 
