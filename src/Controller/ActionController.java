@@ -39,7 +39,7 @@ public class ActionController {
 
     public ActionController(View vue) {
         this.view = vue;
-        
+        view.setController(this);
         // initialisation de l'épisode
         this.ep = EpisodeInitJeu();
         // initialisation du joueur
