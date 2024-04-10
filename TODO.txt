@@ -1,15 +1,13 @@
-<<<<<<< HEAD
-Code => coder le help (+ set de commande au début) // commentaires [Tom]
+Code => [done]
 
-CDC => Carte [Tom]
-=======
-CDC => Gameplay // Carte // [Tom]
->>>>>>> 81f30f79960386508f9ecde87a6a7a14f73d918a
+Cahier des charges => Ajouter carte [Tom]
 
 Analyse => clean les diagrammes // mettre sur un document // commenter [Alexis done]
 
-Conception => MVC + interface graphique [Laurine] // qu'est ce qu'on a codé ? [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
+Conception => MVC + interface graphique [Laurine] // description incrément choisi [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
 
-Manuel utilisateur => comment on lance le jeu et tout tu connais... [Alexis]
+Manuel utilisateur => comment jouer au jeu [à relire]
 
 Bilan [Laurine]
+
+A_lire => à compléter selon énoncé
