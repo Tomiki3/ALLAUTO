@@ -20,13 +20,13 @@ Ces éléments devront fournir des pistes de reflexion au joueur, de manière à
 Cependant, le récit est parsemé d'incohérences qui doivent laisser au joueur un goût un peu amer vis à vis de ses conclusions, des éléments qui lui laissent penser qu'il n'a pas encore bien tout compris, comme si il lui manquait une pièce du puzzle.
 Et en effet, c'est en pénétrant dans la salle des archives et en trouvant un dossier à son nom que le joueur va se rendre compte quil est en fait l'IA "ultime" autour de laquelle toute l'histoire est centrée.
 
-Pour l'instant, le jeu se finira sur un nouveau réveil du joueur, cette fois-ci entourée de l'équipe chargée de son développement, tout sourire.
+Le jeu se finira sur un nouveau réveil du joueur, cette fois-ci entourée de l'équipe chargée de son développement, tout sourire.
 
 ### Carte
 
 TODO
 
-### Gestion de l'inventaire TODO
+### Gestion de l'inventaire
 
 Tout le long du jeu, le protagoniste est équipé d'un inventaire ouvrable contenant un ensemble d'objet.
 Lorsqu'un objet est pris, il est ajouté dans l'inventaire à capacité infinie.

@@ -1,234 +1,238 @@
 package Controller;
 
-import Model.*;
-import View.*;
+import Model.Carton;
+import Model.Chaise;
+import Model.Ciseaux;
+import Model.Clef;
+import Model.Contenant;
+import Model.Cutter;
+import Model.Document;
+import Model.EntiteVivante;
+import Model.Episode;
+import Model.Etagere;
+import Model.Fenetre;
+import Model.Fichier;
+import Model.IA;
+import Model.Imprimante;
+import Model.Joueur;
+import Model.Localisation;
+import Model.Meuble;
+import Model.Mur;
+import Model.Objet;
+import Model.Ordinateur;
+import Model.Porte;
+import Model.PostIt;
+import Model.Poubelle;
+import Model.Repertoire;
+import Model.Salle;
+import Model.Savon;
+import Model.Sol;
+import Model.Table;
 
-import java.util.Iterator;
-import java.util.Scanner;
+import View.View;
 
-public class Jeu {
-    static InteractionController interagissableController;
-    static View view;
-    
-    public static void main(String[] args) {
+public class ActionController {
+    private InteractionController interactionCont;
+    private View view;
+    private Joueur moi;
+    private Episode ep;
+
+    public ActionController(View vue) {
+        this.view = vue;
+        view.setController(this);
         // initialisation de l'épisode
-        Episode ep = EpisodeInitJeu();
-
+        this.ep = EpisodeInitJeu();
         // initialisation du joueur
-        Joueur moi = new Joueur(ep.getSalleDep());
-
-        // initialisation de la localisation de fin d'épisode
-        Localisation contraintefin = ep.getLocfin();
-
-        // initialise une vue et un controlleur
-        view = new View();
-        interagissableController = new InteractionController(moi, view);
+        this.moi = new Joueur(ep.getSalleDep());
         
-        // initialise un scanner pour la ligne de commande
-        Scanner scan = new Scanner(System.in);
+        this.interactionCont = new InteractionController(moi, view);
 
         // Début du jeu
-        view.help();
-        view.afficheBvn();
-        view.examiner((Salle) moi.getLocalisation());
-        
-        // Boucle du jeu
-        while(moi.getVie() && !moi.getfinep()) {
-            view.choixAction();
+        view.initJeu((Salle) moi.getLocalisation()); // initie la vue et le listener
+    }
+    
+    public void traiteAction(String[] arrCommande) {
+        // Parsing de la commande
+        String action = arrCommande[0];
+        String cible = "";
+        for (int i = 1; i < arrCommande.length-1; i++) {
+            cible += (arrCommande[i] + " ");
+        }
+        if (arrCommande.length>1){
+            cible += arrCommande[arrCommande.length-1];
+        }
+        // maintenant on a une "action" qui décrit la commande en cours de traitement 
+        // et une "cible" permettant de désigner les arguments de la commande
+        switch(action) {
 
-            // Lexing de la commande
-            String commande = scan.nextLine();
-            String[] arrCommande = commande.split(" ");
-            view.newLine();
+            case "examiner":
 
-            // Parsing de la commande
-            String action = arrCommande[0];
-            String cible = "";
-            for (int i = 1; i < arrCommande.length-1; i++) {
-                cible += (arrCommande[i] + " ");
-            }
-            if (arrCommande.length>1){
-                cible += arrCommande[arrCommande.length-1];
-            }
-
-            // maintenant on a une "action" qui décrit la commande en cours de traitement 
-            // et une "cible" permettant de désigner les arguments de la commande
-            switch(action) {
-
-                case "examiner":
-
-                    if (cible.equals("self")) {
-                        view.examiner(moi.getLocalisation());
-                        break;
-                    }
-
-                    if (moi.getInventaire().contains(cible) != null)
-                    {
-                        view.examiner(moi.getInventaire().contains(cible));
-                        break;
-                    }
-
-                    if (moi.getLocalisation().contains(cible) != null)
-                    {
-                        view.examiner(moi.getLocalisation().contains(cible));
-                        
-                        if (moi.getLocalisation().contains(cible) instanceof Localisation)
-                        {
-                            // Verifie que c'est pas une entité vivante à la noix
-                            if (!(moi.getLocalisation().contains(cible) instanceof EntiteVivante) ||
-                                moi.getLocalisation().contains(cible) instanceof Contenant ||
-                                 moi.getLocalisation().contains(cible) instanceof Ordinateur)
-                            {
-                                     moi.setLocalisation((Localisation) moi.getLocalisation().contains(cible));
-                            }
-                        }
-                        break;
-                    }
-
-                    view.objetManquant(moi.getLocalisation());
-                    break;
-
-                
-                case "interagir":
-                
-                    if (!(moi.getLocalisation() instanceof Meuble) && !(moi.getLocalisation() instanceof Ordinateur))
-                    {
-                        view.interactionImpossible();
-                        break;
-                    }
-                    
-                    if (moi.getLocalisation() instanceof Meuble){
-                        Meuble monMeuble = (Meuble) moi.getLocalisation();
-
-                        if (monMeuble.containsViv(cible) == null)
-                        {
-                            view.InteractionObjImpossible();
-                            break;
-                        }
-
-                        interagissableController.interagir(monMeuble.containsViv(cible));
-                        break;
-                    }
-
-                    else if (moi.getLocalisation() instanceof Ordinateur){
-                        Ordinateur monOrdi = (Ordinateur) moi.getLocalisation();
-
-                        if (monOrdi.contains(cible) == null)
-                        {
-                            view.InteractionObjImpossible();
-                            break;
-                        }
-                        
-                        interagissableController.interagir((IA) monOrdi.contains(cible));
-                        view.examiner(moi.getLocalisation());
-                        break;
-                    }
-
-
-                case "prendre":
-                    String objet = cible;
-
-                    if(moi.getLocalisation() instanceof Meuble)
-                    {
-                        Meuble meuble = (Meuble) moi.getLocalisation();
-                        if (meuble.containsObjet(objet) != null)   // le meuble contient l'objet
-                        {
-                            prendre(moi, meuble.containsObjet(objet));
-                            break;
-                        }
-                    }
-                    else if (moi.getLocalisation() instanceof Contenant)
-                    {
-                        Contenant contenant = (Contenant) moi.getLocalisation();
-                        if (contenant.contains(objet) != null)   // le contenant contient l'objet
-                        {
-                            prendre(moi, contenant, (Objet) contenant.contains(objet));
-                            break;
-                        }
-                    }
-                    
-                    view.objetManquant(moi.getLocalisation());
-                    break;
-
-
-                case "inventaire":
-                    view.examiner(moi.getInventaire());
-                    break;
-
-                
-                case "équiper":
-                    String aEquiper = cible;
-
-                    if (moi.getInventaire().contains(aEquiper) == null)
-                    {
-                        view.equiper(null);
-                        break;
-                    }
-                    
-                    moi.getInventaire().setObjetEquipe(moi.getInventaire().contains(aEquiper));
-                    view.equiper(aEquiper);
-                    break;
-
-
-                case "quitter":
-                    if (!(moi.getLocalisation() instanceof Salle)) {
-                        if (moi.getLocalisation() == contraintefin){
-                            finep(moi);
-                            break;
-                        }
-
-                        view.quitter(moi.getLocalisation().getNom());
-                        quitter(moi);
-                    }
-
+                if (cible.equals("self")) {
                     view.examiner(moi.getLocalisation());
                     break;
+                }
 
-                case "connecter":
-                    if (!(moi.getLocalisation() instanceof Ordinateur)) {
-                        view.ordiAvantConnexion();
-                    }
-
-                    String id, mdp;
-                    try {
-                        id = cible.split(" ")[0];
-                    }
-                    catch(Exception e) {
-                        id = "";
-                    }
-
-                    try{
-                        mdp = cible.split(" ")[1];    
-                    }
-                    catch(Exception e) {
-                        mdp = "";
-                    }
-
-                    interagissableController.connecter((Ordinateur) moi.getLocalisation(), id, mdp);
+                if (moi.getInventaire().contains(cible) != null)
+                {
+                    view.examiner(moi.getInventaire().contains(cible));
                     break;
+                }
 
-                case "help":
-                    view.help();
-
-                default:
-                    view.actionImpossible();
+                if (moi.getLocalisation().contains(cible) != null)
+                {
+                    view.examiner(moi.getLocalisation().contains(cible));
+                    
+                    if (moi.getLocalisation().contains(cible) instanceof Localisation)
+                    {
+                        // Verifie que c'est pas une entité vivante à la noix
+                        if (!(moi.getLocalisation().contains(cible) instanceof EntiteVivante) ||
+                            moi.getLocalisation().contains(cible) instanceof Contenant ||
+                                moi.getLocalisation().contains(cible) instanceof Ordinateur)
+                        {
+                                    moi.setLocalisation((Localisation) moi.getLocalisation().contains(cible));
+                        }
+                    }
                     break;
-            }
+                }
+
+                view.objetManquant(moi.getLocalisation());
+                break;
+
+            
+            case "interagir":
+            
+                if (!(moi.getLocalisation() instanceof Meuble) && !(moi.getLocalisation() instanceof Ordinateur))
+                {
+                    view.interactionImpossible();
+                    break;
+                }
+                
+                if (moi.getLocalisation() instanceof Meuble){
+                    Meuble monMeuble = (Meuble) moi.getLocalisation();
+
+                    if (monMeuble.containsViv(cible) == null)
+                    {
+                        view.InteractionObjImpossible();
+                        break;
+                    }
+
+                    interactionCont.interagir(monMeuble.containsViv(cible));
+                    break;
+                }
+
+                else if (moi.getLocalisation() instanceof Ordinateur){
+                    Ordinateur monOrdi = (Ordinateur) moi.getLocalisation();
+
+                    if (monOrdi.contains(cible) == null)
+                    {
+                        view.InteractionObjImpossible();
+                        break;
+                    }
+                    
+                    interactionCont.interagir((IA) monOrdi.contains(cible));
+                    view.examiner(moi.getLocalisation());
+                    break;
+                }
+
+
+            case "prendre":
+                String objet = cible;
+
+                if(moi.getLocalisation() instanceof Meuble)
+                {
+                    Meuble meuble = (Meuble) moi.getLocalisation();
+                    if (meuble.containsObjet(objet) != null)   // le meuble contient l'objet
+                    {
+                        prendre(moi, meuble.containsObjet(objet));
+                        break;
+                    }
+                }
+                else if (moi.getLocalisation() instanceof Contenant)
+                {
+                    Contenant contenant = (Contenant) moi.getLocalisation();
+                    if (contenant.contains(objet) != null)   // le contenant contient l'objet
+                    {
+                        prendre(moi, contenant, (Objet) contenant.contains(objet));
+                        break;
+                    }
+                }
+                
+                break;
+
+
+            case "inventaire":
+                view.examiner(moi.getInventaire());
+                break;
+
+            
+            case "équiper":
+                String aEquiper = cible;
+
+                if (moi.getInventaire().contains(aEquiper) == null)
+                {
+                    view.equiper(null);
+                    break;
+                }
+                
+                moi.getInventaire().setObjetEquipe(moi.getInventaire().contains(aEquiper));
+                view.equiper(aEquiper);
+                break;
+
+
+            case "quitter":
+                if (!(moi.getLocalisation() instanceof Salle)) {
+                    if (moi.getLocalisation() == ep.getLocfin()){
+                        finep(moi);
+                        break;
+                    }
+
+                    view.quitter(moi.getLocalisation().getNom());
+                    quitter(moi);
+                }
+
+                view.examiner(moi.getLocalisation());
+                break;
+
+            case "connecter":
+                if (!(moi.getLocalisation() instanceof Ordinateur)) {
+                    view.ordiAvantConnexion();
+                }
+
+                String id, mdp;
+                try {
+                    id = cible.split(" ")[0];
+                }
+                catch(Exception e) {
+                    id = "";
+                }
+
+                try{
+                    mdp = cible.split(" ")[1];    
+                }
+                catch(Exception e) {
+                    mdp = "";
+                }
+
+                interactionCont.connecter((Ordinateur) moi.getLocalisation(), id, mdp);
+                break;
+
+            case "help":
+                view.help();
+
+            default:
+                view.actionImpossible();
+                break;
         }
 
-        view.newLine();
-        if (!(moi.getVie())){
-            view.mort();
+        // Boucle du jeu
+        if(moi.getVie() && !moi.getFinEp()) {
+            view.choixAction();          
+        } else {
+            view.finJeu(moi.getVie(), moi.getFinEp());            
         }
-        else if (moi.getfinep()){
-            view.finep();
-        }
-        view.newLine();
-        view.Remerciements();
-        scan.close();
     }
 
-    public static Episode EpisodeInitTest() {
+    public Episode EpisodeInitTest() {
         // ------ SALLE 1 --------------------------
         Savon savon = new Savon();
         savon.setDescription("Ce savon à l'air vieux." +
@@ -309,7 +313,7 @@ public class Jeu {
         return new Episode(salle1, null);
     }
 
-    public static Episode EpisodeInitJeu(){
+    public Episode EpisodeInitJeu(){
         // ------ Bureau Initial --------------------------
 
         Fichier captureEcranMail = new Fichier("capture d'écran",   "Objet : Réorganisation du personnel suite aux avancées de l'IA\n"+
@@ -717,33 +721,34 @@ public class Jeu {
 
 
     /**
-     * Nous fait quitter l'examination du meuble courant
+     * Fait quitter l'examination du meuble courant
      */
-    public static void quitter(Joueur j) {
+    public void quitter(Joueur j) {
         j.quitterLocalisation();
     }
 
     /**
-     * fait terminer l'épisode
+     * Fait terminer l'épisode
      */
-    public static void finep(Joueur j) {
+    public void finep(Joueur j) {
         j.setfinep(true);
     }
     
-    public static void prendre(Joueur j, Meuble m, Objet o) {
+    public void prendre(Joueur j, Meuble m, Objet o) {
         m.removeObjet(o);
         j.getInventaire().addObjet(o);
     }
 
-    public static void prendre(Joueur j, Contenant c, Objet o) {
+    public void prendre(Joueur j, Contenant c, Objet o) {
         c.removeObjet(o);
         j.getInventaire().addObjet(o);
         view.prendre(o.getNom());
     }
 
-    public static void prendre(Joueur moi, Objet obj) {
+    public void prendre(Joueur moi, Objet obj) {
         moi.getInventaire().addObjet(obj);
         ((Meuble) moi.getLocalisation()).removeObjet(obj);
         view.prendre(obj.getNom());
     }
+
 }

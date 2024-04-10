@@ -1,7 +1,9 @@
 package View;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
+import Controller.ActionController;
 import Model.*;
 
 
@@ -13,9 +15,25 @@ public class View {
 
     private final String Normal = "\u001B[0m";
     private final String Green = "\033[1;32m";
+    private Scanner scan;
+    private ActionController controller;
 
     public View() {
+        // initialise un scanner pour la ligne de commande
+        this.scan = new Scanner(System.in);
+    }
 
+    public void setController(ActionController cont) {
+        this.controller = cont;
+    }
+
+    public void initJeu(Salle s) {
+        help();
+        afficheBvn();
+        examiner(s);
+
+        choixAction();
+       
     }
 
     public void afficheBvn() {
@@ -24,6 +42,11 @@ public class View {
 
     public void choixAction() {
         System.out.print(Green + "\nVeuillez réaliser une action : " + Normal);
+        // Lexing de la commande
+        String commande = this.scan.nextLine();
+        String[] arrCommande = commande.split(" ");
+        newLine();
+        controller.traiteAction(arrCommande);
     }
 
     public void newLine() {
@@ -34,7 +57,7 @@ public class View {
         System.out.println("Rappel de commande\n");
         System.out.println("COMMANDE => DESCRIPTION\n");
         System.out.println("help => donne la liste des commandes");
-        System.out.println("examiner self => donne la descritpion de la localisation courante");
+        System.out.println("examiner self => donne la description de la localisation courante");
         System.out.println("examiner [nom objet] => si possible déplace le personnage devant l'objet et en donne la description");
         System.out.println("examiner [nom répertoire] => permet de naviguer dans les fichiers/répertoires d'un ordinateur");
         System.out.println("interagir [nom objet] => permet d'intéragir avec un objet si possible (ouvrir, allumer, ...)");
@@ -65,6 +88,19 @@ public class View {
                 System.out.println("Il n'y a rien à examiner dans cette interagissable.");
             }
         }
+    }
+
+    public void finJeu(Boolean vie, Boolean finEp) {
+        newLine();
+        if (!(vie)){
+            mort();
+        }
+        else if (finEp){
+            finep();
+        }
+        newLine();
+        Remerciements();
+        this.scan.close();
     }
 
     public void objetManquant(Salle s) {
