@@ -7,6 +7,7 @@ public class Ordinateur extends EntiteVivante {
     private boolean allumable;
     private Repertoire bureauOrdi;
 
+    // on utilise l'attribut verouille d'une EntiteVivante pour décrire si l'ordinateur est allumable ou non
     public Ordinateur(String nom, boolean eteint, String identifiant, IA ia, boolean allumable, String mdp, Repertoire bureau) {
         super(nom, eteint); // verrouille == eteint
         this.ia = ia;

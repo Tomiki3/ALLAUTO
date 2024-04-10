@@ -17,18 +17,17 @@ import Model.IA;
 
 import View.View;
 
-public class InteragissableController {
+/**
+ * partie controlleur de l'architecture MVC.
+ * Permet de manipuler les objets et d'afficher les bonnes informations à l'écran.
+ */
+public class InteractionController {
     Joueur joueur;
     View view;
-    Jeu jeu;
 
-    public InteragissableController(Joueur j, View v) {
+    public InteractionController(Joueur j, View v) {
         joueur = j;
         view = v;
-    }
-    
-    public void setJeu(Jeu jeu) {
-        this.jeu = jeu;
     }
 
     // Joueur en paramètre car une action peut potentiellement modifier l'état du joueur (ex : Fenêtre)
@@ -60,9 +59,11 @@ public class InteragissableController {
             view.interagir(f, true);
         }
         else
-        {
+        {   
+            // interagir fenetre lorsque la fenetre est ouverte permet de sauter à travers.
+            // on demande donc confirmation avant d'executer l'interaction
             view.interagir(f, false);
-            Scanner scanFenetre = new Scanner(System.in);   // le scan est closed dans la méthode main TODO non ?
+            Scanner scanFenetre = new Scanner(System.in);   // le scan est closed dans la méthode main
             String reponse = scanFenetre.nextLine();   // on attend du joueur qu'il réponde par 'oui' ou par 'non'
             
             if (reponse.equals("oui")) 
@@ -77,6 +78,7 @@ public class InteragissableController {
         }
     }
     
+    // interaction avec IA = on ne peut que lui poser les questions qui lui ont été attribuées
     public void interagir(IA ia) {
         Scanner scan = new Scanner(System.in);
         view.IASalut();
@@ -115,10 +117,11 @@ public class InteragissableController {
         {
             if (!ordi.getAllumable())
             {
+                // si ordi éteint et pas allumable alors on peut rien faire
                 view.ordiAllume(false);
                 return;
             }
-
+            // sinon on l'allume
             ordi.setVerrouille(false);
             view.ordiAllume(true);
         }
@@ -128,6 +131,7 @@ public class InteragissableController {
         // Si allumé, donne le choix de se connecter ou d'interagir avec l'IA
     }
 
+    // cas du PC sans identifiant ni mot de passe.
     public void connecter(Ordinateur ordi){
         if (ordi.getIdentifiant() == null && ordi.getmdp() == null){
             view.connexionReussie();
@@ -139,6 +143,7 @@ public class InteragissableController {
         }
     };
 
+    // cas du PC avec identifiant et mot de passe.
     public void connecter(Ordinateur ordi, String id, String mdp) {
         Boolean idvalide = (id.equals(ordi.getIdentifiant()));
         Boolean mdpvalide = (mdp.equals(ordi.getmdp()));
@@ -165,6 +170,7 @@ public class InteragissableController {
         if (porte.getVerrouille())
         {
             if ((joueur.getInventaire().getObjetEquipe() instanceof Clef) &&
+                porte.getClef() != null &&
                 ((Clef) (joueur.getInventaire().getObjetEquipe())).getNom() == porte.getClef().getNom())
             {
                 porte.setVerrouille(false);    // ouvre la porte
@@ -196,6 +202,7 @@ public class InteragissableController {
         }
     }
 
+    // redirige vers la bonne fonction d'interaction
     public void interagir(EntiteVivante e) {
         switch(e.getClass().getName()) {
             case "Model.Carton":
@@ -217,7 +224,7 @@ public class InteragissableController {
                 interagir((Porte) e);
                 break;
             default:
-                view.impossible();
+                view.actionImpossible();
                 break;
         }
     }

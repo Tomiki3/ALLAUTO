@@ -2,6 +2,9 @@ package Model;
 
 import java.util.HashSet;
 
+/**
+ * Cette classe décrit les répertoires présents dans un ordinateur
+ */
 public class Repertoire extends Localisation {
 
     private HashSet<Repertoire> sousReps = new HashSet<Repertoire>();

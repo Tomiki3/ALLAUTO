@@ -3,6 +3,10 @@ package Model;
 import java.util.HashSet;
 import java.util.Iterator;
 
+/**
+ * Décrit des objets (potentiellement fermé) pouvant en contenir d'autre.
+ * Exemple : carton.
+ */
 public abstract class Contenant extends EntiteVivante {
     private HashSet<Objet> objets;
 

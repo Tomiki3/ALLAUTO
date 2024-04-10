@@ -14,6 +14,7 @@ Il fait bon, une odeur d'encens embaume la pièce.
 Sur les murs, des posters représentant des technologies presque futuristes sont accrochés.
 Le sol est en lino bleu clair et les murs en papier peint brun foncé.
 Le mur Nord est vitré mais un store vénitien fermé empêche de voir de l'extérieur.
+
 Il y a un bureau, une étagère, deux chaises, une poubelle.
 Il y a aussi une porte sur le mur nord, et une fenêtre sur le mur sud.
 
@@ -197,9 +198,9 @@ On y voit aussi : un ordinateur, une chaise
 Sur ce post it, on peut lire : "NE PAS OUBLIER : ETEINDRE MCB".
 Vous le rangez dans votre inventaire.
 
--- post it rose --
+-- clef --
 
-Sur ce post it, on peut lire : "POUR OUVRIR LA PORTE DE LA SALLE D'ATTENTE : "
+petite clef
 
 -- post it orange --
 

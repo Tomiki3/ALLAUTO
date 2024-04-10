@@ -2,18 +2,21 @@ package Model;
 
 import java.util.Stack;
 
+/**
+ * Cette classe donne toutes les informations importantes sur le joueur (Localisation actuelle, inventaire, ...)
+ */
 public class Joueur {
     private Stack<Localisation> localisation;
     private Inventaire inventaire;
     private boolean enVie;
-    private boolean finep;
+    private boolean finEp;
 
     public Joueur(Salle salle1) {
         this.localisation = new Stack<>();
         this.localisation.push(salle1);
         this.inventaire = new Inventaire();
         this.enVie = true;
-        this.finep = false;
+        this.finEp = false;
     }
     
     public void setLocalisation (Localisation newLoc) {
@@ -56,11 +59,11 @@ public class Joueur {
         return this.enVie;
     }
 
-    public boolean getfinep() {
-        return this.finep;
+    public boolean getFinEp() {
+        return this.finEp;
     }
 
     public void setfinep(boolean episodetermine){
-        this.finep = episodetermine;
+        this.finEp = episodetermine;
     }
 }

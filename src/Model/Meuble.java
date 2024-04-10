@@ -2,7 +2,6 @@ package Model;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public abstract class Meuble extends Localisation {
     private HashSet<Objet> objets;
@@ -83,41 +82,4 @@ public abstract class Meuble extends Localisation {
         return null;
     }
 
-
-// ----- ITERATOR CONTENANT (si vous avez une meilleure solution je suis preneur) ------
-    public Iterator<Contenant> getContenantIterator() {
-        return new ContenantIterator();
-    }
-
-    // Classe interne pour l'itérateur de Contenants
-    private class ContenantIterator implements Iterator<Contenant> {
-        Iterator<EntiteVivante> iterator = interagissables.iterator();
-        Contenant nextElement = null;
-
-        @Override
-        public boolean hasNext() {
-            while (iterator.hasNext()) {
-                EntiteVivante next = iterator.next();
-                if (next instanceof Contenant) {
-                    nextElement = (Contenant) next;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        @Override
-        public Contenant next() {
-            if (nextElement != null || hasNext())
-            {
-                Contenant toReturn = nextElement;
-                nextElement = null;
-                return toReturn;
-            }
-            else
-            {
-                throw new NoSuchElementException();
-            }
-        }
-    }
 }

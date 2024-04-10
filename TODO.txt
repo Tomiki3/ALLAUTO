@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 Code => coder le help (+ set de commande au début) // commentaires [Tom]
 
 CDC => Carte [Tom]
+=======
+CDC => Gameplay // Carte // [Tom]
+>>>>>>> 81f30f79960386508f9ecde87a6a7a14f73d918a
 
-Analyse => clean les diagrammes // mettre sur un document // commenté  [Alexis]
+Analyse => clean les diagrammes // mettre sur un document // commenter [Alexis done]
 
 Conception => MVC + interface graphique [Laurine] // qu'est ce qu'on a codé ? [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
 

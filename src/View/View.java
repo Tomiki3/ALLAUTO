@@ -1,16 +1,39 @@
 package View;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
+import Controller.ActionController;
 import Model.*;
 
+
+/**
+ * La classe View permet de gérer toute la partie "vue" du modèle MVC.
+ * Le jeu se joue via ligne de commande donc toutes les actions sont décrite grâce aux fonctions de la classe View.
+ */
 public class View {
 
     private final String Normal = "\u001B[0m";
     private final String Green = "\033[1;32m";
+    private Scanner scan;
+    private ActionController controller;
 
     public View() {
+        // initialise un scanner pour la ligne de commande
+        this.scan = new Scanner(System.in);
+    }
 
+    public void setController(ActionController cont) {
+        this.controller = cont;
+    }
+
+    public void initJeu(Salle s) {
+        help();
+        afficheBvn();
+        examiner(s);
+
+        choixAction();
+       
     }
 
     public void afficheBvn() {
@@ -19,10 +42,32 @@ public class View {
 
     public void choixAction() {
         System.out.print(Green + "\nVeuillez réaliser une action : " + Normal);
+        // Lexing de la commande
+        String commande = this.scan.nextLine();
+        String[] arrCommande = commande.split(" ");
+        newLine();
+        controller.traiteAction(arrCommande);
     }
 
     public void newLine() {
         System.out.println("");
+    }
+
+    public void help() {
+        System.out.println("Rappel de commande\n");
+        System.out.println("COMMANDE => DESCRIPTION\n");
+        System.out.println("help => donne la liste des commandes");
+        System.out.println("examiner self => donne la description de la localisation courante");
+        System.out.println("examiner [nom objet] => si possible déplace le personnage devant l'objet et en donne la description");
+        System.out.println("examiner [nom répertoire] => permet de naviguer dans les fichiers/répertoires d'un ordinateur");
+        System.out.println("interagir [nom objet] => permet d'intéragir avec un objet si possible (ouvrir, allumer, ...)");
+        System.out.println("prendre [nom objet] => si c'est possible permet de prendre un objet et de le mettre dans son inventaire");
+        System.out.println("inventaire => donne une description de l'inventaire");
+        System.out.println("équiper [nom objet] => si l'objet désigné se trouve dans l'inventaire alors l'équipe dans la main (clef pour une porte par exemple)");
+        System.out.println("quitter => permet de revenir à la localisation précédente");
+        System.out.println("connecter => utile uniquement devant un pc (la commande est alors rappelée)");
+        newLine();
+    
     }
 
     public void objetManquant(Localisation l) {
@@ -43,6 +88,19 @@ public class View {
                 System.out.println("Il n'y a rien à examiner dans cette interagissable.");
             }
         }
+    }
+
+    public void finJeu(Boolean vie, Boolean finEp) {
+        newLine();
+        if (!(vie)){
+            mort();
+        }
+        else if (finEp){
+            finep();
+        }
+        newLine();
+        Remerciements();
+        this.scan.close();
     }
 
     public void objetManquant(Salle s) {
@@ -123,7 +181,7 @@ public class View {
         System.out.println("IA : " + ia.getReponse(numQuest));
     }
 
-    public void pasInteraction() {
+    public void interactionImpossible() {
         System.out.println("Aucun objet interagissable n'est à votre portée.");
     }
 
@@ -131,11 +189,11 @@ public class View {
         System.out.println("Chaque objet est posé sur un meuble.\nVous devez d'abord examiner un meuble avant de vouloir prendre un objet.");
     }
 
-    public void pasInteractionObj() {
+    public void InteractionObjImpossible() {
         System.out.println("L'objet avec lequel vous souhaitez interagir n'appartient pas au meuble que vous examinez.");
     }
 
-    public void pasPrendre(String nom) {
+    public void prendreImpossible(String nom) {
         System.out.println(nom + " ne contient pas l'objet que vous souhaitez prendre.");
     }
 
@@ -153,8 +211,9 @@ public class View {
         System.out.println("Vous quittez " + nom + ".");
     }
 
-    public void impossible() {
+    public void actionImpossible() {
         System.out.println("Cette action est actuellement impossible à réaliser.");
+        System.out.println("Entrer la commande \"help\" si besoin d'aide");
     }
 
     public void decrire(Descriptible d) {
@@ -169,6 +228,7 @@ public class View {
         System.out.println("Mauvais identifiant");
     }
 
+    // permet de rediriger l'appel vers la bonne fonction afin de différentier certains cas non triviaux.
     public void examiner(Descriptible d) {
         if (d instanceof Salle) {
             examiner((Salle) d);
@@ -177,7 +237,12 @@ public class View {
             examiner((Objet) d);
         }
         else if (d instanceof EntiteVivante) {
-            examiner((EntiteVivante) d);
+            if (d instanceof Contenant) {
+                examiner((Contenant) d);
+            }
+            else{
+                examiner((EntiteVivante) d);
+            }
         }
         else if (d instanceof Meuble) {
             examiner((Meuble) d);
@@ -201,6 +266,7 @@ public class View {
         
         System.out.print("La salle contient : ");
         
+        // donne la liste des éléments présents dans la salle
         Iterator<Meuble> it = s.getMeubles().iterator();
         while (it.hasNext()) {
             System.out.print(it.next().getNom());
@@ -215,11 +281,11 @@ public class View {
     public void examiner(Objet obj) {
         decrire(obj);
     }
-
+    
     public void examiner(EntiteVivante e) {
         decrire(e);
     }
-
+    
     public void examiner(Meuble meuble) {
         decrire(meuble);
 
@@ -253,6 +319,8 @@ public class View {
 
         Iterator<Objet> it = inventaire.getObjets().iterator();
         System.out.print("\nVoici ce qu'il contient : ");
+
+        // donne une liste des éléments de l'inventaire
         while (it.hasNext())
         {
             Objet curr = it.next();
@@ -277,6 +345,7 @@ public class View {
         
         System.out.print("Dans ce/cette " + contenant.getNom() + " se trouvent : ");
         
+        // donne une liste des objets présents dans le contenant.
         Iterator<Objet> it = contenant.getObjets().iterator();
         while (it.hasNext()) {
             System.out.print(it.next().getNom());
