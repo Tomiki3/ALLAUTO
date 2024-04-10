@@ -4,7 +4,7 @@ Cahier des charges => Ajouter carte [Tom]
 
 Analyse => clean les diagrammes // mettre sur un document // commenter [Alexis done]
 
-Conception => MVC + interface graphique [Laurine] // description incrément choisi [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
+Conception => MVC + interface graphique [Laurine done] // description incrément choisi [Laurine done] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
 
 Manuel utilisateur => comment jouer au jeu [à relire]
 

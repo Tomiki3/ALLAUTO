@@ -1,6 +1,6 @@
 # Description des fichiers rendus
 
-Les fichiers sources du projet sont trouvable dans src/
+Les fichiers sources du projet se trouvent dans le répertoire src/
 
 Toute notre documentation est rassemblée dans le fichier "documentation.rmd".
 Ce fichier est séquencé en 5 parties distincts suivants les consignes du sujet: cahier des charges, analyse, conception, manuel utilisateur, bilan
@@ -10,8 +10,8 @@ Ce fichier est séquencé en 5 parties distincts suivants les consignes du sujet
 Un Makefile est présent dans le projet, il contient les commandes suivantes : 
 
 make compileJeu : compile le fichier Jeu.java de src/Controller et met l’executable dans le répertoire bin/
-make compile : compile toutes les sources et les mets dans bin/
-make run : appel la commande “compileJeu” et lance le jeu.
+make run : compile et lance le jeu.
 make play : lance le jeu (à utiliser seulement si le jeu est déjà compilé).
+make clean : supprime le répertoire /bin.
 
 Ces commandes suffisent pour compiler et lancer le jeu.
