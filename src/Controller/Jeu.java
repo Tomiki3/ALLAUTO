@@ -147,6 +147,7 @@ public class Jeu {
                         }
                     }
                     
+                    view.objetManquant(moi.getLocalisation());
                     break;
 
 

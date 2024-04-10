@@ -2,7 +2,7 @@ Code => coder le help (+ set de commande au début) // commentaires [Tom]
 
 CDC => Gameplay // Carte // [Tom]
 
-Analyse => clean les diagrammes // mettre sur un document // commenté  [Alexis]
+Analyse => clean les diagrammes // mettre sur un document // commenter [Alexis done]
 
 Conception => MVC + interface graphique [Laurine] // qu'est ce qu'on a codé ? [Laurine] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
 
