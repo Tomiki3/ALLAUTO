@@ -1,6 +1,6 @@
 Code => coder le help (+ set de commande au début) // commentaires [Tom]
 
-CDC => Gameplay // Carte // [Tom]
+CDC => Carte [Tom]
 
 Analyse => clean les diagrammes // mettre sur un document // commenté  [Alexis]
 
