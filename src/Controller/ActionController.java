@@ -180,15 +180,13 @@ public class ActionController {
 
 
             case "quitter":
-                if (!(moi.getLocalisation() instanceof Salle)) {
-                    if (moi.getLocalisation() == ep.getLocfin()){
-                        finep(moi);
-                        break;
-                    }
-
-                    view.quitter(moi.getLocalisation().getNom());
-                    quitter(moi);
+                if (moi.getLocalisation() == ep.getLocfin()){
+                    finep(moi);
+                    break;
                 }
+
+                view.quitter(moi.getLocalisation().getNom());
+                quitter(moi);
 
                 view.examiner(moi.getLocalisation());
                 break;
