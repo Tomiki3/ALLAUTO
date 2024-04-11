@@ -1,13 +1,13 @@
-Code => [done]
-
-Cahier des charges => Ajouter carte [Tom]
+Cahier des charges => liste objets // liste salles [done]
 
 Analyse => clean les diagrammes // mettre sur un document // commenter [Alexis done]
 
-Conception => MVC + interface graphique [Laurine done] // description incrément choisi [Laurine done] // les diagrammes de conception (classe idea [Tom]) (séquence [Alexis]) (état transi [Laurine]) 
+Conception => les diagrammes de conception (séquence [Alexis]) (état transi [Laurine option]) 
 
-Manuel utilisateur => comment jouer au jeu [à relire]
+Code => [done]
 
-Bilan [Laurine]
+Manuel utilisateur => [à relire done]
 
-A_lire => à compléter selon énoncé
+Bilan [Tom]
+
+A_lire => à compléter selon énoncé (surtout la description de documentation) [done]

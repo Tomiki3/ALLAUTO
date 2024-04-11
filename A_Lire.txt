@@ -1,9 +1,15 @@
 # Description des fichiers rendus
 
 Les fichiers sources du projet se trouvent dans le répertoire src/
+src/Controller/ActionController.java : initialise le jeu, traite les actions du joueur, stocke leur résultat dans le Model et appelle la Vue si nécessaire pour afficher des informations au joueur.
+src/Controller/InteractionController.java : comprend les méthodes effectuant les interactions avec les éléments du jeu, selon la nature de l'élément concerné.
+src/Model/* : classes définissant les divers objets et éléments rencontrés par le protagoniste dans le jeu.
+src/View/View.java : prévient le Contrôleur lorsque le joueur effectue une action, et affiche les informations nécessaires lorsque demandé par le contrôleur.
+src/Jeu.java : classe de test du Jeu
 
-Toute notre documentation est rassemblée dans le fichier "documentation.rmd".
+Toute notre documentation est rassemblée dans le fichier "documentation.pdf".
 Ce fichier est séquencé en 5 parties distincts suivants les consignes du sujet: cahier des charges, analyse, conception, manuel utilisateur, bilan
+
 
 # compiler et exécuter le programme en ligne de commande
 
